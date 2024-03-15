@@ -240,7 +240,7 @@
 
   <HediffDef>
     <defName>USH_TissueSurfeit</defName>
-    <label>tissue overgrowth</label>
+    <label>mecha suppression</label>
     <description>Too much tissue has been pumped into the body. Critical overload leads to death.</description>
     <hediffClass>LuciferiumExpansion.HediffWithComps_USH_InnerOrgansHealer</hediffClass>
     <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
