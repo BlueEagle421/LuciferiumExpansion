@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>USH_Ingest_Spray</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ingest/USH_Spray</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42~42</volumeRange>
+        <pitchRange>0.8~1.2</pitchRange>
+        <distRange>0~51.86047</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

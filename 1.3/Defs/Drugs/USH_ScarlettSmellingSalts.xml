@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="DrugBase">
+    <defName>USH_ScarlettSmellingSalts</defName>
+    <label>scarlet smelling salts</label>
+    <description>A medical drug that, after usage, forces the lungs to expand and heart rate to increase. Contained mechanites are biologically modified to be seen as a threat for the organism, so while they do their job, the body constantly fights to get mechanites out. A nice side-effect is that they also boost perception.</description>
+    <descriptionHyperlinks>
+      <HediffDef>USH_ScarlettSmellingSaltsHigh</HediffDef>
+      <HediffDef>USH_LuciferiumTolerance</HediffDef>
+      <HediffDef>LuciferiumAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drugs/ScarlettSmellingSalts</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>900</WorkToMake>
+      <MarketValue>32</MarketValue>
+      <Mass>0.02</Mass>
+      <DeteriorationRate>6</DeteriorationRate>
+      <Flammability>1.3</Flammability>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+	  <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.25</joy>
+      <baseIngestTicks>60</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Medical</drugCategory>
+      <ingestSound>Ingest_Snort</ingestSound>
+      <ingestEffect>USH_Smoke_RedFlicker</ingestEffect>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.27,0,0.08)</offset>
+          <behind>true</behind>
+        </northDefault>
+        <east>
+          <offset>(0.45,0,0.08)</offset>
+        </east>
+        <south>
+          <offset>(0.27,0,0.08)</offset>
+        </south>
+        <west>
+          <offset>(-0.50,0,0.08)</offset>
+        </west>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Sniff {0}</ingestCommandString>
+      <ingestReportString>Sniffing {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_ScarlettSmellingSaltsHigh</hediffDef>
+          <severity>0.05</severity>
+          <toleranceChemical>Luciferium</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.15</offset>
+		  <toleranceChemical>Luciferium</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_LuciferiumTolerance</hediffDef>
+          <severity>0.05</severity>
+          <divideByBodySize>true</divideByBodySize>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Luciferium</chemical>
+        <addictiveness>0.95</addictiveness>
+        <minToleranceToAddict>0.2</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+        <needLevelOffset>0.05</needLevelOffset>
+		<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>20</listOrder>
+      </li>
+    </comps>
+	<tradeability>Sellable</tradeability>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>USH_ScarlettSmellingSaltsHigh</defName>
+    <label>high on scarlet smelling salts</label>
+    <labelNoun>a scarlet smelling salts high</labelNoun>
+    <description>Scarlet mechanites temporarily enhancing the body.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>0.1</maxSeverity>
+	<initialSeverity>0.05</initialSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.9</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.05</offset>
+          </li>
+		  <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.30</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.10</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>USH_HighOnScarlettSmellingSalts</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>USH_ScarlettSmellingSaltsHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>high on scarlet smelling salts</label>
+        <description>I feel focused and ready to cope with the action.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

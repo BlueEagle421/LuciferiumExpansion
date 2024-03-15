@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <PipeSystem.PipeNetDef>
+    <defName>ScarletNet</defName>
+    <resource>
+      <name>Scarlet sludge</name>
+      <unit>l</unit>
+      <color>(0.96, 0.24, 0.30)</color>
+      <onlyShowStored>True</onlyShowStored>
+      <offTexPath>UI/Gizmos/OutOfSludge</offTexPath>
+    </resource>
+    <pipeDefs>
+      <!--<li>ScarletPipe</li>-->
+      <li>USH_UndergroundScarletPipe</li>
+    </pipeDefs>
+	<designator>
+      <deconstructIconPath>UI/Gizmos/ScarletPipes_Deconstruct</deconstructIconPath>
+      <designationCategoryDef>VCHE_PipeNetworks</designationCategoryDef>
+    </designator>
+    <overlayOptions>
+      <overlayColor>(0.96, 0.24, 0.30)</overlayColor>
+    </overlayOptions>
+    <linkToRefuelables>
+      <li>
+        <thing>LuciferiumDrops</thing>
+        <ratio>1</ratio>
+      </li>
+    </linkToRefuelables>
+  </PipeSystem.PipeNetDef>
+
+  <!--<ThingDef ParentName="BuildingBase">
+    <defName>ScarletPipe</defName>
+    <label>scarlet pipe</label>
+    <description>Steel pipes designed to transport usable chemfuel from deepchem refineries to chemfuel tanks for storage or to chemfuel-consuming structures for automatic refilling.</description>
+    <thingClass>PipeSystem.Building_Pipe</thingClass>
+    <category>Building</category>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Building/Linked/ScarletPipes_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Custom7</li>
+      </linkFlags>
+      <damageData>
+        <rect>(0,0.35,1,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/ScarletPipes_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/ScarletPipes_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <passability>Standable</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <WorkToBuild>35</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <costList>
+      <Plasteel>1</Plasteel>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>ScarletNet</pipeNet>
+      </li>
+      <li Class="PipeSystem.CompProperties_SpillWhenDamaged">
+        <spillEachTicks>600</spillEachTicks>
+        <startAtHitPointsPercent>0.333</startAtHitPointsPercent>
+        <amountToDraw>1</amountToDraw>
+        <filthMaxSpawnRadius>1</filthMaxSpawnRadius>
+        <chooseFilthFrom>
+          <li>Filth_Fuel</li>
+        </chooseFilthFrom>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PipeSystem.PlaceWorker_Pipe</li>
+    </placeWorkers>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+	<designationCategory>VCHE_PipeNetworks</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <clearBuildingArea>false</clearBuildingArea>
+  </ThingDef>-->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>USH_UndergroundScarletPipe</defName>
+    <label>scarlet pipe</label>
+    <description>Subterranean pipe reinforced with plasteel. It is capable of temporary storage and transport of scarlet sludge.</description>
+    <thingClass>PipeSystem.Building_Pipe</thingClass>
+    <category>Building</category>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>UI/CSG/IConduit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Custom7</li>
+      </linkFlags>
+      <damageData>
+        <rect>(0,0.35,1,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/ScarletPipes_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/ScarletPipes_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <passability>Standable</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>620</MaxHitPoints>
+      <WorkToBuild>120</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <costList>
+      <Plasteel>1</Plasteel>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>ScarletNet</pipeNet>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PipeSystem.PlaceWorker_Pipe</li>
+    </placeWorkers>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+	<designationCategory>VCHE_PipeNetworks</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <clearBuildingArea>false</clearBuildingArea>
+	<researchPrerequisites>
+      <li>BasicMechanitesUnderstanding</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>USH_ScarletTank</defName>
+    <label>scarlet tank</label>
+    <description>A sturdy tank capable of storing a decent amount of scarlet sludge.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Production/LuciferiumStorageTank</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Mass>20</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>75</Steel>
+	  <Plasteel>10</Plasteel>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_ResourceStorage">
+        <pipeNet>ScarletNet</pipeNet>
+        <storageCapacity>120</storageCapacity>
+        <barSize>(1.3, 0.25)</barSize>
+        <margin>0.1</margin>
+        <centerOffset>(0, 0, 0.22)</centerOffset>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>BasicMechanitesUnderstanding</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+    <ThingDef ParentName="BuildingBase">
+    <defName>USH_HeavyScarletTank</defName>
+    <label>heavy scarlet tank</label>
+    <description>An industrial-scale tank capable of storing six times more scarlet sludge than regular tanks. It has an advanced pressure control system inside the silo to ensure maximal efficiency of storage.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Production/HeavyScarletTank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <damageData>
+        <rect>(0.05,0.05,0.95,0.95)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+	<passability>PassThroughOnly</passability>
+    <pathCost>180</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.55</fillPercent>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>380</MaxHitPoints>
+      <WorkToBuild>15000</WorkToBuild>
+      <Mass>80</Mass>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>380</Steel>
+	  <Plasteel>40</Plasteel>
+	  <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_ResourceStorage">
+        <pipeNet>ScarletNet</pipeNet>
+        <storageCapacity>720</storageCapacity>
+        <barSize>(1.48, 0.35)</barSize>
+        <margin>0.15</margin>
+        <centerOffset>(0, 0, 0.42)</centerOffset>
+      </li>
+	  <!--<li Class="LuciferiumExpansion.CompProperties_Removal"> </li>-->
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+  </ThingDef>
+
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>ScarlettRefinery</defName>
+    <label>scarlet refinery</label>
+    <description>A heavy machine capable of cleaning and compressing scarlet sludge. It contains a large amount of built-in piping, a high pressure air tank, and an advanced filtering system. The byproducts of the process are incinerated and released into the air via a specialized chimney.
+	\n2 scarlet sludge -> 1 compressed sludge
+	\n12 scarlet sludge -> 1 scarlet mechanite</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+	  <drawOffset>(0,0,0.85)</drawOffset>
+      <texPath>Things/Building/Production/ScarlettRefinery</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,3)</drawSize>
+      <damageData>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+	  <shadowData>
+        <volume>(1.45, 5, 1)</volume>
+      </shadowData>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.60</fillPercent>
+    <tickerType>Normal</tickerType>
+	<category>Building</category>
+	<minifiedDef>MinifiedThing</minifiedDef>
+	<thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>380</MaxHitPoints>
+	  <Mass>42</Mass>
+      <WorkToBuild>9500</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(2,1)</size>
+    <costList>
+      <Steel>200</Steel>
+	  <Plasteel>25</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_ResourceProcessor">
+        <pipeNet>ScarletNet</pipeNet>
+        <showBufferInfo>false</showBufferInfo>
+        <results>
+          <li>
+            <countNeeded>12</countNeeded>
+            <eachTicks>1200</eachTicks>
+
+            <thing>LuciferiumCrystals</thing>
+            <thingCount>1</thingCount>
+            <net>USH_ScarletMechanitesNet</net>
+            <netCount>1</netCount>
+          </li>
+		  
+		  <li>
+            <countNeeded>2</countNeeded>
+            <eachTicks>300</eachTicks>
+
+            <thing>LuciferiumDrops</thing>
+            <thingCount>1</thingCount>
+			<net>USH_CompressedScarletSludgeNet</net>
+            <netCount>1</netCount>
+          </li>
+        </results>
+        <notWorkingKey>USH_LE_CantRefine</notWorkingKey>
+      </li>
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>USH_ScarletMechanitesNet</pipeNet>
+      </li>
+	  <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>USH_CompressedScarletSludgeNet</pipeNet>
+      </li>
+      <li Class="LuciferiumExpansion.CompProperties_ScarlettRefinery"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>350</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+	  <li Class="CompProperties_Flickable"/>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Production</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>ScarlettRefining</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <!--<ThingDef ParentName="BuildingBase">
+    <defName>ScarlettRefineryTest</defName>
+    <label>scarlet refinery</label>
+    <description>A heavy machine capable of cleaning and compressing scarlet sludge. It contains a large amount of built-in piping, a high pressure air tank, and an advanced filtering system. The byproducts of the process are incinerated and released into the air via a specialized chimney.
+	\n2 scarlet sludge -> 1 compressed sludge
+	\n12 scarlet sludge -> 1 scarlet mechanite</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+	  <drawOffset>(0,0,0.85)</drawOffset>
+      <texPath>Things/Building/Production/ScarlettRefinery</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,3)</drawSize>
+      <damageData>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <size>(2,1)</size>
+    <costList>
+      <Steel>200</Steel>
+	  <Plasteel>25</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_ResourceProcessor">
+        <pipeNet>ScarletNet</pipeNet>
+        <showBufferInfo>false</showBufferInfo>
+        <results>
+          <li>
+            <countNeeded>1</countNeeded>
+            <eachTicks>1200</eachTicks>
+
+            <thing>LuciferiumCrystals</thing>
+            <thingCount>1</thingCount>
+            <net>USH_ScarletMechanitesNet</net>
+            <netCount>1</netCount>
+          </li>
+		  
+		  <li>
+            <countNeeded>1</countNeeded>
+            <eachTicks>300</eachTicks>
+
+            <thing>LuciferiumDrops</thing>
+            <thingCount>1</thingCount>
+			<net>USH_CompressedScarletSludgeNet</net>
+            <netCount>1</netCount>
+          </li>
+        </results>
+        <notWorkingKey>USH_LE_CantRefine</notWorkingKey>
+      </li>
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>USH_ScarletMechanitesNet</pipeNet>
+      </li>
+	  <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>USH_CompressedScarletSludgeNet</pipeNet>
+      </li>
+      <li Class="LuciferiumExpansion.CompProperties_ScarlettRefinery"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>350</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>ScarlettRefining</li>
+    </researchPrerequisites>
+  </ThingDef>-->
+  
+  
+</Defs>

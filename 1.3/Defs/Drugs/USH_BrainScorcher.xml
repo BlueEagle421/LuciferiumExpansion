@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--<ThingDef ParentName="DrugBase">
+    <defName>USH_MindScorcher</defName>
+    <label>brain scorcher</label>
+    <description>Placeholder.</description>
+    <descriptionHyperlinks>
+      <HediffDef>USH_ScarletParalysis</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drugs/BrainScorcher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>3600</WorkToMake>
+      <MarketValue>180</MarketValue>
+      <Mass>0.08</Mass>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Flammability>1.0</Flammability>
+	  <Beauty>-4</Beauty>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+	<tradeability>Sellable</tradeability>
+    <ingestible>
+	  <foodType>Processed</foodType>
+      <baseIngestTicks>100</baseIngestTicks>
+	  <chairSearchRadius>0</chairSearchRadius>
+      <nurseable>true</nurseable>
+      <drugCategory>Medical</drugCategory>
+      <ingestSound>Ingest_Pill</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_ScarletBurn</hediffDef>
+          <severity>0.125</severity>
+          <divideByBodySize>false</divideByBodySize>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+	<comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>105</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <TraitDef>
+    <defName>USH_ScarletParalysis</defName>
+    <commonality>0</commonality>
+	<disabledWorkTags>
+	<li>Social</li>
+	<li>Caring</li>
+	<li>Intellectual</li>
+	</disabledWorkTags>
+    <degreeDatas>
+      <li>
+        <label>scarlet paralysis</label>
+        <description>{PAWN_nameDef}'s brain was scorched and damaged with electicity. The operation was partly moderated with scarlet mechanites so {PAWN_pronoun} can still be the person that {PAWN_nameDef} once was just without social and intellectual abilities.</description>
+        <statOffsets>
+          <GlobalLearningFactor>-0.75</GlobalLearningFactor>
+          <MoveSpeed>0.1</MoveSpeed>
+        </statOffsets>
+		<marketValueFactorOffset>-0.2</marketValueFactorOffset>
+      </li>
+    </degreeDatas>
+  </TraitDef>-->
+  
+</Defs>

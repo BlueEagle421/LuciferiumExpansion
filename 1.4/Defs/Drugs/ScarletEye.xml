@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DrugBase">
+    <defName>USH_ScarletEye</defName>
+    <label>scarlet eye</label>
+    <description>A performance enhancing drug applied directly to one's eyes in order to gain enhanced sensory perception and reflexes for a short duration. The mechanites in the spray go immediately from the eyes to the brain, causing a mild euphoria and some neuron connection loss, which leads to memory problems and a slight deterioration of intellectual capacity.
+      \nSee you, space cowboy</description>
+    <descriptionHyperlinks>
+      <HediffDef>USH_ScarletEyeHigh</HediffDef>
+      <HediffDef>USH_LuciferiumTolerance</HediffDef>
+      <HediffDef>LuciferiumAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drugs/BloodyEye</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>1250</WorkToMake>
+      <MarketValue>74</MarketValue>
+      <Mass>0.02</Mass>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Flammability>1.0</Flammability>
+      <Beauty>-4</Beauty>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.2</joy>
+      <baseIngestTicks>90</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>USH_Ingest_Spray</ingestSound>
+      <ingestEffect>USH_Smoke_RedFlicker</ingestEffect>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.27,0,0.08)</offset>
+          <behind>true</behind>
+        </northDefault>
+        <east>
+          <offset>(0.45,0,0.08)</offset>
+        </east>
+        <south>
+          <offset>(0.27,0,0.08)</offset>
+        </south>
+        <west>
+          <offset>(-0.50,0,0.08)</offset>
+        </west>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Apply {0}</ingestCommandString>
+      <ingestReportString>Applying {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_ScarletEyeHigh</hediffDef>
+          <severity>0.17</severity>
+          <toleranceChemical>Luciferium</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.3</offset>
+          <toleranceChemical>Luciferium</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_LuciferiumTolerance</hediffDef>
+          <severity>0.2</severity>
+          <divideByBodySize>true</divideByBodySize>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Luciferium</chemical>
+        <addictiveness>0.5</addictiveness>
+        <minToleranceToAddict>0.3</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+        <needLevelOffset>0.08</needLevelOffset>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>20</listOrder>
+      </li>
+    </comps>
+    <tradeability>Sellable</tradeability>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>USH_ScarletEyeHigh</defName>
+    <label>high on bloody eye</label>
+    <labelNoun>a bloody eye high</labelNoun>
+    <description>Scarlet mechanites temporarily enhancing the body.</description>
+    <hediffClass>LuciferiumExpansion.HediffWithComps_USH_ScarletEye</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>0.25</maxSeverity>
+    <initialSeverity>0.17</initialSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.8</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.10</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.15</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>1.2</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>USH_HighOnBloodyEye</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>USH_ScarletEyeHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>high on scarlet eye</label>
+        <description>Why is everybody moving so slow? I need to smash some stuff!</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

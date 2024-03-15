@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+  <name>Ushankas Luciferium Expansion</name>
+  <author>Ushanka</author>
+  <packageId>Ushanka.LuciferiumExpansion</packageId>
+  <supportedVersions>
+    <li>1.3</li>
+    <li>1.4</li>
+  </supportedVersions>
+
+  <description>
+    Luciferium Expansion adds 10 new machines, 6 drugs, 2 resources, and a scarlet sludge network.
+    It allows the player to produce Luciferium and some decent profits with a drug called lifter. It
+    also adds some emergency combat strategies and an interesting way to dispose useless
+    colonists...
+  </description>
+
+  <modDependencies>
+    <li>
+      <packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+      <displayName>Vanilla Expanded Framework</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+      <downloadUrl>https://github.com/AndroidQuazar/VanillaExpandedFramework</downloadUrl>
+    </li>
+  </modDependencies>
+
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>brrainz.harmony</li>
+    <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+  </loadAfter>
+
+</ModMetaData>

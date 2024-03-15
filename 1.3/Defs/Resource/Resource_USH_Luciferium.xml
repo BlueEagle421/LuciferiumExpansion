@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>LuciferiumDrops</defName>
+    <label>compressed scarlet sludge</label>
+    <description>A mixture of condensed ashes, toxins and most importantly, scarlet mechanites. The resource is worthless on its own, but can be processed further for the valuable byproduct.</description>
+	<graphicData>
+      <texPath>Things/Item/Resource/LuciferiumDrops</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.4</MarketValue>
+	  <Mass>0.12</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+	<thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+	<stackLimit>150</stackLimit>
+  </ThingDef>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>LuciferiumCrystals</defName>
+    <label>scarlet mechanites</label>
+    <description>Wild nanomachines programmed to enhance anything that they stick to. It is extremely difficult to change their default behavior, but it is possible to shape and modify what is left of the organic tissue on them. In large quantities they appear like a dark, shiny gravel, but they are actually soft and semiorganic.
+	\nIt is a mystery who discovered mechanites, but guesses are that archotech researchers produced them first for military usage.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/ScarlettMechanites</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>2.9</MarketValue>
+	  <Mass>0.02</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+	<stackLimit>150</stackLimit>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  
+</Defs>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="DrugBase">
+    <defName>USH_MechaSuppressors</defName>
+    <label>mecha suppressors</label>
+    <description>Pills designed to support weakening organs. They contain vitamins, minerals and biological resources for the body. Upon consumption, it guarantees one more day of life for those on last-wish. Be careful, however, as after a few doses the hormonal management is unsustainable and tissue overload will lead to inevitable death.</description>
+    <descriptionHyperlinks>
+      <ThingDef>USH_LastWish</ThingDef>
+      <HediffDef>USH_InnerOrgansWeakening</HediffDef>
+      <HediffDef>USH_TissueSurfeit</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drugs/ScarletSupportPills</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>2210</WorkToMake>
+      <MarketValue>130</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Flammability>1.0</Flammability>
+	  <Beauty>-4</Beauty>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+	<tradeability>Sellable</tradeability>
+    <ingestible>
+	  <foodType>Processed</foodType>
+      <baseIngestTicks>100</baseIngestTicks>
+	  <chairSearchRadius>0</chairSearchRadius>
+      <nurseable>true</nurseable>
+      <drugCategory>Medical</drugCategory>
+      <ingestSound>Ingest_Pill</ingestSound>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_TissueSurfeit</hediffDef>
+          <severity>0.125</severity>
+          <divideByBodySize>false</divideByBodySize>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+	<comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>105</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>

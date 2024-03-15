@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!--<SoundDef>
+    <defName>USH_LucieriumCollector</defName>
+    <sustain>True</sustain>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Machines/LuciferiumCollector</clipPath>
+          </li>
+        </grains>
+        <volumeRange>45</volumeRange>
+        <distRange>10~40</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>-->
+  
+  <SoundDef>
+    <defName>USH_Ingest_Spray</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Ingest/USH_Spray</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>42~42</volumeRange>
+        <pitchRange>0.8~1.2</pitchRange>
+        <distRange>0~51.86047</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

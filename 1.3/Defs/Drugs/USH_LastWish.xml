@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="DrugBase">
+    <defName>USH_LastWish</defName>
+    <label>last-wish</label>
+    <description>A drug popular among certain organized crime families. Contained mechanites are extremely densely packed, and therefore are very unstable. After ingesting, it bestows a variety of superhuman abilities but also causes the organism to slowly destroy itself. After eight days, the body will die.
+\nPeople who tried it claim that they have no regrets, and that everything was worth it for a taste of this godlike feeling.</description>
+    <descriptionHyperlinks>
+      <HediffDef>LuciferiumHigh</HediffDef>
+	  <HediffDef>USH_UnstableMechanites</HediffDef>
+	  <HediffDef>USH_InnerOrgansWeakening</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drugs/LastWish</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>1840</WorkToMake>
+      <MarketValue>165</MarketValue>
+      <Mass>0.25</Mass>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Flammability>1.0</Flammability>
+	  <Beauty>-4</Beauty>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+	  <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>90</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.18,0,0)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>true</ingestHoldUsesTable>
+      <ingestCommandString>Inject {0}</ingestCommandString>
+      <ingestReportString>Injecting {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>LuciferiumHigh</hediffDef>
+          <severity>1.0</severity>
+          <toleranceChemical>Luciferium</toleranceChemical>
+        </li>
+		<li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_LuciferiumTolerance</hediffDef>
+          <severity>0.6</severity>
+          <divideByBodySize>true</divideByBodySize>
+        </li>
+		<li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_InnerOrgansWeakening</hediffDef>
+		  <severity>0.01</severity>
+        </li>
+		<li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_UnstableMechanites</hediffDef>
+		  <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Luciferium</chemical>
+        <addictiveness>0.01</addictiveness>
+        <minToleranceToAddict>0.9</minToleranceToAddict>
+        <needLevelOffset>1.0</needLevelOffset>
+		<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>1009</listOrder>
+      </li>
+    </comps>
+	<tradeability>Sellable</tradeability>
+  </ThingDef>
+  
+    <ThoughtDef>
+    <defName>USH_ThoughtLastWish</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>USH_InnerOrgansWeakening</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>last wishes</label>
+        <description>My inners hurt, but despite everything i feel great and ready to reconcile with the world.</description>
+        <baseMoodEffect>25</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

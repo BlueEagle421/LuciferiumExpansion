@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+		
+	<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ChemicalDef[defName="Luciferium"]</xpath>
+        <value>
+			<toleranceHediff>USH_LuciferiumTolerance</toleranceHediff>
+        </value>
+    </Operation>
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>*/ThingDef[defName = "DrugLab"]/recipes</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>*/ThingDef[defName = "DrugLab"]</xpath>
+			<value>
+				<recipes>
+					<li>USH_Synthesise_Luciferium</li>
+					<li>USH_Synthesise_Luciferium_Bulk</li>
+					<li>USH_Synthesise_Lifter</li>
+					<li>USH_Synthesise_Lifter_Bulk</li>
+					<li>USH_Synthesise_RedFlicker</li>
+					<li>USH_Synthesise_RedFlicker_Bulk</li>
+					<li>USH_Synthesise_ScarletSmellingSalts</li>
+					<li>USH_Synthesise_ScarletSmellingSalts_Bulk</li>
+					<li>USH_Synthesise_LastWish</li>
+					<li>USH_Synthesise_LastWish_Bulk</li>
+					<li>USH_Synthesise_ScarletEye</li>
+					<li>USH_Synthesise_ScarletEye_Bulk</li>
+					<li>USH_Synthesise_MechaSuppressors</li>
+				</recipes>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>*/ThingDef[defName = "DrugLab"]/recipes</xpath>
+			<value>
+				<li>USH_Synthesise_Luciferium</li>
+				<li>USH_Synthesise_Luciferium_Bulk</li>
+				<li>USH_Synthesise_Lifter</li>
+				<li>USH_Synthesise_Lifter_Bulk</li>
+				<li>USH_Synthesise_RedFlicker</li>
+				<li>USH_Synthesise_RedFlicker_Bulk</li>
+				<li>USH_Synthesise_ScarletSmellingSalts</li>
+				<li>USH_Synthesise_ScarletSmellingSalts_Bulk</li>
+				<li>USH_Synthesise_LastWish</li>
+				<li>USH_Synthesise_LastWish_Bulk</li>
+				<li>USH_Synthesise_ScarletEye</li>
+				<li>USH_Synthesise_ScarletEye_Bulk</li>
+				<li>USH_Synthesise_MechaSuppressors</li>
+			</value>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="HospitalBed"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+        <value>
+			<li>USH_LuciferiumMedicalPump</li>
+			<li>USH_LuciferiumMedicalSimulator</li>
+        </value>
+    </Operation>
+	
+	<!--<Operation Class="PatchOperationAdd">
+        <xpath>/Defs/WorkGiverDef[defName="DoBillsProduceDrugs"]/fixedBillGiverDefs</xpath>
+        <value>
+			<li>LuciferiumSynthesizerTable</li>
+        </value>
+    </Operation-->
+	
+	<!-- Add /comps/li/compClass if there are no comps yet. -->
+	<!-- Add /li/compClass to /comps if exists (i.e. other mod already added the comps field first) -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/DesignationCategoryDef[defName="VCHE_PipeNetworks"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs</xpath>
+			<value>
+				<DesignationCategoryDef>
+					<defName>VCHE_PipeNetworks</defName>
+					<label>pipe networks</label>
+					<order>350</order>
+					<specialDesignatorClasses>
+					<li>Designator_Cancel</li>
+					<li>Designator_Deconstruct</li>
+					</specialDesignatorClasses>
+				</DesignationCategoryDef>
+			</value>
+		</nomatch>
+	</Operation>
+	
+</Patch>

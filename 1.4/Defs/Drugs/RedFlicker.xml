@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="DrugBase">
+    <defName>USH_RedFlicker</defName>
+    <label>redFlicker</label>
+    <description>A powerful device that vaporizes a substance containing scarlet mechanites. After twenty hours, the drug stops working and the organism needs a substantial amount of time to regenerate due to massive overheating. If used frequently, Luciferium addiction may occur. However, the drug can be used as a last resort reserved for emergency situations.</description>
+    <descriptionHyperlinks>
+      <HediffDef>USH_RedFlickerHigh</HediffDef>
+      <HediffDef>USH_LuciferiumTolerance</HediffDef>
+      <HediffDef>LuciferiumAddiction</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/Drugs/RedCigar</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>1480</WorkToMake>
+      <MarketValue>92</MarketValue>
+      <Mass>0.15</Mass>
+      <DeteriorationRate>2</DeteriorationRate>
+      <Flammability>1.0</Flammability>
+      <Beauty>-4</Beauty>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.65</joy>
+      <baseIngestTicks>420</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>USH_Smoke_RedFlicker</ingestEffect>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.27,0,0.08)</offset>
+          <behind>true</behind>
+        </northDefault>
+        <east>
+          <offset>(0.45,0,0.08)</offset>
+        </east>
+        <south>
+          <offset>(0.27,0,0.08)</offset>
+        </south>
+        <west>
+          <offset>(-0.50,0,0.08)</offset>
+          <flip>true</flip>
+        </west>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Smoke {0}</ingestCommandString>
+      <ingestReportString>Smoking {0}.</ingestReportString>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_RedFlickerHigh</hediffDef>
+          <severity>1.0</severity>
+          <toleranceChemical>Luciferium</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.45</offset>
+          <toleranceChemical>Luciferium</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USH_LuciferiumTolerance</hediffDef>
+          <severity>0.12</severity>
+          <divideByBodySize>true</divideByBodySize>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Luciferium</chemical>
+        <addictiveness>0.95</addictiveness>
+        <minToleranceToAddict>0.2</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+        <needLevelOffset>0.2</needLevelOffset>
+        <isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <listOrder>20</listOrder>
+      </li>
+    </comps>
+    <tradeability>Sellable</tradeability>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>USH_RedFlickerHigh</defName>
+    <label>high on redFlicker</label>
+    <labelNoun>a redFlicker high</labelNoun>
+    <description>Active scarlet mechanites in the body. They improve the body's functioning in all aspects but also cause serious setbacks.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.25</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>recovering</label>
+        <hungerRateFactor>1.2</hungerRateFactor>
+        <restFallFactor>1.8</restFallFactor>
+        <vomitMtbDays>4</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>tipping point</label>
+        <minSeverity>0.2</minSeverity>
+        <hungerRateFactor>1.5</hungerRateFactor>
+        <restFallFactor>1.3</restFallFactor>
+        <painFactor>1.2</painFactor>
+        <vomitMtbDays>0.5</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.20</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.20</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.20</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>uplift</label>
+        <minSeverity>0.79</minSeverity>
+        <painFactor>0.8</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.35</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.6</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.40</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.40</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>1.00</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>USH_HighOnRedFlicker</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>USH_RedFlickerHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>enhanced by redFlicker</label>
+        <description>My veins are burning, my sight is clear. Thats the feeling of power and strength.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Red Smoke Effect -->
+
+  <EffecterDef>
+    <defName>USH_Smoke_RedFlicker</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_SmokeUSH_RedFlicker</moteDef>
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <scale>0.35~0.45</scale>
+        <absoluteAngle>true</absoluteAngle>
+        <angle>30~70</angle>
+        <speed>0.18~0.3</speed>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_SmokeUSH_RedFlicker</defName>
+    <thingClass>MoteThrown</thingClass>
+    <graphicData>
+      <texPath>Things/Mote/USH_RedSmoke</texPath>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.25</fadeInTime>
+      <solidTime>2.75</solidTime>
+      <fadeOutTime>4.7</fadeOutTime>
+      <growthRate>0.47</growthRate>
+      <acceleration>(0,0,0.0014)</acceleration>
+    </mote>
+  </ThingDef>
+
+</Defs>

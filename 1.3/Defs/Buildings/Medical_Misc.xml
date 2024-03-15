@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>USH_LuciferiumMedicalPump</defName>
+    <label>luciferium medical pump</label>
+    <description>A machine that connects to the user's bloodstream with various plasteel tubes. It activates upon detecting loss of life, then starts pumping out a massive dose of scarlet mechanites. People without any mechanite tolerance will fall into a five-day-long coma due to the sudden shock and will develop a Luciferium addiction need, whereas those with tolerance will only suffer for one day without further consequences. A successful operation evokes full body resurrection. The machine deconstructs itself after three uses and requires twelve Luciferium per operation.</description>
+    <graphicData>
+		<texPath>Things/Building/Production/LuciferiumPump</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		</damageData>
+		<drawRotated>false</drawRotated>
+		<allowFlip>false</allowFlip>
+	</graphicData>
+	<tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <statBases>
+	  <MarketValue>4300</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>30</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+	<rotatable>false</rotatable>
+    <size>(1,1)</size>
+    <minifiedDef>MinifiedThing</minifiedDef>
+	<costList>
+      <Steel>60</Steel>
+	  <Plasteel>10</Plasteel>
+	  <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>1</maxSimultaneous>
+        <mustBePlacedAdjacent>true</mustBePlacedAdjacent>
+      </li>
+	  <li Class="LuciferiumExpansion.CompProperties_LuciferiumPump" />  
+	  <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>22</fuelConsumptionRate>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelCapacity>12</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Luciferium</li>
+          </thingDefs>
+        </fuelFilter>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+    </comps>
+	<thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+	<tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticBuilding</li>
+    </tradeTags>
+	<placeWorkers>
+		<li>PlaceWorker_ShowFacilitiesConnections</li>
+	</placeWorkers>
+  </ThingDef>
+  
+    <ThingDef ParentName="BuildingBase">
+    <defName>USH_LuciferiumMedicalSimulator</defName>
+    <label>luciferium health simulator</label>
+    <description>A device that continuously conducts simulations and experiments on connected users using scarlet mechanites. The screen displays collected data in the form of reports and insights for medical staff.</description>
+    <graphicData>
+		<!--<drawOffset>(0,0,0.5)</drawOffset>-->
+		<texPath>Things/Building/Production/LuciferiumSimulator</texPath>
+		<graphicClass>Graphic_Multi</graphicClass>
+		<damageData>
+			<cornerTL>Damage/Corner</cornerTL>
+			<cornerTR>Damage/Corner</cornerTR>
+			<cornerBL>Damage/Corner</cornerBL>
+			<cornerBR>Damage/Corner</cornerBR>
+		</damageData>
+		<drawSize>(4,4)</drawSize>
+		<!--<drawRotated>false</drawRotated>
+		<allowFlip>false</allowFlip>-->
+	</graphicData>
+	<tickerType>Normal</tickerType>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+	<defaultPlacingRot>South</defaultPlacingRot>
+    <fillPercent>0.2</fillPercent>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Mass>7</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>90</Steel>
+	  <Plasteel>10</Plasteel>
+	  <ComponentSpacer>1</ComponentSpacer>
+	  <Luciferium>6</Luciferium>
+    </costList>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <comps>
+	  <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>400</basePowerConsumption>
+      </li> 
+	  <li Class="CompProperties_Flickable"/>
+	  <li Class="CompProperties_Facility">
+        <statOffsets>
+          <MedicalTendQualityOffset>0.05</MedicalTendQualityOffset>
+		  <SurgerySuccessChanceFactor>0.03</SurgerySuccessChanceFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>8</maxDistance>
+      </li>
+    </comps>
+	<placeWorkers>
+		<li>PlaceWorker_ShowFacilitiesConnections</li>
+	</placeWorkers>
+	<researchPrerequisites>
+      <li>LuciferiumRes</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <uiIconScale>0.7</uiIconScale>
+	<uiIconOffset>(0, 0)</uiIconOffset>
+  </ThingDef>
+  
+</Defs>

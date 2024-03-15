@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+ <!--<ThingDef ParentName="BuildingBase">
+    <defName>USH_LuciferiumAnalyzer</defName>
+    <label>luciferium anylyzer</label>
+    <description>An advanced data gatherer equipped with pipes, filters and a powerful, digital processor. It has only one purpose - to study scarlet mechanites found in Luciferium. Six Luciferium is required for the operation to start and when it's finished it will leave a unique tech print. After the whole process, the machine can be safely deconstructed.</description>
+    <thingClass>ItemProcessor.Building_ItemProcessor</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+	  <drawOffset>(0,0,0.0)</drawOffset>
+      <texPath>Things/Building/Production/LuciferiumAnalyzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.60</fillPercent>
+    <tickerType>Rare</tickerType>
+	<resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+	<category>Building</category>
+	<minifiedDef>MinifiedThing</minifiedDef>
+	<thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>260</MaxHitPoints>
+	  <Mass>15</Mass>
+      <WorkToBuild>1000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+	<hasInteractionCell>True</hasInteractionCell>
+	<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>200</Steel>
+	  <Plasteel>25</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<basePowerConsumption>1800</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="ItemProcessor.CompProperties_ItemProcessor">
+				<buildingOnGraphic>Things/Buildings/VBE_SodaDispenser</buildingOnGraphic>
+				<numberOfInputs>1</numberOfInputs>
+				<acceptsNoneAsInput>false</acceptsNoneAsInput>
+				<InsertFirstItemDesc>VBE_InsertSyrupDesc</InsertFirstItemDesc>
+				<transfersIngredientLists>true</transfersIngredientLists>
+
+				<isSemiAutomaticMachine>true</isSemiAutomaticMachine>
+				<resetSemiautomaticIcon>UI/VBE_SyrupReset</resetSemiautomaticIcon>
+
+				<chooseIngredientsIcon>UI/VBE_EmptySyrupIcon</chooseIngredientsIcon>
+
+				<bringIngredientsText>VBE_StartInsertion</bringIngredientsText>
+				<bringIngredientsDesc>VBE_StartInsertionDesc</bringIngredientsDesc>
+				<bringIngredientsIcon>UI/VBE_InsertSyrup</bringIngredientsIcon >
+
+				<cancelIngredientsText>VBE_CancelBringingSyrup</cancelIngredientsText> 
+				<cancelIngredientsDesc>VBE_CancelBringingSyrupDesc</cancelIngredientsDesc>
+				<cancelIngredientsIcon>UI/VBE_CancelSyrup</cancelIngredientsIcon> 
+
+				<noPowerDestroysProgress>true</noPowerDestroysProgress>
+				<rareTicksToDestroy>20</rareTicksToDestroy>
+				<noPowerDestroysMessage>VBE_SyrupFailurePower</noPowerDestroysMessage>
+
+				<destroyIngredientsAtStartOfProcess>true</destroyIngredientsAtStartOfProcess>
+				<showProgressBar>true</showProgressBar>
+			</li>
+
+		</comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Production</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>ScarlettRefining</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+	<ItemProcessor.ItemAcceptedDef>
+		<defName>IP_CheesePressFirstItem</defName>
+		<building>USH_LuciferiumAnalyzer</building>
+		<slot>1</slot>
+		<items>			
+			<li>Luciferium</li>						
+		</items>							
+	</ItemProcessor.ItemAcceptedDef>
+  
+  	<ItemProcessor.CombinationDef>
+		<defName>USH_ProduceLuciTechprint</defName>
+		<building>USH_LuciferiumAnalyzer</building>
+		<items>
+			<li>Luciferium</li>
+		</items>	
+		<amount>
+			<li>5</li>
+		</amount>
+		<result>VCE_CookedSoupSimple</result>	
+		<yield>1</yield>
+		<useQualityIncreasing>false</useQualityIncreasing>
+		<singleTimeIfNotQualityIncreasing>2</singleTimeIfNotQualityIncreasing>
+	</ItemProcessor.CombinationDef>-->
+  
+</Defs>

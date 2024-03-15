@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <USH_LE_ExtractScarletMechanites>Extract 1 scarlet mechanite</USH_LE_ExtractScarletMechanites>
+  <USH_LE_ExtractScarletMechanitesDesc>Extract 1 scarlet mechanite from the synthesizer internal tank. A pawn will come to extract it.</USH_LE_ExtractScarletMechanitesDesc>
+  
+  <USH_LE_Efficiency>Efficiency</USH_LE_Efficiency>
+  <USH_LE_Producing>Collecting</USH_LE_Producing>
+  <USH_LE_Not_Producing_Roofed>Can't collect under roofed area</USH_LE_Not_Producing_Roofed>
+  <USH_LE_CantRefine>Can’t refine: Platforms are full</USH_LE_CantRefine>
+  
+  <USH_LE_UsagesLeft>Doses before self-deconstruction</USH_LE_UsagesLeft>
+  <USH_LE_CantResurrect>Can't resurrect</USH_LE_CantResurrect>
+  <USH_LE_NoPower>No power</USH_LE_NoPower>
+  <USH_LE_NoLuciferium>No fuel</USH_LE_NoLuciferium>
+  
+  <USH_LE_ProducingLuciferium>Producing one Luciferium from</USH_LE_ProducingLuciferium>
+  <USH_LE_ScarletMechanites>scarlet mechanites</USH_LE_ScarletMechanites>
+
+  <USH_Debug>Cookies.</USH_Debug>
+</LanguageData>
