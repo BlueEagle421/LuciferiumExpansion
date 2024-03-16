@@ -146,7 +146,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>ScarlettRefinery</defName>
     <label>scarlet refinery</label>
-    <description>A heavy machine capable of cleaning and compressing scarlet sludge. It contains a large amount of built-in piping, a high pressure air tank, and an advanced filtering system. The byproducts of the process are incinerated and released into the air via a specialized chimney.
+    <description>A heavy machine capable of cleaning and compressing scarlet sludge. It contains a large amount of built-in piping, a high pressure air tank, and an advanced filtering system. The byproducts of the process are incinerated and released into the air via a specialized chimney. Use resource platforms to allow for multiple refineries in one pipe net.
       \n20 scarlet sludge -> 1 compressed sludge
       \n120 scarlet sludge -> 1 scarlet mechanite</description>
     <drawerType>MapMeshAndRealTime</drawerType>
