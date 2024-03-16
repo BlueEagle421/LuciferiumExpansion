@@ -126,7 +126,7 @@
     <comps>
       <li Class="PipeSystem.CompProperties_ResourceStorage">
         <pipeNet>ScarletNet</pipeNet>
-        <storageCapacity>600</storageCapacity>
+        <storageCapacity>300</storageCapacity>
         <barSize>(1.3, 0.25)</barSize>
         <margin>0.1</margin>
         <centerOffset>(0, 0, 0.22)</centerOffset>
@@ -147,8 +147,8 @@
     <defName>ScarlettRefinery</defName>
     <label>scarlet refinery</label>
     <description>A heavy machine capable of cleaning and compressing scarlet sludge. It contains a large amount of built-in piping, a high pressure air tank, and an advanced filtering system. The byproducts of the process are incinerated and released into the air via a specialized chimney.
-      \n2 scarlet sludge -> 1 compressed sludge
-      \n12 scarlet sludge -> 1 scarlet mechanite</description>
+      \n20 scarlet sludge -> 1 compressed sludge
+      \n120 scarlet sludge -> 1 scarlet mechanite</description>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <drawOffset>(0,0,0.85)</drawOffset>
@@ -194,8 +194,8 @@
         <showBufferInfo>false</showBufferInfo>
         <results>
           <li>
-            <countNeeded>480</countNeeded>
-            <eachTicks>9600</eachTicks>
+            <countNeeded>120</countNeeded>
+            <eachTicks>14400</eachTicks>
             <thing>LuciferiumCrystals</thing>
             <thingCount>1</thingCount>
             <net>USH_ScarletMechanitesNet</net>
@@ -203,8 +203,8 @@
           </li>
 
           <li>
-            <countNeeded>80</countNeeded>
-            <eachTicks>3200</eachTicks>
+            <countNeeded>20</countNeeded>
+            <eachTicks>4800</eachTicks>
             <thing>LuciferiumDrops</thing>
             <thingCount>1</thingCount>
             <net>USH_CompressedScarletSludgeNet</net>
