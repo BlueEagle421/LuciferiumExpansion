@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>LuciferiumCollector</defName>
+    <label>scarlet collector</label>
+    <description>A machine equipped with plasteel magnets capable of collecting scarlet sludge. The process can be sped up with various scarlet particles attractors.
+      \nScarlet particles alone are very rare, so most of what is gathered are toxins, ashes and other contaminants from the air. The end product comes out as a scarlet sludge – a dense, oil like substance with few viable mechanites.
+      \nNote that collectors can't work under roof.</description>
+    <graphicData>
+      <drawOffset>(0,0,0.15)</drawOffset>
+      <texPath>Things/Building/Production/LuciferiumCollector</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,1)</drawSize>
+      <shadowData>
+        <volume>(2.7, 0.3, 0.66)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <tickerType>Normal</tickerType>
+    <castEdgeShadows>false</castEdgeShadows>
+    <pathCost>42</pathCost>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <costList>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Plasteel>8</Plasteel>
+      <Steel>80</Steel>
+    </costList>
+    <statBases>
+      <MaxHitPoints>380</MaxHitPoints>
+      <Mass>15</Mass>
+      <WorkToBuild>9000</WorkToBuild>
+      <Flammability>0.3</Flammability>
+      <USH_ScarlettCollectorCollectingSpeedFactor>1.0</USH_ScarlettCollectorCollectingSpeedFactor>
+      <Beauty>-3</Beauty>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>350</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>ScarletNet</pipeNet>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>LuciferiumCollectorBoosterA</li>
+          <li>LuciferiumCollectorBoosterB</li>
+          <li>LuciferiumCollectorBoosterC</li>
+        </linkableFacilities>
+      </li>
+      <li Class="LuciferiumExpansion.CompProperties_ScarlettCollector">
+        <ticksPerPortion>250</ticksPerPortion>
+        <portionSize>0.25</portionSize>
+      </li>
+    </comps>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <size>(3,1)</size>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>BasicMechanitesUnderstanding</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>AdvancedLuciferiumCollector</defName>
+    <label>advanced scarlet collector</label>
+    <description>An advanced machine equipped with plasteel magnets capable of collecting scarlet sludge. It has a reinforced core going through the whole construction that can cumulate more energy and attract scarlet particles on its own. The process can be sped up with various scarlet particles attractors.
+      \nScarlet particles alone are very rare, so most of what is gathered are toxins, ashes and other contaminants from the air. The end product comes out as a scarlet sludge – a dense, oil like substance with few viable mechanites.
+      \nNote that collectors can't work under roof.</description>
+    <graphicData>
+      <drawOffset>(0,0,0.15)</drawOffset>
+      <texPath>Things/Building/Production/AdvancedLuciferiumCollector</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,1)</drawSize>
+      <shadowData>
+        <volume>(2.7, 0.38, 0.68)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <tickerType>Normal</tickerType>
+    <castEdgeShadows>false</castEdgeShadows>
+    <pathCost>42</pathCost>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Plasteel>12</Plasteel>
+      <Steel>100</Steel>
+    </costList>
+    <statBases>
+      <MaxHitPoints>520</MaxHitPoints>
+      <Mass>22</Mass>
+      <WorkToBuild>14000</WorkToBuild>
+      <Flammability>0.3</Flammability>
+      <USH_ScarlettCollectorCollectingSpeedFactor>1.5</USH_ScarlettCollectorCollectingSpeedFactor>
+      <Beauty>-3</Beauty>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>700</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>ScarletNet</pipeNet>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>LuciferiumCollectorBoosterA</li>
+          <li>LuciferiumCollectorBoosterB</li>
+          <li>LuciferiumCollectorBoosterC</li>
+        </linkableFacilities>
+      </li>
+      <li Class="LuciferiumExpansion.CompProperties_ScarlettCollector">
+        <ticksPerPortion>250</ticksPerPortion>
+        <portionSize>0.25</portionSize>
+      </li>
+    </comps>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <size>(3,1)</size>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>ReinforcedCoresRes</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <StatDef>
+    <defName>USH_ScarlettCollectorCollectingSpeedFactor</defName>
+    <label>collecting speed factor</label>
+    <description>Scarlet sludge collecting speed is multiplied by this value.</description>
+    <category>Building</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0.1</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showIfUndefined>false</showIfUndefined>
+    <parts>
+    </parts>
+    <displayPriorityInCategory>3000</displayPriorityInCategory>
+  </StatDef>
+
+</Defs>

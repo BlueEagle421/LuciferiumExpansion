@@ -1,0 +1,2 @@
+- update about.xml to inlcude 1.5 supported version
+- wait for Vanilla Expanded Framework to update to 1.5

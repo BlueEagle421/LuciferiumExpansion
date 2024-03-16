@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <PipeSystem.PipeNetDef>
+    <defName>USH_ScarletMechanitesNet</defName>
+    <resource>
+      <name>Scarlet mechanites</name>
+      <unit>l</unit>
+      <color>(0.156, 0.156, 0.156)</color>
+      <onlyShowStored>True</onlyShowStored>
+      <offTexPath>UI/Gizmos/OutOfNothing</offTexPath>
+    </resource>
+    <pipeDefs>
+      <li>USH_ScarletMechanitesPipe</li>
+    </pipeDefs>
+    <designator>
+      <deconstructIconPath>UI/Gizmos/ScarletMechanitesPipes_Deconstruct</deconstructIconPath>
+      <designationCategoryDef>VCHE_PipeNetworks</designationCategoryDef>
+    </designator>
+    <overlayOptions>
+      <overlayColor>(0.156, 0.156, 0.156)</overlayColor>
+    </overlayOptions>
+    <linkToRefuelables>
+      <li>
+        <thing>LuciferiumCrystals</thing>
+        <ratio>1</ratio>
+      </li>
+    </linkToRefuelables>
+  </PipeSystem.PipeNetDef>
+
+
+  <ThingDef ParentName="FurnitureBase">
+    <defName>VCHE_ScarletMechanitesPlatform</defName>
+    <label>scarlet mechanites platform</label>
+    <description>A platform meant to intercept and hold scarlet mechanites from refineries.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/ScarletMechanitesPlatform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>8</Mass>
+      <WorkToBuild>800</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>0.5</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>60</Steel>
+    </costList>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>LuciferiumCrystals</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>LuciferiumCrystals</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <comps>
+      <li Class="PipeSystem.CompProperties_ConvertResourceToThing">
+        <pipeNet>USH_ScarletMechanitesNet</pipeNet>
+        <thing>LuciferiumCrystals</thing>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>ScarlettRefining</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>USH_ScarletMechanitesPipe</defName>
+    <label>scarlet mechanites pipe</label>
+    <description>Subterranean pipe capable of temporary storage and transport of scarlet mechanites directly to the platforms for quick usege or for the Luciferium synthesizer.</description>
+    <thingClass>PipeSystem.Building_Pipe</thingClass>
+    <category>Building</category>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>UI/CSG/IConduit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Custom7</li>
+      </linkFlags>
+      <damageData>
+        <rect>(0,0.35,1,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/ScarletMechanitesPipes_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/ScarletPipes_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <passability>Standable</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>580</MaxHitPoints>
+      <WorkToBuild>140</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <costList>
+      <Steel>2</Steel>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>USH_ScarletMechanitesNet</pipeNet>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PipeSystem.PlaceWorker_Pipe</li>
+    </placeWorkers>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <clearBuildingArea>false</clearBuildingArea>
+    <researchPrerequisites>
+      <li>ScarlettRefining</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>USH_LuciferiumSynthesizer</defName>
+    <label>luciferium synthesizer</label>
+    <description>A complex machine designed for precise manipulation of very small objects. It is capable of putting together scarlet mechanites into consumable Luciferium. During every operation, some material is lost due to particles instability. It can be avoided, to some degree, with higher hydraulic accuracy, which can be achieved with the help of other supporting machines.
+      \nIt should be plugged to a net with an active scarlet refinery.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <drawOffset>(0,0,1)</drawOffset>
+      <texPath>Things/Building/Production/LuciferiumSynthesizer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,3)</drawSize>
+      <damageData>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <uiIconPath>Things/Building/Production/LuciferiumSynthesizer_MenuIcon</uiIconPath>
+    <uiIconScale>1.2</uiIconScale>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.60</fillPercent>
+    <tickerType>Normal</tickerType>
+    <category>Building</category>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>350</MaxHitPoints>
+      <Mass>24</Mass>
+      <WorkToBuild>8200</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>-3</Beauty>
+      <USH_ScarletMechanitesOffset>24</USH_ScarletMechanitesOffset>
+    </statBases>
+    <rotatable>false</rotatable>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>180</Steel>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_ResourceStorage">
+        <pipeNet>USH_ScarletMechanitesNet</pipeNet>
+        <storageCapacity>24</storageCapacity>
+        <drawStorageBar>false</drawStorageBar>
+        <addStorageInfo>false</addStorageInfo>
+        <addTransferGizmo>false</addTransferGizmo>
+        <showOffMatWhenTransfering>false</showOffMatWhenTransfering>
+        <extractOptions>
+          <texPath>UI/Gizmos/ExtractScarletMechanites</texPath>
+          <labelKey>USH_LE_ExtractScarletMechanites</labelKey>
+          <descKey>USH_LE_ExtractScarletMechanitesDesc</descKey>
+          <extractAmount>1</extractAmount>
+          <thing>LuciferiumCrystals</thing>
+          <ratio>1</ratio>
+        </extractOptions>
+      </li>
+      <li Class="LuciferiumExpansion.CompProperties_LuciferiumSynthesizer">
+        <thing>Luciferium</thing>
+        <thingCount>1</thingCount>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>USH_LuciferiumPrecisionBooster</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <staticSunShadowHeight>0.0</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>LuciSynthMachineRes</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>USH_LuciferiumPrecisionBooster</defName>
+    <label>synthesizer precision booster</label>
+    <description>A machine meant to support Luciferium synthesizer. A built-in computing device can help the crafter achieve higher accuracy. Every booster decreases the number of scarlet mechanites required for one Luciferium synthesis. Four of these can link to each synthesizer.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <drawOffset>(0,0,0)</drawOffset>
+      <texPath>Things/Building/Production/LuciferiumPrecisionBooster</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <rotatable>true</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <castEdgeShadows>false</castEdgeShadows>
+    <pathCost>42</pathCost>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <defaultPlacingRot>West</defaultPlacingRot>
+    <costList>
+      <Steel>60</Steel>
+      <Plasteel>4</Plasteel>
+      <Gold>20</Gold>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <statBases>
+      <MaxHitPoints>220</MaxHitPoints>
+      <Mass>15</Mass>
+      <WorkToBuild>5200</WorkToBuild>
+      <Flammability>0.3</Flammability>
+      <Beauty>-3</Beauty>
+    </statBases>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>LuciferiumCrystals</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>LuciferiumCrystals</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <size>(1,1)</size>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <USH_ScarletMechanitesOffset>-1</USH_ScarletMechanitesOffset>
+        </statOffsets>
+        <mustBePlacedAdjacent>true</mustBePlacedAdjacent>
+        <maxSimultaneous>4</maxSimultaneous>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>60</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="PipeSystem.CompProperties_ConvertThingToResource">
+        <pipeNet>USH_ScarletMechanitesNet</pipeNet>
+        <thing>LuciferiumCrystals</thing>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>LuciSynthMachineRes</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <StatDef>
+    <defName>USH_ScarletMechanitesOffset</defName>
+    <label>luciferium cost</label>
+    <description>This value represents the amount of scarlet mechanites required per one Luciferium synthesis operation.</description>
+    <category>Building</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>1</minValue>
+    <toStringStyle>Integer</toStringStyle>
+    <showIfUndefined>false</showIfUndefined>
+    <displayPriorityInCategory>3000</displayPriorityInCategory>
+  </StatDef>
+
+</Defs>

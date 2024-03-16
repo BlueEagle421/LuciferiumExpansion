@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <PipeSystem.PipeNetDef>
+    <defName>USH_CompressedScarletSludgeNet</defName>
+    <resource>
+      <name>Compressed sludge</name>
+      <unit>l</unit>
+      <color>(0.545, 0.129, 0.164)</color>
+      <onlyShowStored>True</onlyShowStored>
+      <offTexPath>UI/Gizmos/OutOfSludge</offTexPath>
+    </resource>
+    <pipeDefs>
+      <li>USH_CompressedScarletSludgePipe</li>
+    </pipeDefs>
+    <designator>
+      <deconstructIconPath>UI/Gizmos/CompressedScarletSludgePipes_Deconstruct</deconstructIconPath>
+      <designationCategoryDef>VCHE_PipeNetworks</designationCategoryDef>
+    </designator>
+    <overlayOptions>
+      <overlayColor>(0.545, 0.129, 0.164)</overlayColor>
+    </overlayOptions>
+    <linkToRefuelables>
+      <li>
+        <thing>LuciferiumDrops</thing>
+        <ratio>1</ratio>
+      </li>
+    </linkToRefuelables>
+  </PipeSystem.PipeNetDef>
+
+
+  <ThingDef ParentName="FurnitureBase">
+    <defName>VCHE_CompressedScarletSludgePlatform</defName>
+    <label>compressed sludge platform</label>
+    <description>A platform meant to intercept and hold compressed scarlet sludge from refineries.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Production/CompressedScarletSludgePlatform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>50</pathCost>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>8</Mass>
+      <WorkToBuild>800</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>0.5</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>60</Steel>
+    </costList>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>LuciferiumDrops</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+          <thingDefs>
+            <li>LuciferiumDrops</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <comps>
+      <li Class="PipeSystem.CompProperties_ConvertResourceToThing">
+        <pipeNet>USH_CompressedScarletSludgeNet</pipeNet>
+        <thing>LuciferiumDrops</thing>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>ScarlettRefining</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>USH_CompressedScarletSludgePipe</defName>
+    <label>compressed scarlet sludge pipe</label>
+    <description>Subterranean pipe capable of temporary storage and transport of compressed scarlet sludge directly to the platforms for quick usage.</description>
+    <thingClass>PipeSystem.Building_Pipe</thingClass>
+    <category>Building</category>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>UI/CSG/IConduit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Basic</linkType>
+      <linkFlags>
+        <li>Custom7</li>
+      </linkFlags>
+      <damageData>
+        <rect>(0,0.35,1,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/CompressedScarletSludgePipes_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/ScarletPipes_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <passability>Standable</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>580</MaxHitPoints>
+      <WorkToBuild>140</WorkToBuild>
+      <Flammability>0</Flammability>
+    </statBases>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <costList>
+      <Steel>2</Steel>
+    </costList>
+    <comps>
+      <li Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>USH_CompressedScarletSludgeNet</pipeNet>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PipeSystem.PlaceWorker_Pipe</li>
+    </placeWorkers>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <clearBuildingArea>false</clearBuildingArea>
+    <researchPrerequisites>
+      <li>ScarlettRefining</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+</Defs>
