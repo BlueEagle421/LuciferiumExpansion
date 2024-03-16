@@ -56,21 +56,18 @@ namespace LuciferiumExpansion
             if (this == null)
                 return string.Empty;
 
+            if (!_powerComp.PowerOn)
+                return string.Empty;
+
+            if (_currentMap.roofGrid.Roofed(parent.Position))
+                return "USH_LE_Not_Producing_Roofed".Translate();
+
             stringBuilder.Append("USH_LE_Efficiency".Translate() + ": " + (Efficiency() * 100f).ToString() + "%");
             stringBuilder.AppendLine();
-            if (_powerComp.PowerOn)
-            {
-                bool flag2 = !_currentMap.roofGrid.Roofed(parent.Position);
-                if (flag2)
-                {
-                    stringBuilder.Append("USH_LE_Producing".Translate() + ": " +
-                        ((60000 / CollectorProperties.ticksPerPortion * DistributeAmount()).ToString() + " l/d"));
-                }
-                else
-                {
-                    stringBuilder.Append("USH_LE_Not_Producing_Roofed".Translate());
-                }
-            }
+
+            string litersPerDay = (60000 / CollectorProperties.ticksPerPortion * DistributeAmount()).ToString() + " l/d";
+            stringBuilder.Append("USH_LE_Producing".Translate() + ": " + litersPerDay);
+
             return stringBuilder.ToString().TrimEnd(Array.Empty<char>());
         }
 
