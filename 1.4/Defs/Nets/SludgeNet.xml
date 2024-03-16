@@ -126,7 +126,7 @@
     <comps>
       <li Class="PipeSystem.CompProperties_ResourceStorage">
         <pipeNet>ScarletNet</pipeNet>
-        <storageCapacity>360</storageCapacity>
+        <storageCapacity>600</storageCapacity>
         <barSize>(1.3, 0.25)</barSize>
         <margin>0.1</margin>
         <centerOffset>(0, 0, 0.22)</centerOffset>
@@ -241,7 +241,7 @@
         <results>
           <li>
             <countNeeded>480</countNeeded>
-            <eachTicks>3600</eachTicks>
+            <eachTicks>9600</eachTicks>
             <thing>LuciferiumCrystals</thing>
             <thingCount>1</thingCount>
             <net>USH_ScarletMechanitesNet</net>
@@ -250,7 +250,7 @@
 
           <li>
             <countNeeded>80</countNeeded>
-            <eachTicks>1200</eachTicks>
+            <eachTicks>3200</eachTicks>
             <thing>LuciferiumDrops</thing>
             <thingCount>1</thingCount>
             <net>USH_CompressedScarletSludgeNet</net>
