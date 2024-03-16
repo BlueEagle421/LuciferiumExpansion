@@ -61,7 +61,7 @@
       </li>
       <li Class="LuciferiumExpansion.CompProperties_ScarlettCollector">
         <ticksPerPortion>250</ticksPerPortion>
-        <portionSize>0.025</portionSize>
+        <portionSize>1</portionSize>
       </li>
     </comps>
     <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
@@ -137,7 +137,7 @@
       </li>
       <li Class="LuciferiumExpansion.CompProperties_ScarlettCollector">
         <ticksPerPortion>250</ticksPerPortion>
-		<portionSize>0.025</portionSize>
+		<portionSize>1</portionSize>
       </li>
     </comps>
     <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
