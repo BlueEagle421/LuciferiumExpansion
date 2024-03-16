@@ -70,3 +70,9 @@ C:\Users\Joachim\Desktop\Moje twórczości\Mody\Luciferium Expansion\LE backup\1
 C:\Users\Joachim\Desktop\Moje twórczości\Mody\Luciferium Expansion\LE backup\1.96 Legodude17 fix\Luciferium Expansion\Source\LuciferiumExpansion\obj\Release\LuciferiumExpansion.csproj.CopyComplete
 C:\Users\Joachim\Desktop\Moje twórczości\Mody\Luciferium Expansion\LE backup\1.96 Legodude17 fix\Luciferium Expansion\Source\LuciferiumExpansion\obj\Release\LuciferiumExpansion.dll
 C:\Users\Joachim\Desktop\Moje twórczości\Mody\Luciferium Expansion\LE backup\1.96 Legodude17 fix\Luciferium Expansion\Source\LuciferiumExpansion\obj\Release\LuciferiumExpansion.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LuciferiumExpansion\Source\LuciferiumExpansion\obj\Release\LuciferiumExpansion.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LuciferiumExpansion\Source\LuciferiumExpansion\obj\Release\LuciferiumExpansion.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LuciferiumExpansion\Source\LuciferiumExpansion\obj\Release\LuciferiumExpansion.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LuciferiumExpansion\Source\LuciferiumExpansion\obj\Release\LuciferiumExpansion.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LuciferiumExpansion\Source\LuciferiumExpansion\bin\Release\LuciferiumExpansion.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LuciferiumExpansion\Source\LuciferiumExpansion\bin\Release\LuciferiumExpansion.pdb

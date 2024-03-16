@@ -252,7 +252,6 @@
           <li>
             <countNeeded>2</countNeeded>
             <eachTicks>300</eachTicks>
-
             <thing>LuciferiumDrops</thing>
             <thingCount>1</thingCount>
             <net>USH_CompressedScarletSludgeNet</net>
