@@ -32,7 +32,7 @@
       <nurseable>true</nurseable>
       <drugCategory>Hard</drugCategory>
       <ingestSound>Ingest_Smoke</ingestSound>
-      <ingestEffect>USH_Smoke_RedFlicker</ingestEffect>
+      <ingestEffect>USH_RedSmokeEffect</ingestEffect>
       <ingestHoldOffsetStanding>
         <northDefault>
           <offset>(0.27,0,0.08)</offset>
@@ -199,11 +199,11 @@
   <!-- Red Smoke Effect -->
 
   <EffecterDef>
-    <defName>USH_Smoke_RedFlicker</defName>
+    <defName>USH_RedSmokeEffect</defName>
     <children>
       <li>
         <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
-        <moteDef>Mote_SmokeUSH_RedFlicker</moteDef>
+        <moteDef>USH_RedSmokeMote</moteDef>
         <ticksBetweenMotes>30</ticksBetweenMotes>
         <scale>0.35~0.45</scale>
         <absoluteAngle>true</absoluteAngle>
@@ -214,7 +214,7 @@
   </EffecterDef>
 
   <ThingDef ParentName="MoteBase">
-    <defName>Mote_SmokeUSH_RedFlicker</defName>
+    <defName>USH_RedSmokeMote</defName>
     <thingClass>MoteThrown</thingClass>
     <graphicData>
       <texPath>Things/Mote/USH_RedSmoke</texPath>

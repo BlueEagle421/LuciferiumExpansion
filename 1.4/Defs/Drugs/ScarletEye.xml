@@ -33,7 +33,7 @@
       <nurseable>true</nurseable>
       <drugCategory>Hard</drugCategory>
       <ingestSound>USH_Ingest_Spray</ingestSound>
-      <ingestEffect>USH_Smoke_RedFlicker</ingestEffect>
+      <ingestEffect>USH_RedSmokeEffect</ingestEffect>
       <ingestHoldOffsetStanding>
         <northDefault>
           <offset>(0.27,0,0.08)</offset>

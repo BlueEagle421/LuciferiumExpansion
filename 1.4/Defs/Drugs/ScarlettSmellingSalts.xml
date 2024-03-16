@@ -31,7 +31,7 @@
       <nurseable>true</nurseable>
       <drugCategory>Medical</drugCategory>
       <ingestSound>Ingest_Snort</ingestSound>
-      <ingestEffect>USH_Smoke_RedFlicker</ingestEffect>
+      <ingestEffect>USH_RedSmokeEffect</ingestEffect>
       <ingestHoldOffsetStanding>
         <northDefault>
           <offset>(0.27,0,0.08)</offset>
