@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0649: Do pola „CompLuciCollector.offMat” nigdy nie jest przypisywana wartość i będzie ono mieć zawsze wartość domyślną null
+dotnet_diagnostic.CS0649.severity = suggestion
