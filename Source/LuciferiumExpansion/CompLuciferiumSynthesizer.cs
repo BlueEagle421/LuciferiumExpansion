@@ -73,8 +73,8 @@ namespace LuciferiumExpansion
                         {
                             Thing thing = ThingMaker.MakeThing(this.Props.thing);
                             thing.stackCount = this.Props.thingCount;
-                            //if (GenPlace.TryPlaceThing(thing, adjCell, map, ThingPlaceMode.Near))
-                            //    break;
+                            if (GenPlace.TryPlaceThing(thing, adjCell, map, ThingPlaceMode.Near))
+                                break;
                         }
                     }
                 }
