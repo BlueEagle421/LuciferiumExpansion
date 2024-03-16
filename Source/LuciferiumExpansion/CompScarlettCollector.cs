@@ -56,7 +56,7 @@ namespace LuciferiumExpansion
             if (this == null)
                 return string.Empty;
 
-            stringBuilder.Append("USH_LE_Efficiency".Translate() + ": " + Efficiency().ToString() + "%");
+            stringBuilder.Append("USH_LE_Efficiency".Translate() + ": " + (Efficiency() * 100f).ToString() + "%");
             stringBuilder.AppendLine();
             if (_powerComp.PowerOn)
             {
@@ -64,7 +64,7 @@ namespace LuciferiumExpansion
                 if (flag2)
                 {
                     stringBuilder.Append("USH_LE_Producing".Translate() + ": " +
-                        ((60000 / 40f / CollectorProperties.ticksPerPortion * Efficiency()).ToString() + " l/d"));
+                        ((60000 / CollectorProperties.ticksPerPortion * DistributeAmount()).ToString() + " l/d"));
                 }
                 else
                 {
