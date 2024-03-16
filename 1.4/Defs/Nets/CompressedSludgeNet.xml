@@ -61,7 +61,6 @@
     </statBases>
     <size>(1,1)</size>
     <costList>
-      <Plasteel>5</Plasteel>
       <Steel>60</Steel>
     </costList>
     <building>

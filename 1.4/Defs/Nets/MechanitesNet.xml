@@ -61,7 +61,6 @@
     </statBases>
     <size>(1,1)</size>
     <costList>
-      <Plasteel>5</Plasteel>
       <Steel>60</Steel>
     </costList>
     <building>
@@ -211,8 +210,8 @@
     <size>(1,1)</size>
     <costList>
       <Steel>180</Steel>
-      <Plasteel>30</Plasteel>
-      <ComponentSpacer>6</ComponentSpacer>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
     </costList>
     <comps>
       <li Class="PipeSystem.CompProperties_ResourceStorage">
@@ -282,7 +281,7 @@
     <defaultPlacingRot>West</defaultPlacingRot>
     <costList>
       <Steel>60</Steel>
-      <Plasteel>10</Plasteel>
+      <Plasteel>4</Plasteel>
       <Gold>20</Gold>
       <ComponentSpacer>2</ComponentSpacer>
     </costList>

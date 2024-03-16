@@ -29,8 +29,8 @@
     <defaultPlacingRot>North</defaultPlacingRot>
     <costList>
       <ComponentIndustrial>5</ComponentIndustrial>
-      <Plasteel>10</Plasteel>
-      <Steel>120</Steel>
+      <Plasteel>8</Plasteel>
+      <Steel>80</Steel>
     </costList>
     <statBases>
       <MaxHitPoints>380</MaxHitPoints>
@@ -104,9 +104,9 @@
     </thingCategories>
     <defaultPlacingRot>North</defaultPlacingRot>
     <costList>
-      <ComponentSpacer>3</ComponentSpacer>
-      <Plasteel>30</Plasteel>
-      <Steel>120</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Plasteel>12</Plasteel>
+      <Steel>100</Steel>
     </costList>
     <statBases>
       <MaxHitPoints>520</MaxHitPoints>
