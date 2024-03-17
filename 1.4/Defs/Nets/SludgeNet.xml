@@ -191,7 +191,7 @@
     <comps>
       <li Class="PipeSystem.CompProperties_ResourceProcessor">
         <pipeNet>ScarletNet</pipeNet>
-        <showBufferInfo>false</showBufferInfo>
+        <showBufferInfo>true</showBufferInfo>
         <results>
           <li>
             <countNeeded>120</countNeeded>
