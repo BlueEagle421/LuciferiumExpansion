@@ -60,8 +60,6 @@
   <ItemGroup>
     <Compile Include="CompModdedResourceStorage.cs" />
     <Compile Include="CompProperties_ModdedResourceStorage.cs" />
-    <Compile Include="CompProperties_Removal.cs" />
-    <Compile Include="CompRemoval.cs" />
     <Compile Include="CompProperties_LuciferiumSynthesizer.cs" />
     <Compile Include="CompLuciferiumSynthesizer.cs" />
     <Compile Include="HediffComp_USH_ScarletParalysis.cs" />

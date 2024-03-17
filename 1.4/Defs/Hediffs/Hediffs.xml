@@ -248,11 +248,6 @@
     <lethalSeverity>1</lethalSeverity>
     <makesSickThought>false</makesSickThought>
     <scenarioCanAdd>false</scenarioCanAdd>
-    <comps>
-      <li Class="HediffCompProperties_Immunizable">
-        <severityPerDayNotImmune>-0.007</severityPerDayNotImmune>
-      </li>
-    </comps>
   </HediffDef>
 
   <HediffDef>

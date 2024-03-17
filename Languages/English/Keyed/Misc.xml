@@ -18,6 +18,8 @@
   
   <USH_LE_LuciNeeded>{0} needed to produce</USH_LE_LuciNeeded>
   <USH_LE_LuciStored>{0} stored in synthesizer</USH_LE_LuciStored>
+  
+  <USH_LE_MechaNotWorking>mecha suppression doesn't seem to work on {0}</USH_LE_MechaNotWorking>
 
   <USH_Debug>Cookies.</USH_Debug>
 </LanguageData>

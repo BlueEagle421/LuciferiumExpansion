@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace LuciferiumExpansion
 {
     public class HediffWithComps_USH_InnerOrgansHealer : HediffWithComps
     {
-        public override void PostMake()
+        public override void PostAdd(DamageInfo? dinfo)
         {
-            base.PostMake();
+            base.PostAdd(dinfo);
             List<Hediff> allHediffs = new List<Hediff>();
-            this.pawn.health.hediffSet.GetHediffs(ref allHediffs);
+            pawn.health.hediffSet.GetHediffs(ref allHediffs);
             foreach (Hediff hediff in allHediffs)
             {
                 if (hediff.def == HediffDef.Named("USH_InnerOrgansWeakening"))
@@ -23,9 +24,12 @@ namespace LuciferiumExpansion
                     {
                         hediff.Severity = firstSeverity - 0.125f;
                     }
-                    break;
+                    return;
                 }
             }
+
+            pawn.health.RemoveHediff(this);
+            Messages.Message("USH_LE_MechaNotWorking".Translate(pawn.Name), pawn, MessageTypeDefOf.NeutralEvent, false);
         }
     }
 }
