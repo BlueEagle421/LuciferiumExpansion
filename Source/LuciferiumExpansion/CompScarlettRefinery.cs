@@ -1,16 +1,15 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: VCHE.CompRefinery
-// Assembly: VCHE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 872512D5-06CA-4BFC-9B2D-EE9D4D7F939F
-// Assembly location: C:\Users\Joachim\Desktop\RimWorld.v1.3.3200\RimWorld.v1.3.3200\Mods\2792917473_vanilla_chemfuel_expanded\1.3\Assemblies\VCHE.dll
-
-using PipeSystem;
+﻿using PipeSystem;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace LuciferiumExpansion
 {
+    public class CompProperties_ScarlettRefinery : CompProperties
+    {
+        public CompProperties_ScarlettRefinery() => this.compClass = typeof(CompScarlettRefinery);
+    }
+
     public class CompScarlettRefinery : ThingComp
     {
         private CompResourceProcessor resource;

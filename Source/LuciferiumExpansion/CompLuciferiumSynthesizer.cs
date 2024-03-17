@@ -7,6 +7,11 @@ using Verse;
 
 namespace LuciferiumExpansion
 {
+    public class CompProperties_LuciferiumSynthesizer : CompProperties_ResourceProcessor
+    {
+        public CompProperties_LuciferiumSynthesizer() => this.compClass = typeof(CompLuciferiumSynthesizer);
+    }
+
     [StaticConstructorOnStartup]
     public class CompLuciferiumSynthesizer : CompResourceProcessor
     {

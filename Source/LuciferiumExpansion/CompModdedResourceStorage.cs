@@ -5,6 +5,11 @@ using Verse;
 
 namespace LuciferiumExpansion
 {
+    public class CompProperties_ModdedResourceStorage : CompProperties_ResourceStorage
+    {
+        public CompProperties_ModdedResourceStorage() => this.compClass = typeof(CompModdedResourceStorage);
+    }
+
     [StaticConstructorOnStartup]
     public class CompModdedResourceStorage : CompResourceStorage
     {
@@ -12,7 +17,5 @@ namespace LuciferiumExpansion
         {
             return string.Empty;
         }
-
-
     }
 }

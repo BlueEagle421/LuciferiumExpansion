@@ -59,19 +59,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompModdedResourceStorage.cs" />
-    <Compile Include="CompProperties_ModdedResourceStorage.cs" />
-    <Compile Include="CompProperties_LuciferiumSynthesizer.cs" />
     <Compile Include="CompLuciferiumSynthesizer.cs" />
     <Compile Include="HediffComp_USH_ScarletParalysis.cs" />
-    <Compile Include="HediffCompProperties_USH_ScarletParalysis.cs" />
     <Compile Include="CompLuciferiumPump.cs" />
-    <Compile Include="CompProperties_LuciferiumPump.cs" />
     <Compile Include="HediffWithComps_USH_ScarletEye.cs" />
     <Compile Include="HediffWithComps_USH_InnerOrgansHealer.cs" />
-    <Compile Include="CompProperties_ScarlettRefinery.cs" />
     <Compile Include="CompScarlettRefinery.cs" />
     <Compile Include="CompScarlettCollector.cs" />
-    <Compile Include="CompProperties_ScarlettCollector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
