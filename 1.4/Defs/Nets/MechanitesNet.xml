@@ -215,7 +215,7 @@
       <ComponentSpacer>3</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="PipeSystem.CompProperties_ResourceStorage">
+		<li Class="LuciferiumExpansion.CompProperties_ModdedResourceStorage">
         <pipeNet>USH_ScarletMechanitesNet</pipeNet>
         <storageCapacity>24</storageCapacity>
         <drawStorageBar>false</drawStorageBar>
@@ -232,8 +232,18 @@
         </extractOptions>
       </li>
       <li Class="LuciferiumExpansion.CompProperties_LuciferiumSynthesizer">
-        <thing>Luciferium</thing>
-        <thingCount>1</thingCount>
+        <pipeNet>USH_ScarletMechanitesNet</pipeNet>
+        <showBufferInfo>false</showBufferInfo>
+        <results>
+          <li>
+            <countNeeded>24</countNeeded>
+            <eachTicks>1000</eachTicks>
+            <thing>Luciferium</thing>
+            <thingCount>1</thingCount>
+          </li>
+        </results>
+        <notWorkingKey>USH_LE_CantRefine</notWorkingKey>
+		
       </li>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>

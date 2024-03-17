@@ -58,6 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompModdedResourceStorage.cs" />
+    <Compile Include="CompProperties_ModdedResourceStorage.cs" />
     <Compile Include="CompProperties_Removal.cs" />
     <Compile Include="CompRemoval.cs" />
     <Compile Include="CompProperties_LuciferiumSynthesizer.cs" />

@@ -1,12 +1,9 @@
-﻿using Verse;
-using PipeSystem;
+﻿using PipeSystem;
 
 namespace LuciferiumExpansion
 {
-    public class CompProperties_LuciferiumSynthesizer : CompProperties
+    public class CompProperties_LuciferiumSynthesizer : CompProperties_ResourceProcessor
     {
-        public ThingDef thing;
-        public int thingCount;
         public CompProperties_LuciferiumSynthesizer() => this.compClass = typeof(CompLuciferiumSynthesizer);
     }
 }
