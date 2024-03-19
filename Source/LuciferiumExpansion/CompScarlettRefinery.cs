@@ -7,28 +7,31 @@ namespace LuciferiumExpansion
 {
     public class CompProperties_ScarlettRefinery : CompProperties
     {
-        public CompProperties_ScarlettRefinery() => this.compClass = typeof(CompScarlettRefinery);
+        public Vector2 fireDrawPositionOffset = new Vector2(0.04f, 1.9f);
+        public CompProperties_ScarlettRefinery() => compClass = typeof(CompScarlettRefinery);
     }
 
     public class CompScarlettRefinery : ThingComp
     {
-        private CompResourceProcessor resource;
-        private Vector3 fireDrawPos;
+        private CompResourceProcessor _resourceProcessor;
+        private Vector3 _fireDrawPos;
+        public CompProperties_ScarlettRefinery Props => (CompProperties_ScarlettRefinery)props;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            this.resource = this.parent.GetComp<CompResourceProcessor>();
-            this.fireDrawPos = this.parent.DrawPos;
-            this.fireDrawPos.y += 0.04054054f;
-            this.fireDrawPos.z += 1.91f;
+            _resourceProcessor = parent.GetComp<CompResourceProcessor>();
+            _fireDrawPos = parent.DrawPos;
+            _fireDrawPos.y += Props.fireDrawPositionOffset.x;
+            _fireDrawPos.z += Props.fireDrawPositionOffset.y;
         }
 
         public override void PostDraw()
         {
-            if (!this.resource.Working)
+            if (!_resourceProcessor.Working)
                 return;
-            CompFireOverlay.FireGraphic.Draw(this.fireDrawPos, Rot4.North, (Thing)this.parent);
+
+            CompFireOverlay.FireGraphic.Draw(_fireDrawPos, Rot4.North, parent);
         }
     }
 }
