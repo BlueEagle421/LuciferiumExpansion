@@ -340,4 +340,4 @@ ASALocalRun/
 healthchecksdb
 
 # vscode configuration
-.vscode/**/*
+.vscode/
