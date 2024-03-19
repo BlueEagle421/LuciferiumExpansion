@@ -341,3 +341,6 @@ healthchecksdb
 
 # vscode configuration
 .vscode/
+
+# compiled files
+/Source/LuciferiumExpansion/bin
