@@ -90,7 +90,7 @@
     <label>high on bloody eye</label>
     <labelNoun>a bloody eye high</labelNoun>
     <description>Scarlet mechanites temporarily enhancing the body.</description>
-    <hediffClass>LuciferiumExpansion.HediffWithComps_USH_ScarletEye</hediffClass>
+    <hediffClass>Hediff_High</hediffClass>
     <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
     <scenarioCanAdd>false</scenarioCanAdd>
     <maxSeverity>0.25</maxSeverity>
@@ -100,6 +100,10 @@
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-1.0</severityPerDay>
         <showHoursToRecover>true</showHoursToRecover>
+      </li>
+	  <li Class="LuciferiumExpansion.HediffCompProperties_RemoveSkillXP">
+        <xpToRemove>1500</xpToRemove>
+        <skillDef>Intellectual</skillDef>
       </li>
     </comps>
     <stages>

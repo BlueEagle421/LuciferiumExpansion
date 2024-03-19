@@ -35,11 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\RimworldDevKit\Dependencies\BaseGameManaged\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\joach\Desktop\RimworldDevKit\Dependencies\BaseManaged\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PipeSystem">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\RimworldDevKit\Dependencies\VanillaFrameworkExpanded\1.4\Assemblies\PipeSystem.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\joach\Desktop\RimworldDevKit\Dependencies\Vanilla Framework Expanded\1.4\Assemblies\PipeSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,11 +49,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\RimworldDevKit\Dependencies\BaseGameManaged\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\joach\Desktop\RimworldDevKit\Dependencies\BaseManaged\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\RimworldDevKit\Dependencies\BaseGameManaged\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\joach\Desktop\RimworldDevKit\Dependencies\BaseManaged\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

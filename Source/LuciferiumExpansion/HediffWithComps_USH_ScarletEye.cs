@@ -3,34 +3,48 @@ using Verse;
 
 namespace LuciferiumExpansion
 {
-    public class HediffWithComps_USH_ScarletEye : HediffWithComps
+    public class HediffCompProperties_RemoveSkillXP : HediffCompProperties
     {
-        private float xpToForget = 1500f;
-        public override void PostMake()
+        public float xpToRemove;
+        public SkillDef skillDef;
+
+        public HediffCompProperties_RemoveSkillXP() => compClass = typeof(HediffComp_RemoveSkillXP);
+    }
+
+    public class HediffComp_RemoveSkillXP : HediffComp
+    {
+        public HediffCompProperties_RemoveSkillXP Props => (HediffCompProperties_RemoveSkillXP)props;
+
+        public override void CompPostMake()
         {
-            base.PostMake();
-            SkillRecord intellectual = this.pawn.skills.GetSkill(SkillDefOf.Intellectual);
-            if (intellectual != null)
+            base.CompPostMake();
+            RemoveSkillXP();
+        }
+
+        private void RemoveSkillXP()
+        {
+            SkillRecord skillRecord = Pawn.skills.GetSkill(Props.skillDef);
+
+            if (skillRecord == null)
+                return;
+
+            if (skillRecord.levelInt == 0 & skillRecord.xpSinceLastLevel <= Props.xpToRemove)
             {
-                if (intellectual.levelInt == 0 & intellectual.xpSinceLastLevel <= xpToForget)
+                skillRecord.xpSinceLastLevel = 0;
+            }
+            else
+            {
+                if (skillRecord.xpSinceLastLevel < Props.xpToRemove)
                 {
-                    intellectual.xpSinceLastLevel = 0;
+                    float XPsinceLastLvl = skillRecord.xpSinceLastLevel;
+                    skillRecord.levelInt--;
+                    skillRecord.xpSinceLastLevel = skillRecord.XpRequiredForLevelUp - (Props.xpToRemove - XPsinceLastLvl);
                 }
                 else
                 {
-                    if (intellectual.xpSinceLastLevel < xpToForget)
-                    {
-                        float XPsinceLastLvl = intellectual.xpSinceLastLevel;
-                        intellectual.levelInt--;
-                        intellectual.xpSinceLastLevel = intellectual.XpRequiredForLevelUp - (xpToForget - XPsinceLastLvl);
-                    }
-                    else
-                    {
-                        intellectual.xpSinceLastLevel = this.pawn.skills.GetSkill(SkillDefOf.Intellectual).xpSinceLastLevel - xpToForget;
-                    }
+                    skillRecord.xpSinceLastLevel = Pawn.skills.GetSkill(SkillDefOf.Intellectual).xpSinceLastLevel - Props.xpToRemove;
                 }
             }
-
         }
     }
 }
