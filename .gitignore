@@ -344,6 +344,7 @@ healthchecksdb
 
 # vs configuration
 .vs/
+.suo
 
 # compiled files
 /Source/LuciferiumExpansion/bin
