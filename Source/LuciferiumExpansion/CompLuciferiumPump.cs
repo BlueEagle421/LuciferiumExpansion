@@ -8,112 +8,185 @@ namespace LuciferiumExpansion
 {
     public class CompProperties_LuciferiumPump : CompProperties
     {
-        public CompProperties_LuciferiumPump() => this.compClass = typeof(CompLuciferiumPump);
+        public int baseUsages = 3;
+        public HediffDef hediffComa;
+        public HediffDef hediffAddiction;
+        public CompProperties_LuciferiumPump() => compClass = typeof(CompLuciferiumPump);
     }
-
 
     [StaticConstructorOnStartup]
     public class CompLuciferiumPump : ThingComp
     {
-        Map map;
-        CompRefuelable compRefuelable;
-        private int usagesLeft = 3;
-        public CompProperties_LuciferiumPump Props => (CompProperties_LuciferiumPump)this.props;
+        Map _currentMap;
+        CompRefuelable _compRefuelable;
+        CompPowerTrader _compPowerTrader;
+        private int _usagesLeft;
+        public CompProperties_LuciferiumPump Props => (CompProperties_LuciferiumPump)props;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            map = this.parent.Map;
-            compRefuelable = this.parent.GetComp<CompRefuelable>();
-            //compPowerTrader = this.parent.GetComp<CompPowerTrader>();
+
+            _currentMap = parent.Map;
+            _usagesLeft = Props.baseUsages;
+
+            _compRefuelable = parent.GetComp<CompRefuelable>();
+            _compPowerTrader = parent.GetComp<CompPowerTrader>();
         }
 
-        public override void CompTick()
+        private void BeginCorpseTargeting()
         {
-            base.CompTick();
-            checkForDeadPawn();
+            Find.Targeter.BeginTargeting(TargetingParameters(), delegate (LocalTargetInfo t)
+            {
+                if (!TryToResurrectAt(t.Thing.Position))
+                    Messages.Message((string)"USH_LE_CantResurrect".Translate(WorkStateCode().Item2), parent, MessageTypeDefOf.CautionInput, true);
 
+                Find.Targeter.StopTargeting();
+            });
         }
+
         public override string CompInspectStringExtra()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            if (this != null)
-            {
-                if (compRefuelable != null)
-                {
-                    stringBuilder.Append((string)"USH_LE_UsagesLeft".Translate() + ": " + usagesLeft.ToString());
-                    stringBuilder.AppendLine();
-                    if (!compRefuelable.IsFull)
-                        stringBuilder.Append((string)"USH_LE_CantResurrect".Translate() + ": ");
-                    stringBuilder.AppendLine();
-                    if (!compRefuelable.IsFull)
-                    {
-                        stringBuilder.Append((string)"USH_LE_NoLuciferium".Translate());
-                    }
-                }
-            }
+
+            if (this == null)
+                return string.Empty;
+
+            var workState = WorkStateCode();
+
+            bool canWork = workState.Item1;
+            string cantWorkCode = workState.Item2;
+
+            if (!canWork)
+                stringBuilder.AppendLine((string)"USH_LE_CantResurrect".Translate(cantWorkCode));
+
+            stringBuilder.AppendLine((string)"USH_LE_UsagesLeft".Translate(_usagesLeft));
+
             return stringBuilder.ToString().TrimEnd();
         }
 
-        public void checkForDeadPawn()
+        private (bool, string) WorkStateCode()
         {
+            bool canWork = true;
+            string cantWorkCode = string.Empty;
 
-            foreach (Thing thing in this.parent.GetComp<CompFacility>().LinkedBuildings)
+            if (_compRefuelable != null && !_compRefuelable.IsFull)
             {
-                tryResurrection(thing.Position);
-                break;
+                canWork = false;
+                cantWorkCode += string.Format("{0}, ", (string)"USH_LE_NoLuciferium".Translate());
             }
+
+            if (_compPowerTrader != null && !_compPowerTrader.PowerOn)
+            {
+                canWork = false;
+                cantWorkCode += string.Format("{0}, ", (string)"USH_LE_NoPower".Translate());
+            }
+
+            cantWorkCode = cantWorkCode.TrimEnd(',', ' ') + '.';
+
+            return (canWork, cantWorkCode);
         }
 
-        public void tryResurrection(IntVec3 bedPos)
+        public bool TryToResurrectAt(IntVec3 position)
         {
-            foreach (Thing thing in map.thingGrid.ThingsAt(bedPos))
-            {
+            Corpse toRessurect = FirstCorpseAt(position);
+
+            if (toRessurect == null)
+                return false;
+
+            if (!CanResurrect(toRessurect))
+                return false;
+
+            Resurrect(toRessurect.InnerPawn);
+            return true;
+        }
+
+        private void Resurrect(Pawn pawn)
+        {
+            ResurrectionUtility.Resurrect(pawn);
+            HandleHediffs(pawn);
+
+            _compRefuelable.ConsumeFuel(12);
+            _usagesLeft--;
+            CheckForSelfDeconstruct();
+        }
+
+        private bool CanResurrect(Corpse corpse)
+        {
+            if (!corpse.InnerPawn.IsColonist)
+                return false;
+
+            if (!WorkStateCode().Item1)
+                return false;
+
+            return true;
+        }
+
+        private Corpse FirstCorpseAt(IntVec3 position)
+        {
+            foreach (Thing thing in _currentMap.thingGrid.ThingsAt(position))
                 if (thing is Corpse corpse)
-                {
-                    if (corpse.InnerPawn.IsColonist && compRefuelable.IsFull && usagesLeft > 0)
-                    // && compPowerTrader.PowerOn
-                    {
-                        Pawn pawn = corpse.InnerPawn;
-                        ResurrectionUtility.Resurrect(pawn);
-                        compRefuelable.ConsumeFuel(12);
+                    return corpse;
 
-                        applyHediffs(pawn);
+            return null;
+        }
 
-                        usagesLeft--;
-                        checkUsages();
-                    }
-                }
+        public void HandleHediffs(Pawn pawn)
+        {
+            List<Hediff> allHediffs = new List<Hediff>();
+            pawn.health.hediffSet.GetHediffs(ref allHediffs);
+
+            Hediff addedComa = pawn.health.AddHediff(Props.hediffComa);
+            Hediff foundAddiction = allHediffs.Find(x => x.def == Props.hediffAddiction);
+
+            if (foundAddiction == null)
+            {
+                addedComa.Severity = 5;
+                pawn.health.AddHediff(Props.hediffAddiction);
+            }
+            else
+            {
+                addedComa.Severity = 1;
+                foundAddiction.Severity = 1;
             }
         }
 
-        public void applyHediffs(Pawn pawnForHediffs)
+        public void CheckForSelfDeconstruct()
         {
-            Hediff coma = pawnForHediffs.health.AddHediff(HediffDef.Named("USH_ScarletComa"));
-            List<Hediff> allhediffs = new List<Hediff>();
-            pawnForHediffs.health.hediffSet.GetHediffs(ref allhediffs);
-            foreach (Hediff hediff in allhediffs)
-            {
-                if (hediff.def == HediffDef.Named("LuciferiumAddiction"))
-                {
-                    coma.Severity = 1;
-                    hediff.Severity = 1;
-                }
-                else
-                {
-                    coma.Severity = 5;
-                    pawnForHediffs.health.AddHediff(HediffDef.Named("LuciferiumAddiction"));
-                }
-                break;
-            }
+            if (_usagesLeft > 0)
+                return;
+
+            parent.Destroy(DestroyMode.Deconstruct);
         }
 
-        public void checkUsages()
+        private TargetingParameters TargetingParameters()
         {
-            if (usagesLeft == 0)
+            return new TargetingParameters
             {
-                this.parent.Destroy(DestroyMode.Deconstruct);
-            }
+                canTargetPawns = false,
+                canTargetBuildings = false,
+                canTargetItems = true,
+                mapObjectTargetsMustBeAutoAttackable = false,
+                validator = ((TargetInfo x) => x.Thing is Corpse)
+            };
+        }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+                yield return gizmo;
+
+            if (!Prefs.DevMode)
+                yield break;
+
+            yield return new Command_Action
+            {
+                defaultLabel = "DEBUG: Resurrect",
+                action = delegate
+                {
+                    BeginCorpseTargeting();
+                }
+            };
         }
     }
 }

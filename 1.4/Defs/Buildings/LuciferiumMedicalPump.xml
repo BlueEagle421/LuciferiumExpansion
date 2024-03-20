@@ -43,7 +43,6 @@
         <maxSimultaneous>1</maxSimultaneous>
         <mustBePlacedAdjacent>true</mustBePlacedAdjacent>
       </li>
-      <li Class="LuciferiumExpansion.CompProperties_LuciferiumPump" />
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>22</fuelConsumptionRate>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -55,6 +54,17 @@
         </fuelFilter>
         <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
       </li>
+	  <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+	  <li Class="LuciferiumExpansion.CompProperties_LuciferiumPump">
+		<baseUsages>3</baseUsages>
+		<hediffComa>USH_ScarletComa</hediffComa>
+		<hediffAddiction>LuciferiumAddiction</hediffAddiction>
+		<fleck>USH_DeconstructCloud</fleck>
+	  </li>
     </comps>
     <thingSetMakerTags>
       <li>RewardStandardMidFreq</li>
@@ -67,5 +77,19 @@
       <li>PlaceWorker_ShowFacilitiesConnections</li>
     </placeWorkers>
   </ThingDef>
+  
+    <FleckDef ParentName="FleckBase">
+    <defName>USH_DeconstructCloud</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <color>(0.75, 0.75, 0.75)</color>
+      <drawSize>(2.5,2.5)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.50</fadeInTime>
+    <solidTime>3</solidTime>
+    <fadeOutTime>3</fadeOutTime>
+    <growthRate>0.025</growthRate>
+  </FleckDef>
 
 </Defs>

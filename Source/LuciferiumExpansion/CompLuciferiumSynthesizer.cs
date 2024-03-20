@@ -43,7 +43,5 @@ namespace LuciferiumExpansion
         {
             return (int)Storage;
         }
-
-
     }
 }
