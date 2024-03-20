@@ -38,7 +38,7 @@ namespace LuciferiumExpansion
         {
             Find.Targeter.BeginTargeting(TargetingParameters(), delegate (LocalTargetInfo t)
             {
-                if (!TryToResurrectAt(t.Thing.Position))
+                if (!TryToResurrect((Corpse)t.Thing))
                     Messages.Message((string)"USH_LE_CantResurrect".Translate(WorkStateCode().Item2), parent, MessageTypeDefOf.CautionInput, true);
 
                 Find.Targeter.StopTargeting();
@@ -87,17 +87,15 @@ namespace LuciferiumExpansion
             return (canWork, cantWorkCode);
         }
 
-        public bool TryToResurrectAt(IntVec3 position)
+        public bool TryToResurrect(Corpse corpse)
         {
-            Corpse toRessurect = FirstCorpseAt(position);
-
-            if (toRessurect == null)
+            if (corpse == null)
                 return false;
 
-            if (!CanResurrect(toRessurect))
+            if (!CanResurrect(corpse))
                 return false;
 
-            Resurrect(toRessurect.InnerPawn);
+            Resurrect(corpse.InnerPawn);
             return true;
         }
 
@@ -120,15 +118,6 @@ namespace LuciferiumExpansion
                 return false;
 
             return true;
-        }
-
-        private Corpse FirstCorpseAt(IntVec3 position)
-        {
-            foreach (Thing thing in _currentMap.thingGrid.ThingsAt(position))
-                if (thing is Corpse corpse)
-                    return corpse;
-
-            return null;
         }
 
         public void HandleHediffs(Pawn pawn)
