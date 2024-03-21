@@ -60,12 +60,11 @@
   <ItemGroup>
     <Compile Include="CompModdedResourceStorage.cs" />
     <Compile Include="CompLuciferiumSynthesizer.cs" />
-    <Compile Include="HediffComp_USH_ScarletParalysis.cs" />
     <Compile Include="CompLuciferiumPump.cs" />
-    <Compile Include="HediffWithComps_USH_ScarletEye.cs" />
-    <Compile Include="HediffWithComps_USH_InnerOrgansHealer.cs" />
-    <Compile Include="CompScarlettRefinery.cs" />
-    <Compile Include="CompScarlettCollector.cs" />
+    <Compile Include="HediffCompRemoveSkillXP.cs" />
+    <Compile Include="HediffCompLowerSeverity.cs" />
+    <Compile Include="CompScarletRefinery.cs" />
+    <Compile Include="CompScarletCollector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

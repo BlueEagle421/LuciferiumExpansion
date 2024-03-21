@@ -28,11 +28,12 @@ namespace LuciferiumExpansion
         public int baseUsages = 3;
         public int fuelConsuption = 12;
         public float range;
-        public HediffDef hediffComa;
-        public HediffDef hediffAddiction;
-        public EffecterDef effecter;
+        public HediffDef hediffDefComa;
+        public HediffDef hediffDefAddiction;
+        public EffecterDef effecterDef;
         public int sustainEffectTicks = 100;
-        public string selectionTexPath;
+        [NoTranslate] public string selectionTexPath;
+
         public CompProperties_LuciferiumPump() => compClass = typeof(CompLuciferiumPump);
     }
 
@@ -185,7 +186,7 @@ namespace LuciferiumExpansion
         private void SpawnResurrectionEffect(Pawn pawn)
         {
             Map currentMap = parent.Map;
-            Effecter spawnedEffecter = Props.effecter.Spawn(pawn, currentMap, 1f);
+            Effecter spawnedEffecter = Props.effecterDef.Spawn(pawn, currentMap, 1f);
             currentMap.effecterMaintainer.AddEffecterToMaintain(spawnedEffecter, pawn.Position, Props.sustainEffectTicks);
         }
 
@@ -194,13 +195,13 @@ namespace LuciferiumExpansion
             List<Hediff> allHediffs = new List<Hediff>();
             pawn.health.hediffSet.GetHediffs(ref allHediffs);
 
-            Hediff addedComa = pawn.health.AddHediff(Props.hediffComa);
-            Hediff foundAddiction = allHediffs.Find(x => x.def == Props.hediffAddiction);
+            Hediff addedComa = pawn.health.AddHediff(Props.hediffDefComa);
+            Hediff foundAddiction = allHediffs.Find(x => x.def == Props.hediffDefAddiction);
 
             if (foundAddiction == null)
             {
                 addedComa.Severity = 5;
-                pawn.health.AddHediff(Props.hediffAddiction);
+                pawn.health.AddHediff(Props.hediffDefAddiction);
             }
             else
             {

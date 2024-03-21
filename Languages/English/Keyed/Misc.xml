@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
+
   <USH_LE_ExtractScarletMechanites>Extract 1 scarlet mechanite</USH_LE_ExtractScarletMechanites>
   <USH_LE_ExtractScarletMechanitesDesc>Extract 1 scarlet mechanite from the synthesizer internal tank. A pawn will come to extract it.</USH_LE_ExtractScarletMechanitesDesc>
   
@@ -15,13 +16,9 @@
   <USH_LE_OrderCorspeSelection>Select corpse</USH_LE_OrderCorspeSelection>
   <USH_LE_OrderCorspeSelectionDesc>Select a corpse for resurrection.</USH_LE_OrderCorspeSelectionDesc>
   
-  <USH_LE_ProducingLuciferium>Producing one Luciferium from</USH_LE_ProducingLuciferium>
-  <USH_LE_ScarletMechanites>scarlet mechanites</USH_LE_ScarletMechanites>
-  
   <USH_LE_LuciNeeded>{0} needed to produce</USH_LE_LuciNeeded>
   <USH_LE_LuciStored>{0} stored in synthesizer</USH_LE_LuciStored>
   
   <USH_LE_MechaNotWorking>mecha suppression doesn't seem to work on {0}</USH_LE_MechaNotWorking>
-
-  <USH_Debug>Cookies.</USH_Debug>
+  
 </LanguageData>

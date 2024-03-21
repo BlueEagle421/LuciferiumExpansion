@@ -54,23 +54,21 @@
         </fuelFilter>
         <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
       </li>
-	  <li Class="CompProperties_Power">
+      <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>100</basePowerConsumption>
         <shortCircuitInRain>false</shortCircuitInRain>
       </li>
-	  <li Class="LuciferiumExpansion.CompProperties_LuciferiumPump">
-		<baseUsages>3</baseUsages>
-		<fuelConsuption>12</fuelConsuption>
-		<range>8.9</range>
-		<selectionTexPath>UI/Commands/ActivateTurret</selectionTexPath>
-		<hediffComa>USH_ScarletComa</hediffComa>
-		<hediffAddiction>LuciferiumAddiction</hediffAddiction>
-		
-		<effecter>USH_RedSmokeEffect</effecter>
-		<sustainEffectTicks>400</sustainEffectTicks>
-		
-		<activeTicks>1</activeTicks>
+      <li Class="LuciferiumExpansion.CompProperties_LuciferiumPump">
+        <baseUsages>3</baseUsages>
+        <fuelConsuption>12</fuelConsuption>
+        <range>8.9</range>
+        <selectionTexPath>UI/Commands/ActivateTurret</selectionTexPath>
+        <hediffDefComa>USH_ScarletComa</hediffDefComa>
+        <hediffDefAddiction>LuciferiumAddiction</hediffDefAddiction>
+        <effecterDef>USH_RedSmokeEffect</effecterDef>
+        <sustainEffectTicks>400</sustainEffectTicks>
+        <activeTicks>1</activeTicks>
         <cooldownTicks>1000</cooldownTicks>
         <ticksToActivate>60</ticksToActivate>
         <jobString>activate</jobString>
@@ -82,7 +80,7 @@
           <canTargetMechs>false</canTargetMechs>
           <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
         </targetingParameters>
-	  </li>
+      </li>
     </comps>
     <thingSetMakerTags>
       <li>RewardStandardMidFreq</li>

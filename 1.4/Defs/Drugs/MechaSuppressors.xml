@@ -50,4 +50,24 @@
     </comps>
   </ThingDef>
 
+  <HediffDef>
+    <defName>USH_TissueSurfeit</defName>
+    <label>mecha suppression</label>
+    <description>Too much tissue has been pumped into the body. Critical overload leads to death.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+    <initialSeverity>0.0</initialSeverity>
+    <lethalSeverity>1</lethalSeverity>
+    <makesSickThought>false</makesSickThought>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="LuciferiumExpansion.HediffCompProperties_LowerSeverity">
+        <severityToSubtract>0.125</severityToSubtract>
+        <hediffDef>USH_InnerOrgansWeakening</hediffDef>
+        <noHediffMessage>USH_LE_MechaNotWorking</noHediffMessage>
+        <removeIfNoHediff>true</removeIfNoHediff>
+      </li>
+    </comps>
+  </HediffDef>
+
 </Defs>

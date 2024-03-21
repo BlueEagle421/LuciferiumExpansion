@@ -7,7 +7,8 @@
     <description>Aggressive mechanites are slowly destroying all of the victim's inner organs. In the last stage, their brain becomes spongy and begins generating overwhelming amounts of dopamine, adrenaline and a natural hallucinogenic.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
-    <initialSeverity>0</initialSeverity>
+    <initialSeverity>0.01</initialSeverity>
+    <minSeverity>0.01</minSeverity>
     <lethalSeverity>1</lethalSeverity>
     <makesSickThought>false</makesSickThought>
     <priceOffset>-0.5</priceOffset>
@@ -236,18 +237,6 @@
         </capMods>
       </li>
     </stages>
-  </HediffDef>
-
-  <HediffDef>
-    <defName>USH_TissueSurfeit</defName>
-    <label>mecha suppression</label>
-    <description>Too much tissue has been pumped into the body. Critical overload leads to death.</description>
-    <hediffClass>LuciferiumExpansion.HediffWithComps_USH_InnerOrgansHealer</hediffClass>
-    <defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
-    <initialSeverity>0.0</initialSeverity>
-    <lethalSeverity>1</lethalSeverity>
-    <makesSickThought>false</makesSickThought>
-    <scenarioCanAdd>false</scenarioCanAdd>
   </HediffDef>
 
   <HediffDef>
