@@ -215,7 +215,7 @@
       <ComponentSpacer>3</ComponentSpacer>
     </costList>
     <comps>
-		<li Class="LuciferiumExpansion.CompProperties_ModdedResourceStorage">
+      <li Class="LuciferiumExpansion.CompProperties_ModdedResourceStorage">
         <pipeNet>USH_ScarletMechanitesNet</pipeNet>
         <storageCapacity>24</storageCapacity>
         <drawStorageBar>false</drawStorageBar>
@@ -243,7 +243,7 @@
           </li>
         </results>
         <notWorkingKey>USH_LE_CantRefine</notWorkingKey>
-		
+
       </li>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>

@@ -6,7 +6,6 @@
     <label>luciferium health simulator</label>
     <description>A device that continuously conducts simulations and experiments on connected users using scarlet mechanites. The screen displays collected data in the form of reports and insights for medical staff.</description>
     <graphicData>
-      <!--<drawOffset>(0,0,0.5)</drawOffset>-->
       <texPath>Things/Building/Production/LuciferiumSimulator</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <damageData>
@@ -16,8 +15,6 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
       <drawSize>(4,4)</drawSize>
-      <!--<drawRotated>false</drawRotated>
-		<allowFlip>false</allowFlip>-->
     </graphicData>
     <tickerType>Normal</tickerType>
     <altitudeLayer>BuildingOnTop</altitudeLayer>

@@ -101,7 +101,7 @@
         <severityPerDay>-1.0</severityPerDay>
         <showHoursToRecover>true</showHoursToRecover>
       </li>
-	  <li Class="LuciferiumExpansion.HediffCompProperties_RemoveSkillXP">
+      <li Class="LuciferiumExpansion.HediffCompProperties_RemoveSkillXP">
         <xpToRemove>1500</xpToRemove>
         <skillDef>Intellectual</skillDef>
       </li>
