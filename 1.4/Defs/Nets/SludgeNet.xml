@@ -219,7 +219,7 @@
       <li Class="PipeSystem.CompProperties_Resource">
         <pipeNet>USH_CompressedScarletSludgeNet</pipeNet>
       </li>
-      <li Class="LuciferiumExpansion.CompProperties_ScarlettRefinery" />
+      <li Class="LuciferiumExpansion.CompProperties_ScarletRefinery" />
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>350</basePowerConsumption>

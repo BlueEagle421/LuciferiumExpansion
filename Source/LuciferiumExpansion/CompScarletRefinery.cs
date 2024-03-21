@@ -5,17 +5,17 @@ using Verse;
 
 namespace LuciferiumExpansion
 {
-    public class CompProperties_ScarlettRefinery : CompProperties
+    public class CompProperties_ScarletRefinery : CompProperties
     {
         public Vector2 fireDrawPositionOffset = new Vector2(0.04f, 1.9f);
-        public CompProperties_ScarlettRefinery() => compClass = typeof(CompScarlettRefinery);
+        public CompProperties_ScarletRefinery() => compClass = typeof(CompScarletRefinery);
     }
 
-    public class CompScarlettRefinery : ThingComp
+    public class CompScarletRefinery : ThingComp
     {
         private CompResourceProcessor _resourceProcessor;
         private Vector3 _fireDrawPos;
-        public CompProperties_ScarlettRefinery Props => (CompProperties_ScarlettRefinery)props;
+        public CompProperties_ScarletRefinery Props => (CompProperties_ScarletRefinery)props;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
