@@ -8,10 +8,10 @@ namespace LuciferiumExpansion
         public float xpToRemove;
         public SkillDef skillDef;
 
-        public HediffCompProperties_RemoveSkillXP() => compClass = typeof(HediffComp_RemoveSkillXP);
+        public HediffCompProperties_RemoveSkillXP() => compClass = typeof(HediffCompRemoveSkillXP);
     }
 
-    public class HediffComp_RemoveSkillXP : HediffComp
+    public class HediffCompRemoveSkillXP : HediffComp
     {
         public HediffCompProperties_RemoveSkillXP Props => (HediffCompProperties_RemoveSkillXP)props;
 
