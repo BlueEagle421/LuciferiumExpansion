@@ -52,9 +52,7 @@ namespace LuciferiumExpansion
             get
             {
                 if (selectionTex == null)
-                {
                     selectionTex = ContentFinder<Texture2D>.Get(Props.activateTexPath);
-                }
 
                 return selectionTex;
             }
