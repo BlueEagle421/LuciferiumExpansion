@@ -59,7 +59,7 @@
           <li>LuciferiumCollectorBoosterC</li>
         </linkableFacilities>
       </li>
-      <li Class="LuciferiumExpansion.CompProperties_ScarlettCollector">
+      <li Class="LuciferiumExpansion.CompProperties_ScarletCollector">
         <ticksPerPortion>250</ticksPerPortion>
         <portionSize>0.25</portionSize>
       </li>
@@ -135,7 +135,7 @@
           <li>LuciferiumCollectorBoosterC</li>
         </linkableFacilities>
       </li>
-      <li Class="LuciferiumExpansion.CompProperties_ScarlettCollector">
+      <li Class="LuciferiumExpansion.CompProperties_ScarletCollector">
         <ticksPerPortion>250</ticksPerPortion>
         <portionSize>0.25</portionSize>
       </li>

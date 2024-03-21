@@ -8,17 +8,17 @@ using Verse;
 
 namespace LuciferiumExpansion
 {
-    public class CompProperties_ScarlettCollector : CompProperties
+    public class CompProperties_ScarletCollector : CompProperties
     {
         public int ticksPerPortion = 60;
         public float portionSize = 0.025f;
         public SoundDef ambientSound;
 
-        public CompProperties_ScarlettCollector() => compClass = typeof(CompScarlettCollector);
+        public CompProperties_ScarletCollector() => compClass = typeof(CompScarletCollector);
     }
 
     [StaticConstructorOnStartup]
-    public class CompScarlettCollector : ThingComp
+    public class CompScarletCollector : ThingComp
     {
         private CompPowerTrader _powerComp;
         private int _nextProduceTick = -1;
@@ -26,7 +26,7 @@ namespace LuciferiumExpansion
         private PipeNet _currentPipeNet;
         private Map _currentMap;
 
-        public CompProperties_ScarlettCollector CollectorProperties => (CompProperties_ScarlettCollector)props;
+        public CompProperties_ScarletCollector CollectorProperties => (CompProperties_ScarletCollector)props;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
