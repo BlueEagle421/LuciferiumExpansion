@@ -9,9 +9,11 @@
   <USH_LE_CantRefine>Can’t refine: Platforms are full</USH_LE_CantRefine>
   
   <USH_LE_UsagesLeft>Usages before self-deconstruction: {0}</USH_LE_UsagesLeft>
-  <USH_LE_CantResurrect>Can't resurrect: {0}</USH_LE_CantResurrect>
-  <USH_LE_NoPower>no power</USH_LE_NoPower>
-  <USH_LE_NoLuciferium>no fuel</USH_LE_NoLuciferium>
+  <USH_LE_CorspeSelected>Corspe selected: {0}</USH_LE_CorspeSelected>
+  <USH_LE_CorspeNotValid>Selected corpse is not valid.</USH_LE_CorspeNotValid>
+  <USH_LE_CorpseNone>none</USH_LE_CorpseNone>
+  <USH_LE_OrderCorspeSelection>Select corpse</USH_LE_OrderCorspeSelection>
+  <USH_LE_OrderCorspeSelectionDesc>Select a corpse for resurrection.</USH_LE_OrderCorspeSelectionDesc>
   
   <USH_LE_ProducingLuciferium>Producing one Luciferium from</USH_LE_ProducingLuciferium>
   <USH_LE_ScarletMechanites>scarlet mechanites</USH_LE_ScarletMechanites>

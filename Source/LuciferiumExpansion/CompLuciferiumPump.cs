@@ -1,48 +1,92 @@
 ﻿
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace LuciferiumExpansion
 {
-    public class CompProperties_LuciferiumPump : CompProperties
+    public class PlaceWorker_LuciferiumPump : PlaceWorker
+    {
+        public override void DrawGhost(ThingDef def, IntVec3 center, Rot4 rot, Color ghostCol, Thing thing = null)
+        {
+            base.DrawGhost(def, center, rot, ghostCol, thing);
+
+            CompProperties_LuciferiumPump props = def.GetCompProperties<CompProperties_LuciferiumPump>();
+
+            if (props == null)
+                return;
+
+            GenDraw.DrawRadiusRing(center, props.range);
+        }
+    }
+    public class CompProperties_LuciferiumPump : CompProperties_Activable
     {
         public int baseUsages = 3;
+        public int fuelConsuption = 12;
+        public float range;
         public HediffDef hediffComa;
         public HediffDef hediffAddiction;
+        public EffecterDef effecter;
+        public int sustainEffectTicks = 100;
+        public string selectionTexPath;
         public CompProperties_LuciferiumPump() => compClass = typeof(CompLuciferiumPump);
     }
 
     [StaticConstructorOnStartup]
-    public class CompLuciferiumPump : ThingComp
+    public class CompLuciferiumPump : CompActivable
     {
-        Map _currentMap;
-        CompRefuelable _compRefuelable;
-        CompPowerTrader _compPowerTrader;
+        [Unsaved(false)]
+        private Texture2D selectionTex;
+
+        private CompRefuelable _compRefuelable;
         private int _usagesLeft;
+        private Corpse _selectedCorpse;
         public CompProperties_LuciferiumPump Props => (CompProperties_LuciferiumPump)props;
+
+        public Texture2D SelectionUIIcon
+        {
+            get
+            {
+                if (selectionTex == null)
+                {
+                    selectionTex = ContentFinder<Texture2D>.Get(Props.activateTexPath);
+                }
+
+                return selectionTex;
+            }
+        }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
 
-            _currentMap = parent.Map;
             _usagesLeft = Props.baseUsages;
-
             _compRefuelable = parent.GetComp<CompRefuelable>();
-            _compPowerTrader = parent.GetComp<CompPowerTrader>();
         }
 
-        private void BeginCorpseTargeting()
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            Find.Targeter.BeginTargeting(TargetingParameters(), delegate (LocalTargetInfo t)
-            {
-                if (!TryToResurrect((Corpse)t.Thing))
-                    Messages.Message((string)"USH_LE_CantResurrect".Translate(WorkStateCode().Item2), parent, MessageTypeDefOf.CautionInput, true);
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+                yield return gizmo;
 
-                Find.Targeter.StopTargeting();
-            });
+            if (parent.Spawned)
+            {
+                Command_Action command_Action = new Command_Action();
+                command_Action.defaultLabel = "USH_LE_OrderCorspeSelection".Translate() + "...";
+                command_Action.defaultDesc = "USH_LE_OrderCorspeSelectionDesc".Translate(parent.Named("THING"));
+                command_Action.icon = SelectionUIIcon;
+                command_Action.action = delegate
+                {
+                    SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
+                    BeginCorpseTargeting();
+                };
+
+                yield return command_Action;
+            }
         }
 
         public override string CompInspectStringExtra()
@@ -52,47 +96,76 @@ namespace LuciferiumExpansion
             if (this == null)
                 return string.Empty;
 
-            var workState = WorkStateCode();
+            stringBuilder.AppendLine("USH_LE_UsagesLeft".Translate(_usagesLeft));
 
-            bool canWork = workState.Item1;
-            string cantWorkCode = workState.Item2;
-
-            if (!canWork)
-                stringBuilder.AppendLine((string)"USH_LE_CantResurrect".Translate(cantWorkCode));
-
-            stringBuilder.AppendLine((string)"USH_LE_UsagesLeft".Translate(_usagesLeft));
+            stringBuilder.AppendLine("USH_LE_CorspeSelected".Translate(CorspeName(_selectedCorpse)));
 
             return stringBuilder.ToString().TrimEnd();
         }
 
-        private (bool, string) WorkStateCode()
+        public override AcceptanceReport CanActivate(Pawn activateBy = null)
         {
-            bool canWork = true;
-            string cantWorkCode = string.Empty;
+            AcceptanceReport result = base.CanActivate(activateBy);
+            if (!result.Accepted)
+                return result;
 
-            if (_compRefuelable != null && !_compRefuelable.IsFull)
-            {
-                canWork = false;
-                cantWorkCode += string.Format("{0}, ", (string)"USH_LE_NoLuciferium".Translate());
-            }
+            if (!IsCorpseValid(_selectedCorpse))
+                return "USH_LE_CorspeNotValid".Translate();
 
-            if (_compPowerTrader != null && !_compPowerTrader.PowerOn)
-            {
-                canWork = false;
-                cantWorkCode += string.Format("{0}, ", (string)"USH_LE_NoPower".Translate());
-            }
-
-            cantWorkCode = cantWorkCode.TrimEnd(',', ' ') + '.';
-
-            return (canWork, cantWorkCode);
+            return true;
         }
 
-        public bool TryToResurrect(Corpse corpse)
+        public override void Activate()
+        {
+            base.Activate();
+
+            TryToResurrect(_selectedCorpse);
+        }
+
+        protected override bool TryUse()
+        {
+            if (IsCorpseValid(_selectedCorpse))
+                return false;
+
+            return true;
+        }
+
+        private void BeginCorpseTargeting()
+        {
+            Find.Targeter.BeginTargeting(CorpseTargetingParameters(), delegate (LocalTargetInfo t)
+            {
+                Find.Targeter.targetingSource = this;
+
+                if (IsCorpseValid((Corpse)t.Thing))
+                    _selectedCorpse = (Corpse)t.Thing;
+            });
+        }
+
+        private string CorspeName(Corpse corpse)
+        {
+            if (corpse == null)
+                return "USH_LE_CorpseNone".Translate();
+
+            return corpse.InnerPawn.Name.ToStringFull;
+        }
+
+        private bool IsCorpseValid(Corpse corpse)
         {
             if (corpse == null)
                 return false;
 
-            if (!CanResurrect(corpse))
+            if (corpse.InnerPawn == null)
+                return false;
+
+            if (!corpse.InnerPawn.IsColonist)
+                return false;
+
+            return true;
+        }
+
+        public bool TryToResurrect(Corpse corpse)
+        {
+            if (!IsCorpseValid(corpse))
                 return false;
 
             Resurrect(corpse.InnerPawn);
@@ -102,22 +175,20 @@ namespace LuciferiumExpansion
         private void Resurrect(Pawn pawn)
         {
             ResurrectionUtility.Resurrect(pawn);
+            SpawnResurrectionEffect(pawn);
             HandleHediffs(pawn);
 
-            _compRefuelable.ConsumeFuel(12);
+            _selectedCorpse = null;
+            _compRefuelable.ConsumeFuel(Props.fuelConsuption);
             _usagesLeft--;
-            CheckForSelfDeconstruct();
+            CheckForSelfDeconstruction();
         }
 
-        private bool CanResurrect(Corpse corpse)
+        private void SpawnResurrectionEffect(Pawn pawn)
         {
-            if (!corpse.InnerPawn.IsColonist)
-                return false;
-
-            if (!WorkStateCode().Item1)
-                return false;
-
-            return true;
+            Map currentMap = parent.Map;
+            Effecter spawnedEffecter = Props.effecter.Spawn(pawn, currentMap, 1f);
+            currentMap.effecterMaintainer.AddEffecterToMaintain(spawnedEffecter, pawn.Position, Props.sustainEffectTicks);
         }
 
         public void HandleHediffs(Pawn pawn)
@@ -140,7 +211,7 @@ namespace LuciferiumExpansion
             }
         }
 
-        public void CheckForSelfDeconstruct()
+        public void CheckForSelfDeconstruction()
         {
             if (_usagesLeft > 0)
                 return;
@@ -148,7 +219,7 @@ namespace LuciferiumExpansion
             parent.Destroy(DestroyMode.Deconstruct);
         }
 
-        private TargetingParameters TargetingParameters()
+        private TargetingParameters CorpseTargetingParameters()
         {
             return new TargetingParameters
             {
@@ -156,26 +227,21 @@ namespace LuciferiumExpansion
                 canTargetBuildings = false,
                 canTargetItems = true,
                 mapObjectTargetsMustBeAutoAttackable = false,
-                validator = ((TargetInfo x) => x.Thing is Corpse)
+                validator = (TargetInfo x) => x.Thing is Corpse && Distance(parent.Position, x.Thing.Position) < Props.range
             };
         }
-
-        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        private float Distance(IntVec3 a, IntVec3 b)
         {
-            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
-                yield return gizmo;
+            float num = a.x - b.x;
+            float num2 = a.y - b.y;
+            float num3 = a.z - b.z;
+            return (float)Math.Sqrt(num * num + num2 * num2 + num3 * num3);
+        }
 
-            if (!Prefs.DevMode)
-                yield break;
-
-            yield return new Command_Action
-            {
-                defaultLabel = "DEBUG: Resurrect",
-                action = delegate
-                {
-                    BeginCorpseTargeting();
-                }
-            };
+        public override void PostDrawExtraSelectionOverlays()
+        {
+            base.PostDrawExtraSelectionOverlays();
+            GenDraw.DrawRadiusRing(parent.Position, Props.range);
         }
     }
 }

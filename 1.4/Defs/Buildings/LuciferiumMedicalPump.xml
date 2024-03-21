@@ -61,8 +61,27 @@
       </li>
 	  <li Class="LuciferiumExpansion.CompProperties_LuciferiumPump">
 		<baseUsages>3</baseUsages>
+		<fuelConsuption>12</fuelConsuption>
+		<range>8.9</range>
+		<selectionTexPath>UI/Commands/ActivateTurret</selectionTexPath>
 		<hediffComa>USH_ScarletComa</hediffComa>
 		<hediffAddiction>LuciferiumAddiction</hediffAddiction>
+		
+		<effecter>USH_RedSmokeEffect</effecter>
+		<sustainEffectTicks>400</sustainEffectTicks>
+		
+		<activeTicks>1</activeTicks>
+        <cooldownTicks>1000</cooldownTicks>
+        <ticksToActivate>60</ticksToActivate>
+        <jobString>activate</jobString>
+        <onCooldownString>cooling off</onCooldownString>
+        <activateTexPath>UI/Commands/ActivateTurret</activateTexPath>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
 	  </li>
     </comps>
     <thingSetMakerTags>
@@ -74,6 +93,7 @@
     </tradeTags>
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>LuciferiumExpansion.PlaceWorker_LuciferiumPump</li>
     </placeWorkers>
   </ThingDef>
 
