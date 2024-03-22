@@ -1,4 +1,4 @@
-﻿
+
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -40,13 +40,12 @@ namespace LuciferiumExpansion
     [StaticConstructorOnStartup]
     public class CompLuciferiumPump : CompActivable
     {
-        [Unsaved(false)]
-        private Texture2D selectionTex;
-
         private CompRefuelable _compRefuelable;
         private int _usagesLeft;
         private Corpse _selectedCorpse;
         public CompProperties_LuciferiumPump Props => (CompProperties_LuciferiumPump)props;
+
+        [Unsaved(false)] private Texture2D selectionTex;
 
         public Texture2D SelectionUIIcon
         {
@@ -140,7 +139,7 @@ namespace LuciferiumExpansion
 
         private string CorspeName(Corpse corpse)
         {
-            if (corpse == null)
+            if (!IsCorpseValid(corpse))
                 return "USH_LE_CorpseNone".Translate();
 
             return corpse.InnerPawn.Name.ToStringFull;
