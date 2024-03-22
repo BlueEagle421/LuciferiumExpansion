@@ -64,9 +64,9 @@ namespace LuciferiumExpansion
 
             stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(_resourceComp.Props.Resource.name, ScarletSludgeManager.Instance.ScarletSludgeAmount));
 
-            if (!CanProduce().Accepted)
+            if (!ProductionReport().Accepted)
             {
-                stringBuilder.AppendLine(("DisabledCommand".Translate() + ": " + CanProduce().Reason).Colorize(ColorLibrary.RedReadable));
+                stringBuilder.AppendLine("USH_LE_CantProduce".Translate(ProductionReport().Reason).Colorize(ColorLibrary.RedReadable));
                 return stringBuilder.ToString().TrimEnd();
             }
 
@@ -79,13 +79,13 @@ namespace LuciferiumExpansion
 
         private void TryProducePortion()
         {
-            if (!CanProduce().Accepted)
+            if (!ProductionReport().Accepted)
                 return;
 
             _resourceComp.PipeNet.DistributeAmongStorage(DistributeAmount(), out var _);
         }
 
-        private AcceptanceReport CanProduce()
+        private AcceptanceReport ProductionReport()
         {
             if (_powerComp != null && !_powerComp.PowerOn)
                 return "NoPower".Translate().CapitalizeFirst();
