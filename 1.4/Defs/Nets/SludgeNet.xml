@@ -176,6 +176,12 @@
     <thingCategories>
       <li>BuildingsProduction</li>
     </thingCategories>
+	<building>
+	  <relatedBuildCommands>
+        <li>VCHE_ScarletMechanitesPlatform</li>
+        <li>VCHE_CompressedScarletSludgePlatform</li>
+      </relatedBuildCommands>
+    </building>
     <statBases>
       <MaxHitPoints>380</MaxHitPoints>
       <Mass>42</Mass>
