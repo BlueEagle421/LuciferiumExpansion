@@ -49,13 +49,15 @@ namespace LuciferiumExpansion
             if (toAdjust == null)
                 return;
 
-            float currentSeverity = toAdjust.Severity;
-            float toSet = currentSeverity - Props.severityToSubtract;
+            toAdjust.Severity = NewSeverity(toAdjust.Severity, toAdjust.def.minSeverity);
+        }
 
-            if (currentSeverity <= Props.severityToSubtract)
-                toSet = toAdjust.def.minSeverity;
+        private float NewSeverity(float current, float min)
+        {
+            if (current <= Props.severityToSubtract)
+                return min;
 
-            toAdjust.Severity = toSet;
+            return current - Props.severityToSubtract;
         }
 
         private void RemoveItself()
