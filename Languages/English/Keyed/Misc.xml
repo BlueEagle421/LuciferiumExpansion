@@ -4,10 +4,12 @@
   <USH_LE_ExtractScarletMechanites>Extract 1 scarlet mechanite</USH_LE_ExtractScarletMechanites>
   <USH_LE_ExtractScarletMechanitesDesc>Extract 1 scarlet mechanite from the synthesizer internal tank. A pawn will come to extract it.</USH_LE_ExtractScarletMechanitesDesc>
   
-  <USH_LE_Efficiency>Efficiency</USH_LE_Efficiency>
-  <USH_LE_Producing>Collecting</USH_LE_Producing>
-  <USH_LE_Not_Producing_Roofed>Can't collect under roofed area</USH_LE_Not_Producing_Roofed>
-  <USH_LE_CantRefine>Can’t refine: Platforms are full</USH_LE_CantRefine>
+  <USH_LE_Efficiency>Efficiency: {0}</USH_LE_Efficiency>
+  <USH_LE_Producing>Collecting: {0}</USH_LE_Producing>
+  <USH_LE_ScarletSludgeLeft>{0} left in the air: {1}</USH_LE_ScarletSludgeLeft>
+  <USH_LE_NoScarletSludge>No {0} left in the air</USH_LE_NoScarletSludge>
+	
+  <USH_LE_CantRefine>Can’t refine: no platforms in the system</USH_LE_CantRefine>
   
   <USH_LE_UsagesLeft>Usages before self-deconstruction: {0}</USH_LE_UsagesLeft>
   <USH_LE_CorspeSelected>Corspe selected: {0}</USH_LE_CorspeSelected>

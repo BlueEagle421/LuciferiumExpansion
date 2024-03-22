@@ -1,6 +1,5 @@
 ﻿using PipeSystem;
 using RimWorld;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -21,9 +20,9 @@ namespace LuciferiumExpansion
     public class CompScarletCollector : ThingComp
     {
         private CompPowerTrader _powerComp;
+        private CompResource _resourceComp;
         private int _nextProduceTick = -1;
         internal List<IntVec3> _lumpCells;
-        private PipeNet _currentPipeNet;
         private Map _currentMap;
 
         public CompProperties_ScarletCollector CollectorProperties => (CompProperties_ScarletCollector)props;
@@ -33,6 +32,7 @@ namespace LuciferiumExpansion
             base.PostSpawnSetup(respawningAfterLoad);
             _currentMap = parent.Map;
             _powerComp = parent.GetComp<CompPowerTrader>();
+            _resourceComp = parent.GetComp<CompResource>();
         }
 
 
@@ -62,46 +62,44 @@ namespace LuciferiumExpansion
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            if (this == null)
-                return string.Empty;
+            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(_resourceComp.Props.Resource.name, ScarletSludgeManager.Instance.ScarletSludgeAmount));
 
-            if (!_powerComp.PowerOn)
-                return string.Empty;
+            if (!CanProduce().Accepted)
+            {
+                stringBuilder.AppendLine(("DisabledCommand".Translate() + ": " + CanProduce().Reason).Colorize(ColorLibrary.RedReadable));
+                return stringBuilder.ToString().TrimEnd();
+            }
 
-            if (_currentMap.roofGrid.Roofed(parent.Position))
-                return "USH_LE_Not_Producing_Roofed".Translate();
+            stringBuilder.AppendLine("USH_LE_Efficiency".Translate((Efficiency() * 100f).ToString()));
 
-            stringBuilder.Append("USH_LE_Efficiency".Translate() + ": " + (Efficiency() * 100f).ToString() + "%");
-            stringBuilder.AppendLine();
+            stringBuilder.AppendLine("USH_LE_Producing".Translate(LitersPerDay().ToString()));
 
-            string litersPerDay = (60000 / CollectorProperties.ticksPerPortion * DistributeAmount()).ToString() + " l/d";
-            stringBuilder.Append("USH_LE_Producing".Translate() + ": " + litersPerDay);
-
-            return stringBuilder.ToString().TrimEnd(Array.Empty<char>());
+            return stringBuilder.ToString().TrimEnd();
         }
 
         private void TryProducePortion()
         {
-            UpdatePipeNet();
-
-            if (!_powerComp.PowerOn)
+            if (!CanProduce().Accepted)
                 return;
 
-            if (_currentMap.roofGrid.Roofed(parent.Position))
-                return;
-
-            if (parent.def.canBeUsedUnderRoof)
-                return;
-
-            if (_currentPipeNet == null)
-                return;
-
-            _currentPipeNet.DistributeAmongStorage(DistributeAmount(), out var _);
+            _resourceComp.PipeNet.DistributeAmongStorage(DistributeAmount(), out var _);
         }
 
-        private void UpdatePipeNet()
+        private AcceptanceReport CanProduce()
         {
-            _currentPipeNet = parent.GetComp<CompResource>().PipeNet;
+            if (_powerComp != null && !_powerComp.PowerOn)
+                return "NoPower".Translate().CapitalizeFirst();
+
+            if (!parent.def.canBeUsedUnderRoof && _currentMap.roofGrid.Roofed(parent.Position))
+                return "Roofed".Translate().CapitalizeFirst();
+
+            if (_resourceComp.PipeNet != null && _resourceComp.PipeNet.storages.Count == 0)
+                return "PipeSystem_NoStorageInNet".Translate().CapitalizeFirst();
+
+            if (ScarletSludgeManager.Instance.ScarletSludgeAmount <= 0)
+                return "USH_LE_NoScarletSludge".Translate(_resourceComp.PipeNet.def.resource.name).CapitalizeFirst();
+
+            return true;
         }
 
         private float SpeedFactor()
@@ -117,6 +115,11 @@ namespace LuciferiumExpansion
         private float DistributeAmount()
         {
             return Efficiency() * CollectorProperties.portionSize;
+        }
+
+        private float LitersPerDay()
+        {
+            return 60000 / CollectorProperties.ticksPerPortion * DistributeAmount();
         }
     }
 }
