@@ -133,8 +133,6 @@ namespace LuciferiumExpansion
         {
             Find.Targeter.BeginTargeting(CorpseTargetingParameters(), delegate (LocalTargetInfo t)
             {
-                Find.Targeter.targetingSource = this;
-
                 if (IsCorpseValid((Corpse)t.Thing))
                     _selectedCorpse = (Corpse)t.Thing;
             });
