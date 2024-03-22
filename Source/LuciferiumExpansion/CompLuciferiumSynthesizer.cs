@@ -9,7 +9,7 @@ namespace LuciferiumExpansion
 {
     public class CompProperties_LuciferiumSynthesizer : CompProperties_ResourceProcessor
     {
-        public CompProperties_LuciferiumSynthesizer() => this.compClass = typeof(CompLuciferiumSynthesizer);
+        public CompProperties_LuciferiumSynthesizer() => compClass = typeof(CompLuciferiumSynthesizer);
     }
 
     [StaticConstructorOnStartup]

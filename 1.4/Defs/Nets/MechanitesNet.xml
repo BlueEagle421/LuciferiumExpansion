@@ -215,7 +215,8 @@
       <ComponentSpacer>3</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="LuciferiumExpansion.CompProperties_ModdedResourceStorage">
+      <li Class="PipeSystem.CompProperties_ResourceStorage">
+		<compClass>LuciferiumExpansion.CompModdedResourceStorage</compClass>
         <pipeNet>USH_ScarletMechanitesNet</pipeNet>
         <storageCapacity>24</storageCapacity>
         <drawStorageBar>false</drawStorageBar>
