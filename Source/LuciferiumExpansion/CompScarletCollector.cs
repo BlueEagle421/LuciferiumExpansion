@@ -62,13 +62,9 @@ namespace LuciferiumExpansion
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(_resourceComp.Props.Resource.name, ScarletSludgeManager.Instance.ScarletSludgeAmount));
 
             if (!ProductionReport().Accepted)
-            {
-                stringBuilder.AppendLine("USH_LE_CantProduce".Translate(ProductionReport().Reason).Colorize(ColorLibrary.RedReadable));
-                return stringBuilder.ToString().TrimEnd();
-            }
+                return "USH_LE_CantProduce".Translate(ProductionReport().Reason).Colorize(ColorLibrary.RedReadable);
 
             stringBuilder.AppendLine("USH_LE_Efficiency".Translate((Efficiency() * 100f).ToString()));
 
@@ -82,7 +78,6 @@ namespace LuciferiumExpansion
             if (!ProductionReport().Accepted)
                 return;
 
-            ScarletSludgeManager.Instance.ScarletSludgeAmount -= DistributeAmount();
             _resourceComp.PipeNet.DistributeAmongStorage(DistributeAmount(), out var _);
         }
 
@@ -94,11 +89,8 @@ namespace LuciferiumExpansion
             if (!parent.def.canBeUsedUnderRoof && _currentMap.roofGrid.Roofed(parent.Position))
                 return "Roofed".Translate().CapitalizeFirst();
 
-            if (_resourceComp.PipeNet != null && _resourceComp.PipeNet.storages.Count == 0 || _resourceComp.PipeNet.AvailableCapacity < DistributeAmount())
+            if (_resourceComp.PipeNet != null && _resourceComp.PipeNet.storages.Count == 0)
                 return "USH_LE_NoStorage".Translate().CapitalizeFirst();
-
-            if (ScarletSludgeManager.Instance.ScarletSludgeAmount <= 0)
-                return "USH_LE_NoScarletSludge".Translate(_resourceComp.PipeNet.def.resource.name).CapitalizeFirst();
 
             return true;
         }
