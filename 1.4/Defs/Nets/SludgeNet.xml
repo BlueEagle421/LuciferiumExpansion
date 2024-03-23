@@ -200,16 +200,15 @@
         <showBufferInfo>true</showBufferInfo>
         <results>
           <li>
-            <countNeeded>120</countNeeded>
+            <countNeeded>48</countNeeded>
             <eachTicks>7200</eachTicks>
             <thing>LuciferiumCrystals</thing>
             <thingCount>1</thingCount>
             <net>USH_ScarletMechanitesNet</net>
             <netCount>1</netCount>
           </li>
-
           <li>
-            <countNeeded>20</countNeeded>
+            <countNeeded>8</countNeeded>
             <eachTicks>2400</eachTicks>
             <thing>LuciferiumDrops</thing>
             <thingCount>1</thingCount>
