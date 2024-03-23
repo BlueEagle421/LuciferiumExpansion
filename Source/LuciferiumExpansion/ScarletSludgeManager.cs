@@ -1,5 +1,4 @@
 using RimWorld.Planet;
-using UnityEngine;
 using Verse;
 
 namespace LuciferiumExpansion
@@ -30,7 +29,8 @@ namespace LuciferiumExpansion
 
         private float DefaultScarletSludgeAmount()
         {
-            return Random.Range(1f, 10f);
+            float amountToSustainOneYear = 1440f;
+            return amountToSustainOneYear * 5f;
         }
     }
 }

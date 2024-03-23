@@ -9,6 +9,7 @@
   <USH_LE_Producing>Collecting: {0} l/d</USH_LE_Producing>
   <USH_LE_ScarletSludgeLeft>{0} left in the air: {1} l</USH_LE_ScarletSludgeLeft>
   <USH_LE_NoScarletSludge>No {0} left in the air</USH_LE_NoScarletSludge>
+  <USH_LE_NoStorage>No storage space</USH_LE_NoStorage>
 	
   <USH_LE_CantRefine>Can’t refine: no platforms in the system</USH_LE_CantRefine>
   
