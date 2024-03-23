@@ -62,8 +62,14 @@ namespace LuciferiumExpansion
         {
             base.PostSpawnSetup(respawningAfterLoad);
 
-            _usagesLeft = Props.baseUsages;
+
             _compRefuelable = parent.GetComp<CompRefuelable>();
+        }
+
+        public override void Initialize(CompProperties props)
+        {
+            base.Initialize(props);
+            _usagesLeft = Props.baseUsages;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -104,7 +110,7 @@ namespace LuciferiumExpansion
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref _usagesLeft, "USH_UsagesLeft");
+            Scribe_Values.Look(ref _usagesLeft, "USH_UsagesLeft", Props.baseUsages);
         }
 
         public override AcceptanceReport CanActivate(Pawn activateBy = null)
