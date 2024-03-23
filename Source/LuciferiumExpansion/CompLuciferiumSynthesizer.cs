@@ -27,7 +27,7 @@ namespace LuciferiumExpansion
 
             stringBuilder.AppendLine();
 
-            stringBuilder.AppendLine((string)"USH_LE_LuciStored".Translate(Resource.name) + ": " + AmountStored().ToString());
+            stringBuilder.AppendLine((string)"USH_LE_LuciStored".Translate(Resource.name) + ": " + ((int)Storage).ToString());
 
             stringBuilder.AppendLine((string)"USH_LE_LuciNeeded".Translate(Resource.name) + ": " + AmountNeeded().ToString());
 
@@ -37,11 +37,6 @@ namespace LuciferiumExpansion
         private int AmountNeeded()
         {
             return (int)parent.GetStatValue(StatDef.Named("USH_ScarletMechanitesOffset"));
-        }
-
-        private int AmountStored()
-        {
-            return (int)Storage;
         }
     }
 }
