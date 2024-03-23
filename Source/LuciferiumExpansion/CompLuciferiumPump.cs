@@ -101,6 +101,12 @@ namespace LuciferiumExpansion
             return stringBuilder.ToString().TrimEnd();
         }
 
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref _usagesLeft, "USH_UsagesLeft");
+        }
+
         public override AcceptanceReport CanActivate(Pawn activateBy = null)
         {
             AcceptanceReport result = base.CanActivate(activateBy);
