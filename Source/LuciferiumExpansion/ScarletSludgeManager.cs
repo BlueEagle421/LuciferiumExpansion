@@ -5,7 +5,11 @@ namespace LuciferiumExpansion
 {
     public class ScarletSludgeManager : WorldComponent
     {
+        //the amount of scarlet sludge needed to sustain one addict for a year
+        //10 (luci needed per year) * 24 (mechanites per luci) * 48 (sludge per mechnite)
+        private const float SUSTAIN_ONE_YEAR = 11520f;
         private float _scarletSludgeAmount = -1;
+
         public float ScarletSludgeAmount
         {
             get => _scarletSludgeAmount;
@@ -27,10 +31,8 @@ namespace LuciferiumExpansion
             Scribe_Values.Look(ref _scarletSludgeAmount, "USH_ScarletSludgeAmount");
         }
 
-        private float DefaultScarletSludgeAmount()
-        {
-            float amountToSustainOneYear = 1440f;
-            return amountToSustainOneYear * 5f;
-        }
+        private float DefaultScarletSludgeAmount() => SUSTAIN_ONE_YEAR * 5f;
+        public float ConvertedToLuciferium() => _scarletSludgeAmount / 24f / 48f;
+        public float ConvertedToLuciferium(float sludge) => sludge / 24f / 48f;
     }
 }

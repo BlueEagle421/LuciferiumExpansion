@@ -7,7 +7,8 @@
   <USH_LE_CantProduce>Can’t produce: {0}</USH_LE_CantProduce>
   <USH_LE_Efficiency>Efficiency: {0}%</USH_LE_Efficiency>
   <USH_LE_Producing>Collecting: {0} l/d</USH_LE_Producing>
-  <USH_LE_ScarletSludgeLeft>{0} left in the air: {1} l</USH_LE_ScarletSludgeLeft>
+  <USH_LE_ScarletSludgeLeft>Scarlet sludge left in the air: {0} l ({1} luciferium)</USH_LE_ScarletSludgeLeft>
+  <USH_LE_WillAttract>Will attract: {0} scarlet sludge ({1} luciferium)</USH_LE_WillAttract>
   <USH_LE_NoScarletSludge>No {0} left in the air</USH_LE_NoScarletSludge>
   <USH_LE_NoStorage>No storage space</USH_LE_NoStorage>
 	

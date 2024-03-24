@@ -1,14 +1,15 @@
 using RimWorld;
 using System.Collections.Generic;
+using System.Text;
 using Verse;
 using Verse.Sound;
 
 namespace LuciferiumExpansion
 {
-    public class CompProperties_ScarletAttractor : CompProperties
+    public class CompProperties_ScarletAttractor : CompProperties_Activable
     {
-        public float scarletSludgeToAdd = 0.025f;
-        public SoundDef soundDef; //USH_ScarletBeam
+        public float scarletSludgeToAdd;
+        public SoundDef soundDef;
 
         public CompProperties_ScarletAttractor() => compClass = typeof(CompScarletAttractor);
     }
@@ -16,7 +17,6 @@ namespace LuciferiumExpansion
     [StaticConstructorOnStartup]
     public class CompScarletAttractor : CompActivable
     {
-        private CompPowerTrader _powerComp;
         internal List<IntVec3> _lumpCells;
         private Map _currentMap;
 
@@ -25,7 +25,7 @@ namespace LuciferiumExpansion
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            _powerComp = parent.GetComp<CompPowerTrader>();
+            _currentMap = parent.Map;
         }
 
         public override void Activate()
@@ -40,6 +40,15 @@ namespace LuciferiumExpansion
             return true;
         }
 
+        public override string CompInspectStringExtra()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            stringBuilder.AppendLine("USH_LE_WillAttract".Translate(Props.scarletSludgeToAdd, ScarletSludgeManager.Instance.ConvertedToLuciferium(Props.scarletSludgeToAdd)));
+
+            return stringBuilder.ToString().TrimEnd();
+        }
+
         private void AttractScarletSludge()
         {
             PlayAttractionSound();
@@ -51,7 +60,7 @@ namespace LuciferiumExpansion
 
         private void PlayAttractionSound()
         {
-            SoundDef.Named("USH_ScarletBeam").PlayOneShot(new TargetInfo(this.parent.Position, this.parent.Map, false));
+            Props.soundDef.PlayOneShot(new TargetInfo(parent.Position, parent.Map, false));
         }
 
         private void SpawnAttractionBeam()

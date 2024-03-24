@@ -61,7 +61,7 @@ namespace LuciferiumExpansion
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(_resourceComp.Props.Resource.name, ScarletSludgeManager.Instance.ScarletSludgeAmount));
+            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(ScarletSludgeManager.Instance.ScarletSludgeAmount, ScarletSludgeManager.Instance.ConvertedToLuciferium()));
 
             if (!ProductionReport().Accepted)
             {

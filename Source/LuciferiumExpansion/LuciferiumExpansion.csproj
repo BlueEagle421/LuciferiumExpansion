@@ -61,7 +61,7 @@
     <Compile Include="CompModdedResourceStorage.cs" />
     <Compile Include="CompLuciferiumSynthesizer.cs" />
     <Compile Include="CompLuciferiumPump.cs" />
-    <Compile Include="CompScaretAttractor.cs" />
+    <Compile Include="CompScarletAttractor.cs" />
     <Compile Include="HediffCompRemoveSkillXP.cs" />
     <Compile Include="HediffCompLowerSeverity.cs" />
     <Compile Include="CompScarletRefinery.cs" />
