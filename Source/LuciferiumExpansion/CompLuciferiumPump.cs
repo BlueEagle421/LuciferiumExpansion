@@ -172,7 +172,7 @@ namespace LuciferiumExpansion
             return true;
         }
 
-        public bool TryToResurrect(Corpse corpse)
+        private bool TryToResurrect(Corpse corpse)
         {
             if (!IsCorpseValid(corpse))
                 return false;
@@ -204,7 +204,7 @@ namespace LuciferiumExpansion
             currentMap.effecterMaintainer.AddEffecterToMaintain(spawnedEffecter, pawn.Position, Props.sustainEffectTicks);
         }
 
-        public void HandleHediffs(Pawn pawn)
+        private void HandleHediffs(Pawn pawn)
         {
             List<Hediff> allHediffs = new List<Hediff>();
             pawn.health.hediffSet.GetHediffs(ref allHediffs);

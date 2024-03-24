@@ -68,6 +68,7 @@
     <Compile Include="CompScarletCollector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScarletSludgeManager.cs" />
+    <Compile Include="LEUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
