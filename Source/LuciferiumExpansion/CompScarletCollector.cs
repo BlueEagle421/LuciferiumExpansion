@@ -25,7 +25,7 @@ namespace LuciferiumExpansion
         internal List<IntVec3> _lumpCells;
         private Map _currentMap;
 
-        public CompProperties_ScarletCollector CollectorProperties => (CompProperties_ScarletCollector)props;
+        public CompProperties_ScarletCollector Props => (CompProperties_ScarletCollector)props;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
@@ -34,7 +34,6 @@ namespace LuciferiumExpansion
             _powerComp = parent.GetComp<CompPowerTrader>();
             _resourceComp = parent.GetComp<CompResource>();
         }
-
 
         public override void PostDeSpawn(Map map)
         {
@@ -48,13 +47,13 @@ namespace LuciferiumExpansion
             int ticksGame = Find.TickManager.TicksGame;
             if (_nextProduceTick == -1)
             {
-                _nextProduceTick = ticksGame + CollectorProperties.ticksPerPortion;
+                _nextProduceTick = ticksGame + Props.ticksPerPortion;
                 return;
             }
             if (ticksGame >= _nextProduceTick)
             {
                 TryProducePortion();
-                _nextProduceTick = ticksGame + CollectorProperties.ticksPerPortion;
+                _nextProduceTick = ticksGame + Props.ticksPerPortion;
             }
         }
 
@@ -62,14 +61,17 @@ namespace LuciferiumExpansion
         {
             StringBuilder stringBuilder = new StringBuilder();
 
+            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(_resourceComp.Props.Resource.name, ScarletSludgeManager.Instance.ScarletSludgeAmount));
 
             if (!ProductionReport().Accepted)
-                return "USH_LE_CantProduce".Translate(ProductionReport().Reason).Colorize(ColorLibrary.RedReadable);
+            {
+                stringBuilder.AppendLine("USH_LE_CantProduce".Translate(ProductionReport().Reason).Colorize(ColorLibrary.RedReadable));
+                return stringBuilder.ToString().TrimEnd();
+            }
 
             stringBuilder.AppendLine("USH_LE_Efficiency".Translate((Efficiency() * 100f).ToString()));
 
             stringBuilder.AppendLine("USH_LE_Producing".Translate(LitersPerDay().ToString()));
-
             return stringBuilder.ToString().TrimEnd();
         }
 
@@ -78,6 +80,7 @@ namespace LuciferiumExpansion
             if (!ProductionReport().Accepted)
                 return;
 
+            ScarletSludgeManager.Instance.ScarletSludgeAmount -= DistributeAmount();
             _resourceComp.PipeNet.DistributeAmongStorage(DistributeAmount(), out var _);
         }
 
@@ -89,8 +92,11 @@ namespace LuciferiumExpansion
             if (!parent.def.canBeUsedUnderRoof && _currentMap.roofGrid.Roofed(parent.Position))
                 return "Roofed".Translate().CapitalizeFirst();
 
-            if (_resourceComp.PipeNet != null && _resourceComp.PipeNet.storages.Count == 0)
+            if (_resourceComp.PipeNet != null && (_resourceComp.PipeNet.storages.Count == 0 || _resourceComp.PipeNet.AvailableCapacity < DistributeAmount()))
                 return "USH_LE_NoStorage".Translate().CapitalizeFirst();
+
+            if (ScarletSludgeManager.Instance.ScarletSludgeAmount <= 0)
+                return "USH_LE_NoScarletSludge".Translate(_resourceComp.PipeNet.def.resource.name).CapitalizeFirst();
 
             return true;
         }
@@ -107,12 +113,12 @@ namespace LuciferiumExpansion
 
         private float DistributeAmount()
         {
-            return Efficiency() * CollectorProperties.portionSize;
+            return Efficiency() * Props.portionSize;
         }
 
         private float LitersPerDay()
         {
-            return 60000 / CollectorProperties.ticksPerPortion * DistributeAmount();
+            return 60000 / Props.ticksPerPortion * DistributeAmount();
         }
     }
 }
