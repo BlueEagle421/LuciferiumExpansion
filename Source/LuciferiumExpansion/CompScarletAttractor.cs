@@ -44,7 +44,7 @@ namespace LuciferiumExpansion
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.AppendLine("USH_LE_WillAttract".Translate(Props.scarletSludgeToAdd, ScarletSludgeManager.Instance.ConvertedToLuciferium(Props.scarletSludgeToAdd)));
+            stringBuilder.AppendLine("USH_LE_WillAttract".Translate(Props.scarletSludgeToAdd, Props.scarletSludgeToAdd.ConvertToLuciferium()));
 
             return stringBuilder.ToString().TrimEnd();
         }

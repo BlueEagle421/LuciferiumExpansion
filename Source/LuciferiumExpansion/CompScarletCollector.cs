@@ -61,7 +61,8 @@ namespace LuciferiumExpansion
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(ScarletSludgeManager.Instance.ScarletSludgeAmount, ScarletSludgeManager.Instance.ConvertedToLuciferium()));
+            float sludgeLeft = ScarletSludgeManager.Instance.ScarletSludgeAmount;
+            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(sludgeLeft, sludgeLeft.ConvertToLuciferium()));
 
             if (!ProductionReport().Accepted)
             {
@@ -69,9 +70,9 @@ namespace LuciferiumExpansion
                 return stringBuilder.ToString().TrimEnd();
             }
 
-            stringBuilder.AppendLine("USH_LE_Efficiency".Translate((Efficiency() * 100f).ToString()));
+            stringBuilder.AppendLine("USH_LE_Efficiency".Translate(Efficiency() * 100f));
 
-            stringBuilder.AppendLine("USH_LE_Producing".Translate(LitersPerDay().ToString()));
+            stringBuilder.AppendLine("USH_LE_Producing".Translate(LitersPerDay()));
             return stringBuilder.ToString().TrimEnd();
         }
 
