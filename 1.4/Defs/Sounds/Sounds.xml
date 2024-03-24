@@ -19,5 +19,24 @@
       </li>
     </subSounds>
   </SoundDef>
+  
+    <SoundDef>
+    <defName>USH_ScarletBeam</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/USH_ScarletBeam</clipPath>
+          </li>
+        </grains>
+        <volumeRange>80</volumeRange>
+        <pitchRange>0.99~1.01</pitchRange>
+        <distRange>0~51.86047</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
 
 </Defs>

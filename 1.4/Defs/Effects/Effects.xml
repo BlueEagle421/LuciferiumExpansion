@@ -31,5 +31,20 @@
       <acceleration>(0,0,0.0014)</acceleration>
     </mote>
   </ThingDef>
+  
+   <ThingDef ParentName="MoteBase">
+    <defName>USH_ScarletBeam</defName>
+    <graphicData>
+      <texPath>Things/Mote/USH_ScarletBeam</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <mote>
+      <fadeInTime>0.5</fadeInTime>
+      <solidTime>0.15</solidTime>
+      <fadeOutTime>0.6</fadeOutTime>
+    </mote>
+  </ThingDef>
 
 </Defs>

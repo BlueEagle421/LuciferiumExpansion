@@ -61,11 +61,13 @@
     <Compile Include="CompModdedResourceStorage.cs" />
     <Compile Include="CompLuciferiumSynthesizer.cs" />
     <Compile Include="CompLuciferiumPump.cs" />
+    <Compile Include="CompScaretAttractor.cs" />
     <Compile Include="HediffCompRemoveSkillXP.cs" />
     <Compile Include="HediffCompLowerSeverity.cs" />
     <Compile Include="CompScarletRefinery.cs" />
     <Compile Include="CompScarletCollector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScarletSludgeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
