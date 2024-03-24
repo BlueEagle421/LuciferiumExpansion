@@ -21,14 +21,13 @@
     <passability>PassThroughOnly</passability>
     <fillPercent>0.2</fillPercent>
     <statBases>
-
       <MaxHitPoints>100</MaxHitPoints>
       <Mass>30</Mass>
       <Flammability>0.7</Flammability>
     </statBases>
     <rotatable>false</rotatable>
     <size>(1,1)</size>
-	<designationCategory>VCHE_PipeNetworks</designationCategory>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
     <minifiedDef>MinifiedThing</minifiedDef>
     <costList>
       <Steel>60</Steel>
@@ -47,7 +46,6 @@
       <li Class="LuciferiumExpansion.CompProperties_ScarletAttractor">
         <scarletSludgeToAdd>23040</scarletSludgeToAdd>
         <soundDef>USH_ScarletBeam</soundDef>
-
         <jobString>activate</jobString>
         <activateTexPath>UI/Commands/ActivateTurret</activateTexPath>
         <targetingParameters>
@@ -65,7 +63,7 @@
     <tradeTags>
       <li>ExoticBuilding</li>
     </tradeTags>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>ReinforcedCoresRes</li>
     </researchPrerequisites>
   </ThingDef>

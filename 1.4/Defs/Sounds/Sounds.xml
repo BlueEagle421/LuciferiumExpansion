@@ -19,7 +19,7 @@
       </li>
     </subSounds>
   </SoundDef>
-  
+
   <SoundDef>
     <defName>USH_ScarletBeam</defName>
     <context>MapOnly</context>
@@ -38,8 +38,8 @@
       </li>
     </subSounds>
   </SoundDef>
-  
-   <SoundDef>
+
+  <SoundDef>
     <defName>USH_LuciferiumMedicalPump</defName>
     <context>MapOnly</context>
     <maxSimultaneous>1</maxSimultaneous>
