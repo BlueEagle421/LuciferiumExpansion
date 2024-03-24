@@ -64,6 +64,7 @@
         <fuelConsuption>12</fuelConsuption>
         <range>8.9</range>
         <selectionTexPath>UI/Commands/ActivateTurret</selectionTexPath>
+        <soundDef>USH_LuciferiumMedicalPump</soundDef>
         <hediffDefComa>USH_ScarletComa</hediffDefComa>
         <hediffDefAddiction>LuciferiumAddiction</hediffDefAddiction>
         <effecterDef>USH_RedSmokeEffect</effecterDef>

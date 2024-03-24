@@ -28,6 +28,7 @@ namespace LuciferiumExpansion
         public int baseUsages = 3;
         public int fuelConsuption = 12;
         public float range;
+        public SoundDef soundDef;
         public HediffDef hediffDefComa;
         public HediffDef hediffDefAddiction;
         public EffecterDef effecterDef;
@@ -189,8 +190,12 @@ namespace LuciferiumExpansion
             _selectedCorpse = null;
             _compRefuelable.ConsumeFuel(Props.fuelConsuption);
             _usagesLeft--;
+            PlayResurrectionSound();
+            SpawnResurrectionFleck();
             CheckForSelfDeconstruction();
         }
+
+        private void PlayResurrectionSound() => Props.soundDef.PlayOneShot(new TargetInfo(parent.Position, parent.Map, false));
 
         private void SpawnResurrectionEffect(Pawn pawn)
         {
@@ -217,6 +222,11 @@ namespace LuciferiumExpansion
                 addedComa.Severity = 1;
                 foundAddiction.Severity = 1;
             }
+        }
+
+        private void SpawnResurrectionFleck()
+        {
+            FleckMaker.Static(parent.Position, parent.Map, FleckDefOf.PsycastAreaEffect, 2f);
         }
 
         public void CheckForSelfDeconstruction()
