@@ -63,7 +63,7 @@
         <baseUsages>3</baseUsages>
         <fuelConsuption>12</fuelConsuption>
         <range>8.9</range>
-        <selectionTexPath>UI/Commands/ActivateTurret</selectionTexPath>
+        <selectionTexPath>UI/Gizmos/TargetCorpse</selectionTexPath>
         <soundDef>USH_LuciferiumMedicalPump</soundDef>
         <hediffDefComa>USH_ScarletComa</hediffDefComa>
         <hediffDefAddiction>LuciferiumAddiction</hediffDefAddiction>
@@ -74,7 +74,7 @@
         <ticksToActivate>60</ticksToActivate>
         <jobString>activate</jobString>
         <onCooldownString>cooling off</onCooldownString>
-        <activateTexPath>UI/Commands/ActivateTurret</activateTexPath>
+        <activateTexPath>UI/Gizmos/ActivatePump</activateTexPath>
         <targetingParameters>
           <canTargetBuildings>false</canTargetBuildings>
           <canTargetAnimals>false</canTargetAnimals>

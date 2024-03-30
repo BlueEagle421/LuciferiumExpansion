@@ -50,7 +50,7 @@
         <scarletSludgeToAdd>23040</scarletSludgeToAdd>
         <soundDef>USH_ScarletBeam</soundDef>
         <jobString>activate</jobString>
-        <activateTexPath>UI/Commands/ActivateTurret</activateTexPath>
+        <activateTexPath>UI/Gizmos/ActivatePump</activateTexPath>
         <targetingParameters>
           <canTargetBuildings>false</canTargetBuildings>
           <canTargetAnimals>false</canTargetAnimals>
