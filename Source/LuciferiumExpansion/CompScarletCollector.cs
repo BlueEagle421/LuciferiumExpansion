@@ -16,7 +16,6 @@ namespace LuciferiumExpansion
         public CompProperties_ScarletCollector() => compClass = typeof(CompScarletCollector);
     }
 
-    [StaticConstructorOnStartup]
     public class CompScarletCollector : ThingComp
     {
         private CompPowerTrader _powerComp;
