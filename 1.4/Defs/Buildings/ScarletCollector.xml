@@ -5,7 +5,8 @@
     <label>scarlet collector</label>
     <description>A machine equipped with plasteel magnets capable of collecting scarlet sludge. The process can be sped up with various scarlet particles attractors.
       \nScarlet particles alone are very rare, so most of what is gathered are toxins, ashes and other contaminants from the air. The end product comes out as a scarlet sludge – a dense, oil like substance with few viable mechanites.
-      \nNote that collectors can't work under roof.</description>
+      \nNote that collectors can't work under roof.
+	  \nScarlet sludge is a finite resource and will decrease over time. Its presence in the air is due to archotechs, who were the only ones capable of producing scarlet mechanites. If all sludge is depleted on this planet, every collector will stop working. There are ways to summon more, but they are very costly.</description>
     <graphicData>
       <drawOffset>(0,0,0.15)</drawOffset>
       <texPath>Things/Building/Production/LuciferiumCollector</texPath>
@@ -81,8 +82,9 @@
     <label>advanced scarlet collector</label>
     <description>An advanced machine equipped with plasteel magnets capable of collecting scarlet sludge. It has a reinforced core going through the whole construction that can cumulate more energy and attract scarlet particles on its own. The process can be sped up with various scarlet particles attractors.
       \nScarlet particles alone are very rare, so most of what is gathered are toxins, ashes and other contaminants from the air. The end product comes out as a scarlet sludge – a dense, oil like substance with few viable mechanites.
-      \nNote that collectors can't work under roof.</description>
-    <graphicData>
+      \nNote that collectors can't work under roof.
+	  \nScarlet sludge is a finite resource and will decrease over time. Its presence in the air is due to archotechs, who were the only ones capable of producing scarlet mechanites. If all sludge is depleted on this planet, every collector will stop working. There are ways to summon more, but they are very costly.</description>
+	<graphicData>
       <drawOffset>(0,0,0.15)</drawOffset>
       <texPath>Things/Building/Production/AdvancedLuciferiumCollector</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

@@ -4,7 +4,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>USH_ScarletAttractor</defName>
     <label>scarlet attractor</label>
-    <description>vip</description>
+    <description>A small, but powerful signal broadcaster capable of sending an encrypted message across galaxies. If any scarlet mechanites pick up on it, a primal instinct will guide them towards the signal source. The overheating of such a powerful shock will evaporate the attractor from existence, but it will summon a substantial amount of scarlet sludge for further collecting.</description>
     <graphicData>
       <texPath>Things/Building/Production/LuciferiumPump</texPath>
       <graphicClass>Graphic_Single</graphicClass>
