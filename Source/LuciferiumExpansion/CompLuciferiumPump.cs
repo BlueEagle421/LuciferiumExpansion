@@ -23,7 +23,7 @@ namespace LuciferiumExpansion
             GenDraw.DrawRadiusRing(center, props.range);
         }
     }
-    public class CompProperties_LuciferiumPump : CompProperties_Activable
+    public class CompProperties_LuciferiumPump : CompProperties_Interactable
     {
         public int baseUsages = 3;
         public int fuelConsuption = 12;
@@ -39,7 +39,7 @@ namespace LuciferiumExpansion
     }
 
     [StaticConstructorOnStartup]
-    public class CompLuciferiumPump : CompActivable
+    public class CompLuciferiumPump : CompInteractable
     {
         private CompRefuelable _compRefuelable;
         private int _usagesLeft;
@@ -114,9 +114,10 @@ namespace LuciferiumExpansion
             Scribe_Values.Look(ref _usagesLeft, "USH_UsagesLeft", Props.baseUsages);
         }
 
-        public override AcceptanceReport CanActivate(Pawn activateBy = null)
+        public override AcceptanceReport CanInteract(Pawn activateBy = null, bool checkOptionalItems = true)
         {
-            AcceptanceReport result = base.CanActivate(activateBy);
+            AcceptanceReport result = base.CanInteract(activateBy, checkOptionalItems);
+
             if (!result.Accepted)
                 return result;
 
@@ -126,14 +127,14 @@ namespace LuciferiumExpansion
             return true;
         }
 
-        public override void Activate()
+        protected override void OnInteracted(Pawn caster)
         {
-            base.Activate();
+            base.OnInteracted(caster);
 
             TryToResurrect(_selectedCorpse);
         }
 
-        protected override bool TryUse()
+        protected override bool TryInteractTick()
         {
             if (IsCorpseValid(_selectedCorpse))
                 return false;
@@ -183,7 +184,7 @@ namespace LuciferiumExpansion
 
         private void Resurrect(Pawn pawn)
         {
-            ResurrectionUtility.Resurrect(pawn);
+            ResurrectionUtility.TryResurrect(pawn);
             SpawnResurrectionEffect(pawn);
             HandleHediffs(pawn);
 

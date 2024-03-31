@@ -43,7 +43,6 @@
         <maxSimultaneous>1</maxSimultaneous>
         <mustBePlacedAdjacent>true</mustBePlacedAdjacent>
       </li>
-      <li Class="LuciferiumExpansion.CompProperties_LuciferiumPump" />
       <li Class="CompProperties_Refuelable">
         <fuelConsumptionRate>22</fuelConsumptionRate>
         <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -55,6 +54,34 @@
         </fuelFilter>
         <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
       </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="LuciferiumExpansion.CompProperties_LuciferiumPump">
+        <baseUsages>3</baseUsages>
+        <fuelConsuption>12</fuelConsuption>
+        <range>8.9</range>
+        <selectionTexPath>UI/Gizmos/TargetCorpse</selectionTexPath>
+        <soundDef>USH_LuciferiumMedicalPump</soundDef>
+        <hediffDefComa>USH_ScarletComa</hediffDefComa>
+        <hediffDefAddiction>LuciferiumAddiction</hediffDefAddiction>
+        <effecterDef>USH_RedSmokeEffect</effecterDef>
+        <sustainEffectTicks>400</sustainEffectTicks>
+        <activeTicks>1</activeTicks>
+        <cooldownTicks>1000</cooldownTicks>
+        <ticksToActivate>60</ticksToActivate>
+        <jobString>activate</jobString>
+        <onCooldownString>cooling off</onCooldownString>
+        <activateTexPath>UI/Gizmos/ActivatePump</activateTexPath>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
     </comps>
     <thingSetMakerTags>
       <li>RewardStandardMidFreq</li>
@@ -65,6 +92,7 @@
     </tradeTags>
     <placeWorkers>
       <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>LuciferiumExpansion.PlaceWorker_LuciferiumPump</li>
     </placeWorkers>
   </ThingDef>
 

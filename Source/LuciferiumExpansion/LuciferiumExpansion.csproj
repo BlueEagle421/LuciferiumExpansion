@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.4\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -35,11 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\Moje twórczości\Mody\RimworldDevKit\Dependencies\BaseGameManaged\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\Moje twórczości\Mody\RimworldDevKit\Dependencies\1.5\BaseGameManaged\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PipeSystem">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\Moje twórczości\Mody\RimworldDevKit\Dependencies\VanillaFrameworkExpanded\1.4\Assemblies\PipeSystem.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\Moje twórczości\Mody\RimworldDevKit\Dependencies\1.5\VanillaFrameworkExpanded\Used\PipeSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,11 +49,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\Moje twórczości\Mody\RimworldDevKit\Dependencies\BaseGameManaged\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\Moje twórczości\Mody\RimworldDevKit\Dependencies\1.5\BaseGameManaged\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\Moje twórczości\Mody\RimworldDevKit\Dependencies\BaseGameManaged\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\..\Users\Joachim\Desktop\Moje twórczości\Mody\RimworldDevKit\Dependencies\1.5\BaseGameManaged\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

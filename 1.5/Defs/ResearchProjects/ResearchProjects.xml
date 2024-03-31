@@ -128,7 +128,7 @@
     <ResearchProjectDef ParentName="LEProjectBase">
         <defName>ReinforcedCoresRes</defName>
         <label>Reinforced cores</label>
-        <description>Build an andvanced version of scarlet collectors and heavy sludge tanks with greater capacity.</description>
+        <description>Build an andvanced version of scarlet collectors and scarlet attractors when your planet runs out of scalret sludge.</description>
         <baseCost>4000</baseCost>
         <prerequisites>
             <li>LuciferiumRes</li>

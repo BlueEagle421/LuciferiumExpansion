@@ -7,7 +7,7 @@ namespace LuciferiumExpansion
 {
     public class CompProperties_ScarletRefinery : CompProperties
     {
-        public Vector2 fireDrawPositionOffset = new Vector2(0.04f, 1.9f);
+        public Vector2 fireDrawPositionOffset = new Vector2(0.04f, 1.05f);
         public CompProperties_ScarletRefinery() => compClass = typeof(CompScarletRefinery);
     }
 

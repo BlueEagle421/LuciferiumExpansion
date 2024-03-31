@@ -61,7 +61,7 @@ namespace LuciferiumExpansion
             StringBuilder stringBuilder = new StringBuilder();
 
             float sludgeLeft = ScarletSludgeManager.Instance.ScarletSludgeAmount;
-            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(sludgeLeft, sludgeLeft.ConvertToLuciferium()));
+            stringBuilder.AppendLine("USH_LE_ScarletSludgeLeft".Translate(sludgeLeft, sludgeLeft.ConvertToLuciferium().ToString("0.0")));
 
             if (!ProductionReport().Accepted)
             {

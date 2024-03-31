@@ -176,6 +176,12 @@
     <thingCategories>
       <li>BuildingsProduction</li>
     </thingCategories>
+	<building>
+	  <relatedBuildCommands>
+        <li>VCHE_ScarletMechanitesPlatform</li>
+        <li>VCHE_CompressedScarletSludgePlatform</li>
+      </relatedBuildCommands>
+    </building>
     <statBases>
       <MaxHitPoints>380</MaxHitPoints>
       <Mass>42</Mass>
@@ -191,20 +197,19 @@
     <comps>
       <li Class="PipeSystem.CompProperties_ResourceProcessor">
         <pipeNet>ScarletNet</pipeNet>
-        <showBufferInfo>false</showBufferInfo>
+        <showBufferInfo>true</showBufferInfo>
         <results>
           <li>
-            <countNeeded>120</countNeeded>
-            <eachTicks>14400</eachTicks>
+            <countNeeded>48</countNeeded>
+            <eachTicks>7200</eachTicks>
             <thing>LuciferiumCrystals</thing>
             <thingCount>1</thingCount>
             <net>USH_ScarletMechanitesNet</net>
             <netCount>1</netCount>
           </li>
-
           <li>
-            <countNeeded>20</countNeeded>
-            <eachTicks>4800</eachTicks>
+            <countNeeded>8</countNeeded>
+            <eachTicks>2400</eachTicks>
             <thing>LuciferiumDrops</thing>
             <thingCount>1</thingCount>
             <net>USH_CompressedScarletSludgeNet</net>
@@ -219,7 +224,7 @@
       <li Class="PipeSystem.CompProperties_Resource">
         <pipeNet>USH_CompressedScarletSludgeNet</pipeNet>
       </li>
-      <li Class="LuciferiumExpansion.CompProperties_ScarlettRefinery" />
+      <li Class="LuciferiumExpansion.CompProperties_ScarletRefinery" />
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>350</basePowerConsumption>

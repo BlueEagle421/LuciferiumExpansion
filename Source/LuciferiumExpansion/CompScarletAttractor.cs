@@ -6,7 +6,7 @@ using Verse.Sound;
 
 namespace LuciferiumExpansion
 {
-    public class CompProperties_ScarletAttractor : CompProperties_Activable
+    public class CompProperties_ScarletAttractor : CompProperties_Interactable
     {
         public float scarletSludgeToAdd;
         public SoundDef soundDef;
@@ -15,7 +15,7 @@ namespace LuciferiumExpansion
     }
 
     [StaticConstructorOnStartup]
-    public class CompScarletAttractor : CompActivable
+    public class CompScarletAttractor : CompInteractable
     {
         internal List<IntVec3> _lumpCells;
         private Map _currentMap;
@@ -28,17 +28,14 @@ namespace LuciferiumExpansion
             _currentMap = parent.Map;
         }
 
-        public override void Activate()
+        protected override void OnInteracted(Pawn caster)
         {
-            base.Activate();
+            base.OnInteracted(caster);
 
             AttractScarletSludge();
         }
 
-        protected override bool TryUse()
-        {
-            return true;
-        }
+        protected override bool TryInteractTick() => true;
 
         public override string CompInspectStringExtra()
         {
