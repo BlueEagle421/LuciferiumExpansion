@@ -106,7 +106,6 @@
       </damageData>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
     <pathCost>50</pathCost>
     <blockWind>true</blockWind>
     <castEdgeShadows>true</castEdgeShadows>
@@ -165,7 +164,6 @@
     </graphicData>
     <rotatable>false</rotatable>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <passability>Impassable</passability>
     <pathCost>50</pathCost>
     <blockWind>true</blockWind>
     <castEdgeShadows>false</castEdgeShadows>
@@ -176,8 +174,8 @@
     <thingCategories>
       <li>BuildingsProduction</li>
     </thingCategories>
-	<building>
-	  <relatedBuildCommands>
+    <building>
+      <relatedBuildCommands>
         <li>VCHE_ScarletMechanitesPlatform</li>
         <li>VCHE_CompressedScarletSludgePlatform</li>
       </relatedBuildCommands>

@@ -187,7 +187,6 @@
     <uiIconScale>1.2</uiIconScale>
     <defaultPlacingRot>South</defaultPlacingRot>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <passability>Impassable</passability>
     <pathCost>50</pathCost>
     <blockWind>true</blockWind>
     <castEdgeShadows>false</castEdgeShadows>
