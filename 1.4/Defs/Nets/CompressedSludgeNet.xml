@@ -95,7 +95,6 @@
       <li Class="PipeSystem.CompProperties_ConvertResourceToThing">
         <pipeNet>USH_CompressedScarletSludgeNet</pipeNet>
         <thing>LuciferiumDrops</thing>
-        <maxOutputStackSize>150</maxOutputStackSize>
       </li>
     </comps>
     <researchPrerequisites>
