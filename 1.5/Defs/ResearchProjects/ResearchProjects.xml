@@ -4,6 +4,8 @@
     <ResearchTabDef>
         <defName>USH_LuciferiumExpansion</defName>
         <label>Luciferium Expansion</label>
+        <generalTitle>Advanced luciferium research projects</generalTitle>
+        <generalDescription>Learn how to collect and refine scarlet sludge into drugs that enhance the body beyond human comprehension.</generalDescription>
     </ResearchTabDef>
 
     <ResearchProjectDef Name="LEProjectBase" Abstract="True">

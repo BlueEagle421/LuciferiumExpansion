@@ -4,7 +4,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>USH_LuciferiumMedicalPump</defName>
     <label>luciferium medical pump</label>
-    <description>A machine that connects to the user's bloodstream with various plasteel tubes. It activates upon detecting loss of life, then starts pumping out a massive dose of scarlet mechanites. People without any mechanite tolerance will fall into a five-day-long coma due to the sudden shock and will develop a Luciferium addiction need, whereas those with tolerance will only suffer for one day without further consequences. A successful operation evokes full body resurrection. The machine deconstructs itself after three uses and requires twelve Luciferium per operation.</description>
+    <description>A machine that can pump out a massive dose of scarlet mechanites. People without any mechanite tolerance will fall into a five-day-long coma due to the sudden shock and will develop a Luciferium addiction need, whereas those with tolerance will only suffer for one day without further consequences. A successful operation evokes full body resurrection. The machine deconstructs itself after three uses and requires twelve Luciferium per operation.</description>
     <graphicData>
       <texPath>Things/Building/Production/LuciferiumPump</texPath>
       <graphicClass>Graphic_Single</graphicClass>
