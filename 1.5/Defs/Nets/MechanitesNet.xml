@@ -95,7 +95,6 @@
       <li Class="PipeSystem.CompProperties_ConvertResourceToThing">
         <pipeNet>USH_ScarletMechanitesNet</pipeNet>
         <thing>LuciferiumCrystals</thing>
-        <maxOutputStackSize>150</maxOutputStackSize>
       </li>
     </comps>
     <researchPrerequisites>
@@ -216,7 +215,7 @@
     </costList>
     <comps>
       <li Class="PipeSystem.CompProperties_ResourceStorage">
-		<compClass>LuciferiumExpansion.CompModdedResourceStorage</compClass>
+        <compClass>LuciferiumExpansion.CompModdedResourceStorage</compClass>
         <pipeNet>USH_ScarletMechanitesNet</pipeNet>
         <storageCapacity>24</storageCapacity>
         <drawStorageBar>false</drawStorageBar>
