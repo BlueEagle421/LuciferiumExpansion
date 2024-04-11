@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_Luciferium</defName>
     <label>synthesise Luciferium</label>
@@ -8,7 +8,7 @@
     <jobString>Synthesizing Luciferium.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>3580</workAmount>
     <ingredients>
       <li>
@@ -30,14 +30,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>LuciferiumRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_Luciferium_Bulk</defName>
     <label>synthesise Luciferium x4</label>
@@ -45,7 +45,7 @@
     <jobString>Synthesizing Luciferium x4.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>14320</workAmount>
     <ingredients>
       <li>
@@ -67,15 +67,15 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>LuciferiumRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
-  
+
+
   <RecipeDef>
     <defName>USH_Synthesise_RedFlicker</defName>
     <label>synthesise redFlicker</label>
@@ -83,7 +83,7 @@
     <jobString>Synthesizing redFlicker.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>1480</workAmount>
     <ingredients>
       <li>
@@ -94,7 +94,7 @@
         </filter>
         <count>8</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>PsychoidLeaves</li>
@@ -102,7 +102,7 @@
         </filter>
         <count>4</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -114,8 +114,8 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>LuciferiumCrystals</li>
-		<li>PsychoidLeaves</li>
-		<li>Plasteel</li>
+        <li>PsychoidLeaves</li>
+        <li>Plasteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -123,14 +123,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>RedFlickerRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_RedFlicker_Bulk</defName>
     <label>synthesise redFlicker x4</label>
@@ -138,7 +138,7 @@
     <jobString>Synthesizing redFlicker x4.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>5920</workAmount>
     <ingredients>
       <li>
@@ -149,7 +149,7 @@
         </filter>
         <count>32</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>PsychoidLeaves</li>
@@ -157,7 +157,7 @@
         </filter>
         <count>16</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -169,8 +169,8 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>LuciferiumCrystals</li>
-		<li>PsychoidLeaves</li>
-		<li>Plasteel</li>
+        <li>PsychoidLeaves</li>
+        <li>Plasteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -178,14 +178,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>RedFlickerRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_ScarletEye</defName>
     <label>synthesise scarlet eye</label>
@@ -193,7 +193,7 @@
     <jobString>Synthesizing scarlet eye.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>1250</workAmount>
     <ingredients>
       <li>
@@ -204,7 +204,7 @@
         </filter>
         <count>6</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Neutroamine</li>
@@ -212,7 +212,7 @@
         </filter>
         <count>1</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -224,8 +224,8 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>LuciferiumCrystals</li>
-		<li>Neutroamine</li>
-		<li>Plasteel</li>
+        <li>Neutroamine</li>
+        <li>Plasteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -233,14 +233,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>ScarlettRefining</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_ScarletEye_Bulk</defName>
     <label>synthesise scarlet eye x4</label>
@@ -248,7 +248,7 @@
     <jobString>Synthesizing scarlet eye x4.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>5000</workAmount>
     <ingredients>
       <li>
@@ -259,7 +259,7 @@
         </filter>
         <count>24</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Neutroamine</li>
@@ -267,7 +267,7 @@
         </filter>
         <count>4</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -279,8 +279,8 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>LuciferiumCrystals</li>
-		<li>Neutroamine</li>
-		<li>Plasteel</li>
+        <li>Neutroamine</li>
+        <li>Plasteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -288,22 +288,22 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>ScarlettRefining</li>
     </researchPrerequisites>
   </RecipeDef>
-  
-    <RecipeDef>
+
+  <RecipeDef>
     <defName>USH_Synthesise_ScarletSmellingSalts</defName>
     <label>synthesise scarlet smelling salts</label>
     <description>Synthesise scarlet smelling salts.</description>
     <jobString>Synthesizing scarlet smelling salts.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>900</workAmount>
     <ingredients>
       <li>
@@ -314,7 +314,7 @@
         </filter>
         <count>4</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -326,7 +326,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>LuciferiumCrystals</li>
-		<li>Plasteel</li>
+        <li>Plasteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -334,14 +334,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>ScarletSmellingSaltsRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_ScarletSmellingSalts_Bulk</defName>
     <label>synthesise scarlet smelling salts x4</label>
@@ -349,7 +349,7 @@
     <jobString>Synthesizing scarlet smelling salts x4.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>3600</workAmount>
     <ingredients>
       <li>
@@ -358,9 +358,9 @@
             <li>LuciferiumCrystals</li>
           </thingDefs>
         </filter>
-        <count>24</count>
+        <count>16</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -372,7 +372,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>LuciferiumCrystals</li>
-		<li>Plasteel</li>
+        <li>Plasteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -380,14 +380,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>ScarletSmellingSaltsRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_LastWish</defName>
     <label>synthesise last-wish</label>
@@ -395,7 +395,7 @@
     <jobString>Synthesizing last-wish.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>1840</workAmount>
     <ingredients>
       <li>
@@ -406,7 +406,7 @@
         </filter>
         <count>20</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Neutroamine</li>
@@ -414,7 +414,7 @@
         </filter>
         <count>4</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -426,8 +426,8 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>LuciferiumCrystals</li>
-		<li>Neutroamine</li>
-		<li>Plasteel</li>
+        <li>Neutroamine</li>
+        <li>Plasteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -435,14 +435,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>LastWishRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_LastWish_Bulk</defName>
     <label>synthesise last-wish x4</label>
@@ -450,7 +450,7 @@
     <jobString>Synthesizing last-wish x4.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>7360</workAmount>
     <ingredients>
       <li>
@@ -461,7 +461,7 @@
         </filter>
         <count>80</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Neutroamine</li>
@@ -469,7 +469,7 @@
         </filter>
         <count>16</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Plasteel</li>
@@ -481,8 +481,8 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>LuciferiumCrystals</li>
-		<li>Neutroamine</li>
-		<li>Plasteel</li>
+        <li>Neutroamine</li>
+        <li>Plasteel</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -490,14 +490,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>LastWishRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_MechaSuppressors</defName>
     <label>synthesise mecha suppressors</label>
@@ -505,7 +505,7 @@
     <jobString>Synthesizing mecha suppressors.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>2210</workAmount>
     <ingredients>
       <li>
@@ -516,7 +516,7 @@
         </filter>
         <count>1</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Neutroamine</li>
@@ -528,7 +528,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>Luciferium</li>
-		<li>Neutroamine</li>
+        <li>Neutroamine</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -536,14 +536,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>LastWishRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_MechaSuppressors_Bulk</defName>
     <label>synthesise mecha suppressors x4</label>
@@ -551,7 +551,7 @@
     <jobString>Synthesizing mecha suppressors x4.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>8840</workAmount>
     <ingredients>
       <li>
@@ -562,7 +562,7 @@
         </filter>
         <count>4</count>
       </li>
-	  <li>
+      <li>
         <filter>
           <thingDefs>
             <li>Neutroamine</li>
@@ -574,7 +574,7 @@
     <fixedIngredientFilter>
       <thingDefs>
         <li>Luciferium</li>
-		<li>Neutroamine</li>
+        <li>Neutroamine</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
@@ -582,14 +582,14 @@
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>LastWishRes</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
   <RecipeDef>
     <defName>USH_Synthesise_Lifter</defName>
     <label>synthesise lifter</label>
@@ -597,7 +597,7 @@
     <jobString>Synthesizing lifter.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>380</workAmount>
     <ingredients>
       <li>
@@ -619,22 +619,22 @@
     </products>
     <skillRequirements>
       <Intellectual>4</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>ScarlettRefining</li>
     </researchPrerequisites>
   </RecipeDef>
-  
-    <RecipeDef>
+
+  <RecipeDef>
     <defName>USH_Synthesise_Lifter_Bulk</defName>
     <label>synthesise lifter x4</label>
     <description>Synthesise lifter x4.</description>
     <jobString>Synthesizing lifter x4.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-	<soundWorking>Recipe_Drug</soundWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
     <workAmount>1520</workAmount>
     <ingredients>
       <li>
@@ -656,12 +656,12 @@
     </products>
     <skillRequirements>
       <Intellectual>4</Intellectual>
-	  <Crafting>4</Crafting>
+      <Crafting>4</Crafting>
     </skillRequirements>
     <workSkill>Crafting</workSkill>
-	<researchPrerequisites>
+    <researchPrerequisites>
       <li>ScarlettRefining</li>
     </researchPrerequisites>
   </RecipeDef>
-  
+
 </Defs>
