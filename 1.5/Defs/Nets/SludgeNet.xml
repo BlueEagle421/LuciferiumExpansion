@@ -150,10 +150,10 @@
       \n120 scarlet sludge -> 1 scarlet mechanite</description>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
-      <drawOffset>(0,0,0.85)</drawOffset>
-      <texPath>Things/Building/Production/ScarlettRefinery</texPath>
+      <!-- <drawOffset>(0,0,0.85)</drawOffset> -->
+      <texPath>Things/Building/Production/ScarlettRefineryNew</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(2,3)</drawSize>
+      <drawSize>(4,4)</drawSize>
       <damageData>
         <cornerBL>Damage/Corner</cornerBL>
         <cornerBR>Damage/Corner</cornerBR>
@@ -186,7 +186,7 @@
       <WorkToBuild>9500</WorkToBuild>
       <Flammability>1.0</Flammability>
     </statBases>
-    <size>(2,1)</size>
+    <size>(2,2)</size>
     <costList>
       <Steel>200</Steel>
       <Plasteel>25</Plasteel>
@@ -222,7 +222,9 @@
       <li Class="PipeSystem.CompProperties_Resource">
         <pipeNet>USH_CompressedScarletSludgeNet</pipeNet>
       </li>
-      <li Class="LuciferiumExpansion.CompProperties_ScarletRefinery" />
+      <li Class="LuciferiumExpansion.CompProperties_ScarletRefinery">
+        <fireDrawPositionOffset>(0.04, 1.35)</fireDrawPositionOffset>
+      </li>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>350</basePowerConsumption>
