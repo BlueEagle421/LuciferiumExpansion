@@ -44,7 +44,7 @@ namespace LuciferiumExpansion
         private CompRefuelable _compRefuelable;
         private int _usagesLeft;
         private Corpse _selectedCorpse;
-        public CompProperties_LuciferiumPump Props => (CompProperties_LuciferiumPump)props;
+        public CompProperties_LuciferiumPump PropsPump => (CompProperties_LuciferiumPump)props;
 
         [Unsaved(false)] private Texture2D selectionTex;
 
@@ -53,7 +53,7 @@ namespace LuciferiumExpansion
             get
             {
                 if (selectionTex == null)
-                    selectionTex = ContentFinder<Texture2D>.Get(Props.selectionTexPath);
+                    selectionTex = ContentFinder<Texture2D>.Get(PropsPump.selectionTexPath);
 
                 return selectionTex;
             }
@@ -70,7 +70,7 @@ namespace LuciferiumExpansion
         public override void Initialize(CompProperties props)
         {
             base.Initialize(props);
-            _usagesLeft = Props.baseUsages;
+            _usagesLeft = PropsPump.baseUsages;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -111,7 +111,7 @@ namespace LuciferiumExpansion
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref _usagesLeft, "USH_UsagesLeft", Props.baseUsages);
+            Scribe_Values.Look(ref _usagesLeft, "USH_UsagesLeft", PropsPump.baseUsages);
         }
 
         public override AcceptanceReport CanInteract(Pawn activateBy = null, bool checkOptionalItems = true)
@@ -189,20 +189,20 @@ namespace LuciferiumExpansion
             HandleHediffs(pawn);
 
             _selectedCorpse = null;
-            _compRefuelable.ConsumeFuel(Props.fuelConsuption);
+            _compRefuelable.ConsumeFuel(PropsPump.fuelConsuption);
             _usagesLeft--;
             PlayResurrectionSound();
             SpawnResurrectionFleck();
             CheckForSelfDeconstruction();
         }
 
-        private void PlayResurrectionSound() => Props.soundDef.PlayOneShot(new TargetInfo(parent.Position, parent.Map, false));
+        private void PlayResurrectionSound() => PropsPump.soundDef.PlayOneShot(new TargetInfo(parent.Position, parent.Map, false));
 
         private void SpawnResurrectionEffect(Pawn pawn)
         {
             Map currentMap = parent.Map;
-            Effecter spawnedEffecter = Props.effecterDef.Spawn(pawn, currentMap, 1f);
-            currentMap.effecterMaintainer.AddEffecterToMaintain(spawnedEffecter, pawn.Position, Props.sustainEffectTicks);
+            Effecter spawnedEffecter = PropsPump.effecterDef.Spawn(pawn, currentMap, 1f);
+            currentMap.effecterMaintainer.AddEffecterToMaintain(spawnedEffecter, pawn.Position, PropsPump.sustainEffectTicks);
         }
 
         private void HandleHediffs(Pawn pawn)
@@ -210,13 +210,13 @@ namespace LuciferiumExpansion
             List<Hediff> allHediffs = new List<Hediff>();
             pawn.health.hediffSet.GetHediffs(ref allHediffs);
 
-            Hediff addedComa = pawn.health.AddHediff(Props.hediffDefComa);
-            Hediff foundAddiction = allHediffs.Find(x => x.def == Props.hediffDefAddiction);
+            Hediff addedComa = pawn.health.AddHediff(PropsPump.hediffDefComa);
+            Hediff foundAddiction = allHediffs.Find(x => x.def == PropsPump.hediffDefAddiction);
 
             if (foundAddiction == null)
             {
                 addedComa.Severity = 5;
-                pawn.health.AddHediff(Props.hediffDefAddiction);
+                pawn.health.AddHediff(PropsPump.hediffDefAddiction);
             }
             else
             {
@@ -246,7 +246,7 @@ namespace LuciferiumExpansion
                 canTargetBuildings = false,
                 canTargetItems = true,
                 mapObjectTargetsMustBeAutoAttackable = false,
-                validator = (TargetInfo x) => x.Thing is Corpse && Distance(parent.Position, x.Thing.Position) < Props.range
+                validator = (TargetInfo x) => x.Thing is Corpse && Distance(parent.Position, x.Thing.Position) < PropsPump.range
             };
         }
         private float Distance(IntVec3 a, IntVec3 b)
@@ -260,7 +260,7 @@ namespace LuciferiumExpansion
         public override void PostDrawExtraSelectionOverlays()
         {
             base.PostDrawExtraSelectionOverlays();
-            GenDraw.DrawRadiusRing(parent.Position, Props.range);
+            GenDraw.DrawRadiusRing(parent.Position, PropsPump.range);
         }
     }
 }
