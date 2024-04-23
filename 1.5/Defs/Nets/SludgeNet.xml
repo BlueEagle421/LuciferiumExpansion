@@ -206,7 +206,7 @@
             <netCount>1</netCount>
           </li>
           <li>
-            <countNeeded>8</countNeeded>
+            <countNeeded>12</countNeeded>
             <eachTicks>2400</eachTicks>
             <thing>LuciferiumDrops</thing>
             <thingCount>1</thingCount>

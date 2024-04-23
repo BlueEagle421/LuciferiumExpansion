@@ -176,8 +176,8 @@
     <thingCategories>
       <li>BuildingsProduction</li>
     </thingCategories>
-	<building>
-	  <relatedBuildCommands>
+    <building>
+      <relatedBuildCommands>
         <li>VCHE_ScarletMechanitesPlatform</li>
         <li>VCHE_CompressedScarletSludgePlatform</li>
       </relatedBuildCommands>
@@ -208,7 +208,7 @@
             <netCount>1</netCount>
           </li>
           <li>
-            <countNeeded>8</countNeeded>
+            <countNeeded>12</countNeeded>
             <eachTicks>2400</eachTicks>
             <thing>LuciferiumDrops</thing>
             <thingCount>1</thingCount>
