@@ -191,7 +191,7 @@
     <blockWind>true</blockWind>
     <castEdgeShadows>false</castEdgeShadows>
     <fillPercent>0.60</fillPercent>
-    <tickerType>Normal</tickerType>
+    <tickerType>Rare</tickerType>
     <category>Building</category>
     <minifiedDef>MinifiedThing</minifiedDef>
     <thingCategories>
@@ -216,7 +216,7 @@
       <li Class="PipeSystem.CompProperties_ResourceStorage">
         <compClass>LuciferiumExpansion.CompModdedResourceStorage</compClass>
         <pipeNet>USH_ScarletMechanitesNet</pipeNet>
-        <storageCapacity>24</storageCapacity>
+        <storageCapacity>32</storageCapacity>
         <drawStorageBar>false</drawStorageBar>
         <addStorageInfo>false</addStorageInfo>
         <addTransferGizmo>false</addTransferGizmo>
@@ -231,18 +231,8 @@
         </extractOptions>
       </li>
       <li Class="LuciferiumExpansion.CompProperties_LuciferiumSynthesizer">
-        <pipeNet>USH_ScarletMechanitesNet</pipeNet>
-        <showBufferInfo>false</showBufferInfo>
-        <results>
-          <li>
-            <countNeeded>24</countNeeded>
-            <eachTicks>1000</eachTicks>
-            <thing>Luciferium</thing>
-            <thingCount>1</thingCount>
-          </li>
-        </results>
-        <notWorkingKey>USH_LE_CantRefine</notWorkingKey>
-
+        <thing>Luciferium</thing>
+        <thingCount>1</thingCount>
       </li>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
