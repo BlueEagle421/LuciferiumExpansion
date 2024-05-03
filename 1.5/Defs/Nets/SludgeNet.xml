@@ -166,7 +166,7 @@
     <altitudeLayer>BuildingOnTop</altitudeLayer>
     <pathCost>50</pathCost>
     <blockWind>true</blockWind>
-    <castEdgeShadows>false</castEdgeShadows>
+    <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>0.60</fillPercent>
     <tickerType>Normal</tickerType>
     <category>Building</category>
