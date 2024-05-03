@@ -78,9 +78,9 @@
 
   <RecipeDef>
     <defName>USH_Synthesise_RedFlicker</defName>
-    <label>synthesise redFlicker</label>
-    <description>Synthesise a redFlicker.</description>
-    <jobString>Synthesizing redFlicker.</jobString>
+    <label>synthesise red flicker</label>
+    <description>Synthesise a red flicker.</description>
+    <jobString>Synthesizing red flicker.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
     <soundWorking>Recipe_Drug</soundWorking>
@@ -133,9 +133,9 @@
 
   <RecipeDef>
     <defName>USH_Synthesise_RedFlicker_Bulk</defName>
-    <label>synthesise redFlicker x4</label>
-    <description>Synthesise redFlicker x4.</description>
-    <jobString>Synthesizing redFlicker x4.</jobString>
+    <label>synthesise red flicker x4</label>
+    <description>Synthesise red flicker x4.</description>
+    <jobString>Synthesizing red flicker x4.</jobString>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
     <soundWorking>Recipe_Drug</soundWorking>
