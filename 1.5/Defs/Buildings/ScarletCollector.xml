@@ -109,7 +109,7 @@
       <Mass>22</Mass>
       <WorkToBuild>14000</WorkToBuild>
       <Flammability>0.3</Flammability>
-      <USH_ScarlettCollectorCollectingSpeedFactor>1.5</USH_ScarlettCollectorCollectingSpeedFactor>
+      <USH_ScarlettCollectorCollectingSpeedFactor>1.8</USH_ScarlettCollectorCollectingSpeedFactor>
       <Beauty>-3</Beauty>
     </statBases>
     <comps>
