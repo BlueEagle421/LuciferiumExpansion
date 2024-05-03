@@ -29,6 +29,6 @@ namespace LuciferiumExpansion
             Scribe_Values.Look(ref _scarletSludgeAmount, "USH_ScarletSludgeAmount");
         }
 
-        private float DefaultScarletSludgeAmount() => LEUtils.SUSTAIN_ONE_YEAR * 5f;
+        private float DefaultScarletSludgeAmount() => LEUtils.SUSTAIN_ONE_YEAR * 8f;
     }
 }
