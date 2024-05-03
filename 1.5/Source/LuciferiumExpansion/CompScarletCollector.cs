@@ -113,7 +113,7 @@ namespace LuciferiumExpansion
 
         private float DistributeAmount()
         {
-            return Efficiency() * Props.portionSize;
+            return Efficiency() * Props.portionSize * LuciferiumExpansionMod.Settings.CollectionSpeedMultiplier;
         }
 
         private float LitersPerDay()
