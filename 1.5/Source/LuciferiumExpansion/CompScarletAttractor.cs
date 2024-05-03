@@ -20,7 +20,7 @@ namespace LuciferiumExpansion
         internal List<IntVec3> _lumpCells;
         private Map _currentMap;
 
-        public CompProperties_ScarletAttractor Props => (CompProperties_ScarletAttractor)props;
+        public new CompProperties_ScarletAttractor Props => (CompProperties_ScarletAttractor)props;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
