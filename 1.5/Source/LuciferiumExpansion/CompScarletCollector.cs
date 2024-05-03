@@ -71,7 +71,8 @@ namespace LuciferiumExpansion
 
             stringBuilder.AppendLine("USH_LE_Efficiency".Translate(Efficiency() * 100f));
 
-            stringBuilder.AppendLine("USH_LE_Producing".Translate(LitersPerDay()));
+            float litersPerDay = LitersPerDay();
+            stringBuilder.AppendLine("USH_LE_Producing".Translate(litersPerDay, (litersPerDay * 60f).ConvertToLuciferium().ToString("0.0")));
             return stringBuilder.ToString().TrimEnd();
         }
 
