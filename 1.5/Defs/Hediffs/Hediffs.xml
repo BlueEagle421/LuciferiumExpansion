@@ -19,6 +19,7 @@
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>0.125</severityPerDay>
       </li>
+      <li Class="LuciferiumExpansion.HediffCompProperties_DestroyBrainOnDeath"></li>
     </comps>
     <stages>
       <li>
