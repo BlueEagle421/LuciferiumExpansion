@@ -26,6 +26,9 @@
 
   <USH_LE_MechaNotWorking>mecha suppression doesn't seem to work on {0}</USH_LE_MechaNotWorking>
 
+  <USH_LE_ScarletWarningLetterLabel>Warning: Scarlet sludge deficit</USH_LE_ScarletWarningLetterLabel>
+  <USH_LE_ScarletWarningLetterDesc>Your intensive harvest of scarlet sludge from the air has led to a substantial deficit of mechanites on this planet. If you continue at the current pace, you will deplete all scarlet resources, and all luciferium addicts will die.\n\nConsider researching reinforced cores and building scarlet attractors before it's too late. Conolonists with luciferium addition: {0}</USH_LE_ScarletWarningLetterDesc>
+
   <USH_LE_CollectionSpeedLabel>Scarlet collectors speed multiplier</USH_LE_CollectionSpeedLabel>
   <USH_LE_CollectionSpeedDesc>The scarlet collectors speed will be mulitplied by {0}. This will have a major balance impact. I suggest playing with the default 100%.</USH_LE_CollectionSpeedDesc>
 
