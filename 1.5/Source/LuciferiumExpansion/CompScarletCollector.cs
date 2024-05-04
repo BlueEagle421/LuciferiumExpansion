@@ -76,6 +76,20 @@ namespace LuciferiumExpansion
             return stringBuilder.ToString().TrimEnd();
         }
 
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+                yield return gizmo;
+
+            if (!DebugSettings.ShowDevGizmos)
+                yield break;
+
+            yield return new CommandSetScarletSludge
+            {
+                defaultLabel = "DEV: Set scarlet sludge",
+            };
+        }
+
         private void TryProducePortion()
         {
             if (!ProductionReport().Accepted)
