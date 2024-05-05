@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <USH_LE_ExtractScarletMechanites>Extract 1 scarlet mechanite</USH_LE_ExtractScarletMechanites>
+  <USH_LE_ExtractScarletMechanitesDesc>Extract 1 scarlet mechanite from the synthesizer internal tank. A pawn will come to extract it.</USH_LE_ExtractScarletMechanitesDesc>
+
+  <USH_LE_CantProduce>Can’t produce: {0}</USH_LE_CantProduce>
+  <USH_LE_Efficiency>Efficiency: {0}%</USH_LE_Efficiency>
+  <USH_LE_Producing>Collecting: {0} l/d</USH_LE_Producing>
+  <USH_LE_ScarletSludgeLeft>Scarlet sludge left in the air: {0} l ({1} luciferium)</USH_LE_ScarletSludgeLeft>
+  <USH_LE_WillAttract>Will attract: {0} scarlet sludge ({1} luciferium)</USH_LE_WillAttract>
+  <USH_LE_NoScarletSludge>No {0} left in the air</USH_LE_NoScarletSludge>
+  <USH_LE_NoStorage>No storage space</USH_LE_NoStorage>
+
+  <USH_LE_CantRefine>Can’t refine: no platforms in the system</USH_LE_CantRefine>
+
+  <USH_LE_UsagesLeft>Usages before self-deconstruction: {0}</USH_LE_UsagesLeft>
+  <USH_LE_CorspeSelected>Corspe selected: {0}</USH_LE_CorspeSelected>
+  <USH_LE_CorspeNotValid>Selected corpse is not valid.</USH_LE_CorspeNotValid>
+  <USH_LE_CorpseNone>none</USH_LE_CorpseNone>
+  <USH_LE_OrderCorspeSelection>Select corpse</USH_LE_OrderCorspeSelection>
+  <USH_LE_OrderCorspeSelectionDesc>Select a corpse for resurrection.</USH_LE_OrderCorspeSelectionDesc>
+
+  <USH_LE_LuciNeeded>{0} needed to produce</USH_LE_LuciNeeded>
+  <USH_LE_LuciStored>{0} stored in synthesizer</USH_LE_LuciStored>
+
+  <USH_LE_MechaNotWorking>mecha suppression doesn't seem to work on {0}</USH_LE_MechaNotWorking>
+
+</LanguageData>
