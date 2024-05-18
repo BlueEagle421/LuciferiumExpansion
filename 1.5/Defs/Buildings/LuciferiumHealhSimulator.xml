@@ -4,7 +4,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>USH_LuciferiumMedicalSimulator</defName>
     <label>luciferium health simulator</label>
-    <description>A device that continuously conducts simulations and experiments on connected users using scarlet mechanites. The screen displays collected data in the form of reports and insights for medical staff.</description>
+    <description>A device that continuously conducts simulations and experiments on connected users using scarlet mechanites. The screen displays collected data in the form of reports and insights for medical staff. It connects to hospital beds.</description>
     <graphicData>
       <texPath>Things/Building/Production/LuciferiumSimulator</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -47,8 +47,8 @@
       <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_Facility">
         <statOffsets>
-          <MedicalTendQualityOffset>0.05</MedicalTendQualityOffset>
-          <SurgerySuccessChanceFactor>0.03</SurgerySuccessChanceFactor>
+          <MedicalTendQualityOffset>0.08</MedicalTendQualityOffset>
+          <SurgerySuccessChanceFactor>0.12</SurgerySuccessChanceFactor>
         </statOffsets>
         <maxSimultaneous>1</maxSimultaneous>
         <maxDistance>8</maxDistance>
