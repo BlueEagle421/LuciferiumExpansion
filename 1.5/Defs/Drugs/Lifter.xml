@@ -4,8 +4,7 @@
   <ThingDef ParentName="DrugBase">
     <defName>USH_Lifter</defName>
     <label>lifter</label>
-    <description>A drug made from cheap, unrefined scarlet sludge. It is a simple psychedelic with a small portion of the benefits of Luciferium. Note that you can’t keep a full Luciferium addiction satisfied with lifters, because of how destructive and risky it is.
-      \nIn the dark places of the world, there are entire societies of people addicted to Luciferium. People like former marines, celebrities and servants, who are willing to pay every penny to keep their bodies alive just a bit longer.</description>
+    <description>A drug made from cheap, unrefined scarlet sludge. It's a simple psychedelic with a small portion of the benefits of Luciferium. Note that you can’t keep a full Luciferium addiction satisfied with lifters due to how destructive and risky it is.\n\nIn the dark places of the world, there are entire societies of people addicted to Luciferium. These include former marines, celebrities, and servants, who are willing to pay every penny to keep their bodies alive just a bit longer. They can offer top prices for lifters, which is why it's so beneficial to produce it.</description>
     <descriptionHyperlinks>
       <HediffDef>USH_LifterHigh</HediffDef>
       <HediffDef>USH_LuciferiumTolerance</HediffDef>

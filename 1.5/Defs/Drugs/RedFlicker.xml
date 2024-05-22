@@ -4,7 +4,7 @@
   <ThingDef ParentName="DrugBase">
     <defName>USH_RedFlicker</defName>
     <label>red-flicker</label>
-    <description>A powerful combat-enhancing device that vaporizes a substance containing scarlet mechanites. After twenty hours, the drug stops working and the organism needs a substantial amount of time to regenerate due to massive overheating. If used frequently, Luciferium addiction may occur. However, the drug can be used as a last resort reserved for emergency situations.</description>
+    <description>A combat-enhancing, powerful device that vaporizes a substance containing scarlet mechanites. After twenty hours, the drug stops working and the organism needs a substantial amount of time to regenerate due to massive overheating. If used frequently, Luciferium addiction may occur. However, the drug can be used as a last resort reserved for emergency situations.</description>
     <descriptionHyperlinks>
       <HediffDef>USH_RedFlickerHigh</HediffDef>
       <HediffDef>USH_LuciferiumTolerance</HediffDef>
