@@ -110,6 +110,7 @@
     <thingClass>PipeSystem.Building_Pipe</thingClass>
     <category>Building</category>
     <tickerType>Rare</tickerType>
+    <drawStyleCategory>Conduits</drawStyleCategory>
     <graphicData>
       <texPath>UI/CSG/IConduit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
