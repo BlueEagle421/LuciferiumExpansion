@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>USH_ScarletAttractor</defName>
+    <label>scarlet attractor</label>
+    <description>A small, but powerful signal broadcaster capable of sending an encrypted message across galaxies. If any scarlet mechanites pick up on it, a primal instinct will guide them towards the signal source. The overheating of such a powerful shock will evaporate the attractor from existence, but it will summon a substantial amount of scarlet sludge for further collecting.</description>
+    <graphicData>
+      <texPath>Things/Building/Production/ScarletAttractor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <drawSize>(3,3)</drawSize>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <uiIconScale>0.7</uiIconScale>
+    <castEdgeShadows>true</castEdgeShadows>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.2</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>30</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <rotatable>false</rotatable>
+    <size>(1,1)</size>
+    <designationCategory>VCHE_PipeNetworks</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <costList>
+      <Steel>60</Steel>
+      <Plasteel>15</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="LuciferiumExpansion.CompProperties_ScarletAttractor">
+        <scarletSludgeToAdd>23040</scarletSludgeToAdd>
+        <soundDef>USH_ScarletBeam</soundDef>
+        <jobString>activate</jobString>
+        <activateTexPath>UI/Gizmos/ActivatePump</activateTexPath>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+    </thingSetMakerTags>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticBuilding</li>
+    </tradeTags>
+    <researchPrerequisites>
+      <li>ReinforcedCoresRes</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+</Defs>

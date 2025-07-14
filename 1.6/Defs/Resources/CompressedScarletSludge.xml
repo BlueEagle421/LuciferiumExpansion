@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>LuciferiumDrops</defName>
+    <label>compressed scarlet sludge</label>
+    <description>A mixture of condensed ashes, toxins and most importantly, scarlet mechanites. The resource is worthless on its own, but can be processed further for the valuable byproduct.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/LuciferiumDrops</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.4</MarketValue>
+      <Mass>0.12</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <stackLimit>150</stackLimit>
+  </ThingDef>
+
+</Defs>

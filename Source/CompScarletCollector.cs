@@ -34,11 +34,14 @@ namespace LuciferiumExpansion
             _resourceComp = parent.GetComp<CompResource>();
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostPostMake()
         {
-            base.PostDeSpawn(map);
+            base.PostPostMake();
+
             _nextProduceTick = -1;
         }
+
+
 
         public override void CompTick()
         {
